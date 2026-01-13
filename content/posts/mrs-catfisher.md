@@ -2,7 +2,7 @@
 title: "Mrs. Catfisher"
 date: 2025-12-12T14:15:05+07:00
 description: Catching moving bugs using the Franka Arm
-image: /mrs-catfisher/bug_sorter.gif
+image: mrs-catfisher/bug_sorter.gif
 tags:
   - Franka Arm
   - ROS2
