@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+{{ if .Params.math }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+{{ end }}
+
+<div class="flex justify-center">
+  <article class="md:col-span-2 prose lg:prose-lg">
+    <header class="not-prose">   
+    </header>
+
+    <div id="content" class="mb-14">
+      {{- .Content -}}
+      {{- partial "terms.html" (dict "taxonomy" "tags" "page" .) -}}
+    </div>
+
+    <footer id="content-footer" class="not-prose">
+    </footer>
+  </article>
+</div>
+
+{{ end }}
