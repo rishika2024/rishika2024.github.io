@@ -7,14 +7,13 @@
 {{ end }}
 
 <div class="flex justify-center">
-  <article class="md:col-span-2 prose lg:prose-lg max-w-4xl">
+  <article class="md:col-span-2 prose lg:prose-lg max-w-5xl">
     <header class="not-prose mb-8">   
       <h1 class="text-4xl font-bold">{{ .Title }}</h1>
     </header>
 
-    <div id="content" class="mb-14">
+    <div id="content" class="mb-8">
       {{- .Content -}}
-      {{- partial "terms.html" (dict "taxonomy" "tags" "page" .) -}}
     </div>
 
     <footer id="content-footer" class="not-prose">
