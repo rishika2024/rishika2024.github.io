@@ -26,7 +26,6 @@
   </figure>
   <div class="basis-1/2 self-center">
     <h2 class="text-2xl md:text-3xl lg:text-5xl font-bold mb-4"><a class="before:content-[''] before:z-10 before:top-0 before:right-0 before:left-0 before:bottom-0 before:absolute before:pointer-events-auto" href="{{ .Permalink }}">{{ .Title}}</a></h2>
-    <time datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}"><span class="font-bold">{{ .Date.Format "Jan 02, 2006" }}</span></time>
   </div>
 </section>
 
@@ -34,55 +33,46 @@
 
 <!-- / End feature post  -->
 
-<!-- Category Post -->
+<!-- Category Post removed -->
+<!-- Start recent post (no subheading) -->
 
-<section class="mb-16">
+  <section class="mt-8 mb-16">
 
-    {{ $cat := "astronomy" }}
+    {{ $pages := ( where site.RegularPages "Type" "in" site.Params.mainSections ) }}
+    {{ $paginator := .Paginate ( $pages.ByParam "order" ) }}
+    {{ $list := $paginator.Pages }}
 
-    <div class="flex items-center mb-6">
+    {{ $col1 := slice }}
+    {{ $col2 := slice }}
+    {{ $col3 := slice }}
 
-      <h2 class="text-3xl md:text-4xl font-bold mr-auto">{{ $cat | humanize }}</h2>
-
-      <a class="border rounded-full py-2 px-4 md:px-6 hover:bg-blue-100" href="{{ printf "/categories/%s" $cat | absURL }}">View All</a>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-10">
-
-    {{ $catPages := where .Site.RegularPages "Params.categories" "intersect" (slice $cat ) }}
-    {{ range ($catPages.ByParam "order" | first 3) }}
-
-      {{- partial "content/card" . -}}
-
+    {{ range $i, $p := $list }}
+      {{ $m := mod $i 3 }}
+      {{ if eq $m 0 }}
+        {{ $col1 = $col1 | append $p }}
+      {{ else if eq $m 1 }}
+        {{ $col2 = $col2 | append $p }}
+      {{ else }}
+        {{ $col3 = $col3 | append $p }}
+      {{ end }}
     {{ end }}
 
-    </div>
-
-  </section>
-
-<!-- / End category post --> 
-<hr class="my-8">
-<!-- Start recent post  -->
-
-  <section class="mb-16">
-
-    <div class="flex items-center mb-6">
-
-      <h2 class="text-3xl md:text-4xl font-bold mr-auto">Recent Post</h2>
-
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-10">
-
-    {{ $recent := ( where site.RegularPages "Type" "in" site.Params.mainSections) }}
-    {{ $paginator := .Paginate ( $recent.ByParam "order" ) }}
-
-    {{ range $paginator.Pages }}
-
-      {{- partial "content/card" . -}}
-
-    {{ end }}
-
+    <div style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 1.5rem;">
+      <div style="display:flex; flex-direction:column; row-gap: 2.5rem;">
+        {{ range $col1 }}
+          {{- partial "content/card" . -}}
+        {{ end }}
+      </div>
+      <div style="display:flex; flex-direction:column; row-gap: 2.5rem;">
+        {{ range $col2 }}
+          {{- partial "content/card" . -}}
+        {{ end }}
+      </div>
+      <div style="display:flex; flex-direction:column; row-gap: 2.5rem;">
+        {{ range $col3 }}
+          {{- partial "content/card" . -}}
+        {{ end }}
+      </div>
     </div>
 
     <!-- Paginate here -->
@@ -101,6 +91,6 @@
 
 <!-- / End recent post  -->
 
-  {{- partial "content/newsletter.html" . -}}
+  {{/* Newsletter removed per request */}}
 
 {{ end }}
