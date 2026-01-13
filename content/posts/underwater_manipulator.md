@@ -54,7 +54,7 @@ The end effector is attached at the end of the rack.
 
 ## Final Demo
 
-{{< figure src="/underwater-arm/Robotic_Manipulator.gif" width="50%">}}
+[{{< figure src="/underwater-arm/Robotic_Manipulator.gif" width="50%">}}](https://private-user-images.githubusercontent.com/172546714/534910357-35cca60f-55f5-460a-959c-c522ae3a753a.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjgyODA1NTgsIm5iZiI6MTc2ODI4MDI1OCwicGF0aCI6Ii8xNzI1NDY3MTQvNTM0OTEwMzU3LTM1Y2NhNjBmLTU1ZjUtNDYwYS05NTljLWM1MjJhZTNhNzUzYS5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDExM1QwNDU3MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02ZGZhYzQxYjEzYzhjNzFiODcwNjM0NDU5YjFkZWNkY2Q5NTk3MWM0MDdkYzBjYmM5N2E1NmJjMGY2YTJhNDAyJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Hs_cYNMHRqMDDDIEBxLf8lG3gqlfV7btm6FtxxxVaXg)
 
 
 
