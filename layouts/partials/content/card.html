@@ -40,5 +40,19 @@
 
 		<p class="text-normal leading-normal text-zinc-500 line-clamp-2">{{ .Params.description }}</p>
 
+		<div class="mt-4 text-sm text-zinc-600">
+			{{- if .Date }}
+			<p class="mb-2">{{ .Date.Format "Jan 2, 2006" }}</p>
+			{{- end }}
+		</div>
+
+		{{- if .Params.tags }}
+		<div class="mt-3 flex flex-wrap gap-2">
+			{{- range .Params.tags }}
+			<span class="inline-block bg-zinc-200 text-zinc-700 text-xs px-3 py-1 rounded-full">{{ . }}</span>
+			{{- end }}
+		</div>
+		{{- end }}
+
 	</div>
 </article>
