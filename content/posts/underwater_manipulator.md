@@ -11,6 +11,22 @@ draft: false
 
 ---
 
+<style>
+.side-by-side {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+.side-by-side figure {
+  flex: 1;
+  min-width: 300px;
+  max-width: 45%;
+}
+</style>
+
 # Developing a simulation and control system for an underwater robotic manipulator
 
 #### This was a group project done in the Vibration Lab in IIT Jodhpur, Rajasthan, India under the guidance of Prof. Barun Pratiher and Nithin Tripathi
@@ -30,13 +46,12 @@ The gripper was set such that there is a delay of few seconds after it grasps th
 A rack and pinion setup is used to move the gripper up and down.
 The servo motor rotates the pinion, which drives the rack in a straight line. Since the gripper is attached to the rack, it moves vertically based on the motor's rotation, allowing it to align with objects at different heights.
 
-<div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin: 2rem 0;">
-  <div style="flex: 1; max-width: 45%;">
-    <img src="/underwater-arm/gripper_rack_pinion_cad.png" alt="Gripper CAD" style="width: 100%; height: auto; display: block;" />
-  </div>
-  <div style="flex: 1; max-width: 45%;">
-    <img src="/underwater-arm/gripper_rack_pinion.png" alt="Gripper" style="width: 100%; height: auto; display: block;" />
-  </div>
+<div class="side-by-side">
+
+{{< figure src="underwater-arm/gripper_rack_pinion_cad.png" alt="Gripper CAD" >}}
+
+{{< figure src="underwater-arm/gripper_rack_pinion.png" alt="Gripper Mechanism" >}}
+
 </div>
 
 ## Encoder
