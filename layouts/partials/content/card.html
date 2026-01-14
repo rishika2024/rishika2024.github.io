@@ -13,14 +13,18 @@
 		  {{- else }}
 
 			{{- if or (strings.HasSuffix .Params.image ".gif") (strings.HasSuffix .Params.image ".GIF") (strings.HasSuffix .Params.image ".mp4") (strings.HasSuffix .Params.image ".webm") -}}
-			  <img class="block w-full h-auto transition duration-500 cursor-pointer" src="/{{ .Params.image }}" alt="{{ $.Name }}">
+			  {{- with $img := resources.Get .Params.image -}}
+			    <img class="block w-full h-auto transition duration-500 cursor-pointer" src="{{ $img.Permalink }}" alt="{{ $.Name }}">
+			  {{- end -}}
 			{{- else if or (strings.HasSuffix .Params.image ".png") (strings.HasSuffix .Params.image ".jpg") (strings.HasSuffix .Params.image ".jpeg") -}}
 			  {{- with $img := resources.Get .Params.image -}}
 			    {{- $img := $img.Process "resize 750x" -}}
 			    <img class="block w-full h-auto transition duration-500 cursor-pointer" src="{{ $img.Permalink }}" alt="{{ $.Name }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
 			  {{- end -}}
 			{{- else -}}
-			  <img class="block w-full h-auto transition duration-500 cursor-pointer" src="/{{ .Params.image }}" alt="{{ $.Name }}">
+			  {{- with $img := resources.Get .Params.image -}}
+			    <img class="block w-full h-auto transition duration-500 cursor-pointer" src="{{ $img.Permalink }}" alt="{{ $.Name }}">
+			  {{- end -}}
 			{{- end -}}
 
 		  {{- end -}}
