@@ -23,7 +23,7 @@ The frame at the center of the outer box is obtained by translating the world fr
 
 ## Jack Frames
 
-{{< figure src="/jack-in-box/Jack Frame.png" alt="Jack Frames" width="55%" >}}
+{{< figure src="/jack-in-box/Jack Frame.png" alt="Jack Frames" width="75%" >}}
 
 The frame at the center of the jack is obtained by translating the world frame to the jack center and then rotating it by the jack orientation $\theta_{\text{jack}}$. The corner positions are defined relative to the jack center (fixed offsets), rotated by $\theta_{\text{jack}}$, and then expressed in the box frame.
 
