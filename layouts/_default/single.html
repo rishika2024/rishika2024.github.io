@@ -13,10 +13,28 @@
     max-width: 100%;
     height: auto;
   }
+  article {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  @media (min-width: 768px) {
+    article {
+      padding-left: 5rem !important;
+      padding-right: 5rem !important;
+    }
+  }
+  @media (min-width: 1024px) {
+    article {
+      padding-left: 10rem !important;
+      padding-right: 10rem !important;
+    }
+  }
 </style>
 
 <div class="flex justify-center w-full">
-  <article class="md:col-span-2 w-full px-12 md:px-20 lg:px-40 mx-auto py-16">
+  <article class="md:col-span-2 w-full mx-auto py-16">
     <header class="not-prose mb-16 text-center">   
       <h1 class="text-4xl font-bold">{{ .Title }}</h1>
     </header>
