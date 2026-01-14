@@ -57,11 +57,20 @@
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
+  #content p, #content li, #content a {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+  #content ul, #content ol {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 </style>
 
 <div class="flex justify-center w-full">
   <article class="md:col-span-2 w-full mx-auto py-16">
-    <div id="content" class="mb-32 text-justify leading-relaxed">
+    <div id="content" class="mb-32 text-justify leading-relaxed text-lg">
       {{- .Content -}}
     </div>
 
