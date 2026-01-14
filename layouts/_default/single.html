@@ -31,6 +31,24 @@
       padding-right: 14rem !important;
     }
   }
+  #content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  #content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  #content h4, #content h5, #content h6 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
 </style>
 
 <div class="flex justify-center w-full">
@@ -39,7 +57,7 @@
       <h1 class="text-4xl font-bold">{{ .Title }}</h1>
     </header>
 
-    <div id="content" class="mb-32 prose-content text-justify leading-relaxed">
+    <div id="content" class="mb-32 text-justify leading-relaxed">
       {{- .Content -}}
     </div>
 
