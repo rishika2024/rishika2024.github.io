@@ -17,6 +17,7 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       DART_SASS_VERSION: 1.97.2
       GO_VERSION: 1.25.5
@@ -106,4 +107,4 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          timeout: 900000
+          timeout: 1800000
