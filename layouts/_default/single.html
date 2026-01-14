@@ -6,13 +6,22 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
 {{ end }}
 
+<style>
+  #content img {
+    display: block;
+    margin: 1.5rem auto;
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
 <div class="flex justify-center w-full">
-  <article class="md:col-span-2 w-full px-4 md:px-8 lg:px-16 max-w-4xl mx-auto">
-    <header class="not-prose mb-8 text-center">   
+  <article class="md:col-span-2 w-full px-6 md:px-12 lg:px-24 max-w-5xl mx-auto py-8">
+    <header class="not-prose mb-12 text-center">   
       <h1 class="text-4xl font-bold">{{ .Title }}</h1>
     </header>
 
-    <div id="content" class="mb-8 prose-content text-justify">
+    <div id="content" class="mb-24 prose-content text-justify leading-relaxed">
       {{- .Content -}}
     </div>
 
