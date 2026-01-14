@@ -2,7 +2,7 @@
 title: "Underwater Manipulator"
 date: 2024-10-15T22:45:37+07:00
 description: Developing a simulation and control system for an underwater robotic manipulator
-image: underwater-arm/gripper.gif
+image: underwater-arm/Robotic_Manipulator.gif
 tags:
   - MATLAB
   - Arduino  
