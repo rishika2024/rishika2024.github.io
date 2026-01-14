@@ -6,6 +6,7 @@ image: underwater-arm/Robotic_Manipulator.gif
 tags:
   - MATLAB
   - Arduino  
+  - Solidworks
 order: 5
 draft: false
 
