@@ -23,7 +23,7 @@ This project focuses on building a simulation and control system for an underwat
 The gripper is controlled using a stator motor. The linear displacement of the gripper depends on the angle of rotation of the motor. A min angle is set for grasping the object and a maximum angle is set for releasing the object.
 The gripper was set such that there is a delay of few seconds after it grasps the object and drops it at the designated location. It was observed for every 10 degrees the gripper moves linearly by 0.5cm
 
-{{< figure src="/images/gripper.gif" alt="Gripper Working" >}}
+{{< figure src="/underwater-arm/gripper.gif" alt="Gripper Working" >}}
 
 
 ## Rack and Pinion setup
