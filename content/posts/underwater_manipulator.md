@@ -11,7 +11,7 @@ draft: false
 
 ---
 
-# Underwater Manipulator
+# Developing a simulation and control system for an underwater robotic manipulator
 
 #### This was a group project done in the Vibration Lab in IIT Jodhpur, Rajasthan, India under the guidance of Prof. Barun Pratiher and Nithin Tripathi
 
