@@ -28,15 +28,15 @@ The gripper was set such that there is a delay of few seconds after it grasps th
 
 ## Rack and Pinion setup
 A rack and pinion setup is used to move the gripper up and down.
-The servo motor rotates the pinion, which drives the rack in a straight line. Since the gripper is attached to the rack, it moves vertically based on the motor’s rotation, allowing it to align with objects at different heights.
+The servo motor rotates the pinion, which drives the rack in a straight line. Since the gripper is attached to the rack, it moves vertically based on the motor's rotation, allowing it to align with objects at different heights.
 
-<div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; align-items:start;">
-  <figure>
-    <img src="/underwater-arm/gripper_rack_pinion_cad.png" alt="Gripper CAD" style="max-width:100%; height:auto;" />
-  </figure>
-  <figure>
-    <img src="/underwater-arm/gripper_rack_pinion.png" alt="Gripper" style="max-width:105%; height:auto;" />
-  </figure>
+<div style="display: flex; gap: 2rem; align-items: center; justify-content: center; margin: 2rem 0;">
+  <div style="flex: 1; max-width: 45%;">
+    <img src="/underwater-arm/gripper_rack_pinion_cad.png" alt="Gripper CAD" style="width: 100%; height: auto; display: block;" />
+  </div>
+  <div style="flex: 1; max-width: 45%;">
+    <img src="/underwater-arm/gripper_rack_pinion.png" alt="Gripper" style="width: 100%; height: auto; display: block;" />
+  </div>
 </div>
 
 ## Encoder
