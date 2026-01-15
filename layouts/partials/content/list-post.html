@@ -10,12 +10,18 @@
 
 		  {{- else }}
 
-			{{- if or (strings.HasSuffix .Params.image ".gif") (strings.HasSuffix .Params.image ".GIF") -}}
-			  <img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="{{ .Params.image }}" alt="{{ $.Name }}" style="width: 100%; height: 100%; object-fit: cover;">
-			{{- else -}}
+			{{- if or (strings.HasSuffix .Params.image ".gif") (strings.HasSuffix .Params.image ".GIF") (strings.HasSuffix .Params.image ".mp4") (strings.HasSuffix .Params.image ".webm") -}}
+			  {{- with $img := resources.Get .Params.image -}}
+			    <img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="{{ $img.Permalink }}" alt="{{ $.Name }}" style="width: 100%; height: 100%; object-fit: cover;">
+			  {{- end -}}
+			{{- else if or (strings.HasSuffix .Params.image ".png") (strings.HasSuffix .Params.image ".jpg") (strings.HasSuffix .Params.image ".jpeg") -}}
 			  {{- with $imglist := resources.Get .Params.image -}}
 			    {{- $imglist := $imglist.Crop "250x250 Center" -}}
 			    <img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="{{ $imglist.Permalink }}" alt="{{ $.Name }}" width="{{ $imglist.Width }}" height="{{ $imglist.Height }}">
+			  {{- end -}}
+			{{- else -}}
+			  {{- with $img := resources.Get .Params.image -}}
+			    <img class="object-cover h-full w-full group-hover:scale-105 transition duration-500 cursor-pointer" src="{{ $img.Permalink }}" alt="{{ $.Name }}" style="width: 100%; height: 100%; object-fit: cover;">
 			  {{- end -}}
 			{{- end }}
 
