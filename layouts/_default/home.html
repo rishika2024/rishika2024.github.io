@@ -57,22 +57,12 @@
       {{ end }}
     {{ end }}
 
-    <div style="display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 1.5rem;">
-      <div style="display:flex; flex-direction:column; row-gap: 2.5rem;">
-        {{ range $col1 }}
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); column-gap: 1.5rem; row-gap: 2.5rem;">
+      {{ range .Site.RegularPages.ByParam "order" }}
+        {{- if and (ne .Params.draft true) (not (in .Params.tags "feature")) }}
           {{- partial "content/card" . -}}
-        {{ end }}
-      </div>
-      <div style="display:flex; flex-direction:column; row-gap: 2.5rem;">
-        {{ range $col2 }}
-          {{- partial "content/card" . -}}
-        {{ end }}
-      </div>
-      <div style="display:flex; flex-direction:column; row-gap: 2.5rem;">
-        {{ range $col3 }}
-          {{- partial "content/card" . -}}
-        {{ end }}
-      </div>
+        {{- end }}
+      {{ end }}
     </div>
 
     <!-- Paginate here -->
