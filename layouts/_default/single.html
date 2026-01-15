@@ -14,57 +14,133 @@
     height: auto;
   }
   article {
-    padding-left: 5rem !important;
-    padding-right: 5rem !important;
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  @media (min-width: 640px) {
+    article {
+      padding-left: 1.5rem !important;
+      padding-right: 1.5rem !important;
+      padding-top: 2rem !important;
+      padding-bottom: 2rem !important;
+    }
   }
   @media (min-width: 768px) {
     article {
-      padding-left: 8rem !important;
-      padding-right: 8rem !important;
+      padding-left: 3rem !important;
+      padding-right: 3rem !important;
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
     }
   }
   @media (min-width: 1024px) {
+    article {
+      padding-left: 8rem !important;
+      padding-right: 8rem !important;
+      padding-top: 4rem !important;
+      padding-bottom: 4rem !important;
+    }
+  }
+  @media (min-width: 1280px) {
     article {
       padding-left: 16rem !important;
       padding-right: 16rem !important;
     }
   }
   #content h1 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     text-align: center;
     line-height: 1.2;
   }
-  #content h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+  @media (min-width: 640px) {
+    #content h1 {
+      font-size: 2.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
   }
-  #content h3 {
+  @media (min-width: 1024px) {
+    #content h1 {
+      font-size: 3.5rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  #content h2 {
     font-size: 1.25rem;
     font-weight: 600;
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
   }
-  #content h4, #content h5, #content h6 {
+  @media (min-width: 1024px) {
+    #content h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+  #content h3 {
     font-size: 1.125rem;
     font-weight: 600;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
   }
+  @media (min-width: 1024px) {
+    #content h3 {
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+  }
+  #content h4, #content h5, #content h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  @media (min-width: 1024px) {
+    #content h4, #content h5, #content h6 {
+      font-size: 1.125rem;
+      margin-top: 1rem;
+    }
+  }
   #content p, #content li, #content a {
-    font-size: 1.125rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  @media (min-width: 768px) {
+    #content p, #content li, #content a {
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+  }
+  @media (min-width: 1024px) {
+    #content p, #content li, #content a {
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
   }
   #content ul, #content ol {
-    margin-left: 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  @media (min-width: 768px) {
+    #content ul, #content ol {
+      margin-left: 1.25rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    #content ul, #content ol {
+      margin-left: 1.5rem;
+    }
   }
 </style>
 
