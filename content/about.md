@@ -6,39 +6,56 @@ draft: false
 
 # About Me
 
-Hi! I'm Rishika, a passionate roboticist and engineer with a strong foundation in mechanical design, control systems, and software development.
+Hi! I'm Rishika, pursuing my Master's in Robotics at Northwestern University. I completed my B.Tech in Mechanical Engineering from IIT Jodhpur with a passion for robotics, intelligent systems, and innovative solutions.
+
+## Education
+
+- **Master's in Robotics** - Northwestern University (In Progress)
+- **B.Tech in Mechanical Engineering** - IIT Jodhpur
 
 ## Background
 
-I'm currently focused on developing innovative robotic solutions that combine hardware design with intelligent software. My expertise spans across:
+My journey combines strong mechanical engineering fundamentals with cutting-edge robotics research. I'm particularly interested in:
 
-- **Robotics & Control Systems**: Designing and programming robotic arms, manipulators, and autonomous systems
-- **Mechanical Design**: Using tools like Solidworks and Onshape for CAD and 3D modeling
-- **Software Development**: Python, MATLAB, Arduino, and ROS/ROS2 for robot programming
-- **Computer Vision**: OpenCV for perception and visual feedback systems
-- **Simulation**: Creating accurate simulations for testing and validation
+- **Large Language Models (LLMs)** in robotics for natural language interfaces and autonomous decision-making
+- **Robotic Solutions**: Developing practical systems that solve real-world problems
+- **Control Systems & Dynamics**: Motion planning and trajectory optimization
+- **Mechanical Design & Simulation**: Creating and validating robotic mechanisms
+
+## Expertise
+
+- **Robotics & Control**: Designing and programming robotic manipulators, arms, and autonomous systems
+- **Mechanical Design**: CAD modeling with Solidworks, Onshape, and mechanical simulation
+- **Software Development**: Python, MATLAB, C++, and embedded systems
+- **Robot Operating System**: ROS2, MoveIt, Gazebo simulation
+- **Computer Vision**: OpenCV and visual perception systems
+- **Simulation & Validation**: Creating accurate digital twins for hardware validation
 
 ## Projects
 
-On this portfolio, you'll find some of my key projects including:
+You can explore my portfolio projects including:
 
-- **Underwater Manipulator**: A simulation and control system for underwater robotic arms
-- **Mrs. Catfisher - The Bug Sorter**: An autonomous system using the Franka Arm to catch and sort moving objects
+- **Underwater Manipulator**: Simulation and control system for underwater robotic arms
+- **Mrs. Catfisher - The Bug Sorter**: Autonomous Franka Arm system for object detection and manipulation
 - **RRT Algorithm Implementation**: Motion planning using Rapidly-exploring Random Trees
-- **Jack-in-a-Box**: An interactive robotic project combining mechanical design with control
+- **Jack-in-a-Box**: Interactive robotic project combining mechanical design with intelligent control
 
-## Tools & Technologies
+## Technical Skills
 
-- **Programming**: Python, MATLAB, C++
-- **Robotics**: ROS2, MoveIt, Gazebo
-- **CAD**: Solidworks, Onshape
-- **Microcontrollers**: Arduino
-- **Vision**: OpenCV
-- **Version Control**: Git, GitHub
+- **Languages**: Python, MATLAB, C++, Arduino
+- **Robotics**: ROS2, MoveIt, Gazebo, Franka API
+- **CAD & Simulation**: Solidworks, Onshape, MATLAB Simulink
+- **Vision & Perception**: OpenCV, image processing
+- **Tools**: Git, GitHub, Linux, Docker
+- **Hardware**: Arduino, Microcontrollers, Robotic Arms
+
+## Interests & Vision
+
+I'm passionate about bridging the gap between mechanical engineering and AI, particularly in developing intelligent robotic systems that can understand and respond to human intent. I'm always excited to explore how LLMs can enhance robot autonomy and human-robot interaction.
 
 ## Let's Connect
 
-I'm always interested in collaborating on exciting robotics projects or discussing innovative ideas. Feel free to reach out through:
+I'm always open to discussing robotics projects, research opportunities, or innovative ideas. Feel free to reach out:
 
 - **GitHub**: [github.com/rishika2024](https://github.com/rishika2024)
 - **LinkedIn**: [linkedin.com/in/rishika-bera-05b7b025a/](https://www.linkedin.com/in/rishika-bera-05b7b025a/)
