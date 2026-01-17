@@ -4,6 +4,24 @@ description: "About me"
 draft: false
 ---
 
+<style>
+#content p {
+  font-size: 1.25rem !important;
+}
+#content a {
+  font-size: 1.25rem !important;
+}
+#content li {
+  font-size: 1.25rem !important;
+}
+#content h1 {
+  font-size: 2.5rem !important;
+}
+#content h2 {
+  font-size: 1.875rem !important;
+}
+</style>
+
 # About Me
 
 Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern University. I completed my B.Tech in Mechanical Engineering from IIT Jodhpur, and I'm passionate about developing intelligent robotic solutions with a focus on LLMs and autonomous systems.
