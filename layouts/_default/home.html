@@ -59,7 +59,7 @@
 
     <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); column-gap: 1.5rem; row-gap: 2.5rem;">
       {{ range .Site.RegularPages.ByParam "order" }}
-        {{- if and (ne .Params.draft true) (not (in .Params.tags "feature")) (not (eq .File.Path "content/about.md")) }}
+        {{- if and (ne .Params.draft true) (not (in .Params.tags "feature")) (not (eq .File.BaseFileName "about")) }}
           {{- partial "content/card" . -}}
         {{- end }}
       {{ end }}
