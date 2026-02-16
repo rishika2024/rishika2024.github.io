@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume - Rishika Bera</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <style>body,html{margin:0;padding:0;height:100%;width:100%;}</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf_viewer.min.css"/>
+</head>
+<body style="height:100vh;width:100vw;overflow:hidden;">
+  <div id="viewerContainer" style="height:100vh;width:100vw;"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf_viewer.min.js"></script>
+  <script>
+    const url = '/resume/Rishika_Resume.pdf';
+    const container = document.getElementById('viewerContainer');
+    const eventBus = new pdfjsViewer.EventBus();
+    const pdfLinkService = new pdfjsViewer.PDFLinkService({ eventBus });
+    const pdfViewer = new pdfjsViewer.PDFViewer({
+      container,
+      eventBus,
+      linkService: pdfLinkService,
+      removePageBorders: false
+    });
+    pdfLinkService.setViewer(pdfViewer);
+    eventBus.on('pagesinit', function () {
+      pdfViewer.currentScaleValue = 'page-width';
+    });
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.2.67/pdf.worker.min.js';
+    pdfjsLib.getDocument(url).promise.then(function (pdfDocument) {
+      pdfViewer.setDocument(pdfDocument);
+      pdfLinkService.setDocument(pdfDocument, null);
+    });
+  </script>
+</body>
+</html>
