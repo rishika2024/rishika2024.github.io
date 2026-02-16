@@ -1,12 +1,12 @@
 
 <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col mb-8">
-	<div class="flex items-center justify-between">
+	<div class="relative flex items-center justify-between">
 		<!-- Profile photo on the left -->
 		<div class="flex-shrink-0">
 			<img src="/photo/photo.jpeg" alt="Rishika Bera" style="border-radius: 50%; width: 120px; height: 120px; object-fit: cover; box-shadow: 0 4px 16px rgba(0,0,0,0.12);" />
 		</div>
-		<!-- Site title in the center -->
-		<div class="flex-grow flex justify-center items-center text-3xl font-bold uppercase">
+		<!-- Site title in the center, absolutely positioned -->
+		<div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max-content;" class="text-3xl font-bold uppercase">
 			{{ if .IsHome}}<h1 class="m-0">Rishika Bera</h1>
 			{{ else }}<h2 class="m-0">Rishika Bera</h2>{{ end }}
 		</div>
