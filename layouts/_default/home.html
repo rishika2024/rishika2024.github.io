@@ -57,26 +57,30 @@
       {{ end }}
     {{ end }}
 
-    <div style="column-count: 3; column-gap: 1.5rem;">
-      <style>
-        @media (max-width: 1024px) {
-          .masonry-grid { column-count: 2 !important; }
-        }
-        @media (max-width: 640px) {
-          .masonry-grid { column-count: 1 !important; }
-        }
-        .masonry-grid > article {
-          break-inside: avoid;
-          margin-bottom: 1.5rem;
-        }
-      </style>
-      <div class="masonry-grid" style="column-count: 3; column-gap: 1.5rem;">
+    <style>
+      .masonry-grid {
+        column-count: 3;
+        column-gap: 1.5rem;
+      }
+      @media (max-width: 1024px) {
+        .masonry-grid { column-count: 2; }
+      }
+      @media (max-width: 640px) {
+        .masonry-grid { column-count: 1; }
+      }
+      .masonry-grid > article {
+        break-inside: avoid;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        width: 100%;
+      }
+    </style>
+    <div class="masonry-grid">
       {{ range .Site.RegularPages.ByParam "order" }}
         {{- if and (ne .Params.draft true) (not (in .Params.tags "feature")) (not (eq .File.BaseFileName "about")) }}
           {{- partial "content/card" . -}}
         {{- end }}
       {{ end }}
-      </div>
     </div>
 
     <!-- Paginate here -->
