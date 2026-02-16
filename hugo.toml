@@ -1,6 +1,6 @@
 baseURL = 'https://rishika2024.github.io'
 languageCode = 'en-us'
-title = "Rishika Bera's Portfolio"
+title = "Rishika Bera"
 theme = 'pehtheme-hugo'
 disqusShortname = ''
 
