@@ -22,6 +22,11 @@ draft: false
 }
 </style>
 
+
+<div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+  <img src="/photo/photo.jpeg" alt="Rishika Bera" style="border-radius: 50%; width: 180px; height: 180px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+</div>
+
 # About Me
 
 Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern University. I completed my B.Tech in Mechanical Engineering from IIT Jodhpur, and I'm passionate about developing intelligent robotic solutions with a focus on LLMs and autonomous systems.
