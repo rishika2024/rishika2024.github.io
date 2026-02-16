@@ -57,12 +57,10 @@
       {{ end }}
     {{ end }}
 
-    <div class="masonry-columns" style="column-count: 1; column-gap: 1.5rem;">
+    <div class="masonry-grid">
       {{ range .Site.RegularPages.ByParam "order" }}
         {{- if and (ne .Params.draft true) (not (in .Params.tags "feature")) (not (eq .File.BaseFileName "about")) }}
-          <div style="margin-bottom: 2.5rem; break-inside: avoid;">
-            {{- partial "content/card" . -}}
-          </div>
+          {{- partial "content/card" . -}}
         {{- end }}
       {{ end }}
     </div>
@@ -86,15 +84,22 @@
   {{/* Newsletter removed per request */}}
 
 <style>
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem 1.5rem;
+    grid-auto-rows: auto;
+  }
+  
   @media (min-width: 640px) {
-    .masonry-columns {
-      column-count: 2 !important;
+    .masonry-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
   
   @media (min-width: 1024px) {
-    .masonry-columns {
-      column-count: 3 !important;
+    .masonry-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
