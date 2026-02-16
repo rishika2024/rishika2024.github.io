@@ -59,14 +59,14 @@
 
     <style>
       .masonry-grid {
-        column-count: 3;
+        column-count: 3 !important;
         column-gap: 1.5rem;
       }
-      @media (max-width: 1200px) {
-        .masonry-grid { column-count: 2; }
+      @media (max-width: 900px) {
+        .masonry-grid { column-count: 2 !important; }
       }
-      @media (max-width: 800px) {
-        .masonry-grid { column-count: 1; }
+      @media (max-width: 600px) {
+        .masonry-grid { column-count: 1 !important; }
       }
       .masonry-grid > article {
         break-inside: avoid;
