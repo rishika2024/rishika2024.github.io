@@ -57,7 +57,7 @@
       {{ end }}
     {{ end }}
 
-    <div class="masonry-grid" style="position: relative;">
+    <div class="masonry-grid">
       {{ range .Site.RegularPages.ByParam "order" }}
         {{- if and (ne .Params.draft true) (not (in .Params.tags "feature")) (not (eq .File.BaseFileName "about")) }}
           <div class="masonry-item">
@@ -87,25 +87,26 @@
 
 <style>
   .masonry-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
   }
   
+  .masonry-item {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
   @media (min-width: 640px) {
-    .masonry-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .masonry-item {
+      width: calc(50% - 0.75rem);
     }
   }
   
   @media (min-width: 1024px) {
-    .masonry-grid {
-      grid-template-columns: repeat(3, 1fr);
+    .masonry-item {
+      width: calc(33.333% - 1rem);
     }
-  }
-  
-  .masonry-item {
-    margin-bottom: 1rem;
   }
 </style>
 
@@ -114,78 +115,80 @@ function masonryLayout() {
   const grid = document.querySelector('.masonry-grid');
   if (!grid) return;
   
-  const items = Array.from(grid.children);
-  const columnGap = 24; // 1.5rem in pixels
-  const rowGap = 40; // 2.5rem in pixels
+  const items = Array.from(document.querySelectorAll('.masonry-item'));
+  if (items.length === 0) return;
   
   // Get number of columns based on viewport
-  const computedStyle = window.getComputedStyle(grid);
-  const columns = computedStyle.gridTemplateColumns.split(' ').length;
+  const width = window.innerWidth;
+  let columns = 1;
+  if (width >= 1024) columns = 3;
+  else if (width >= 640) columns = 2;
   
   if (columns === 1) {
     // Single column - reset positioning
     items.forEach(item => {
       item.style.position = 'relative';
-      item.style.top = '';
+      item.style.transform = 'translateY(0)';
     });
+    grid.style.height = 'auto';
     return;
   }
   
   // Initialize column heights
   const columnHeights = Array(columns).fill(0);
+  const columnGap = 24; // 1.5rem
+  const rowGap = 40; // 2.5rem (1rem margin-bottom + 1.5rem gap)
   
   items.forEach((item, index) => {
     const column = index % columns;
-    const row = Math.floor(index / columns);
     
-    if (row === 0) {
-      // First row - natural position
-      item.style.position = 'relative';
-      item.style.top = '0px';
-      columnHeights[column] = item.offsetHeight;
-    } else {
-      // Subsequent rows - position based on column height
-      item.style.position = 'relative';
-      
-      // Find the shortest column
-      const shortestColumn = columnHeights.indexOf(Math.min(...columnHeights));
-      const currentColumn = column;
-      
-      // Calculate offset
-      const offset = columnHeights[currentColumn] - columnHeights[shortestColumn];
-      item.style.top = `-${offset}px`;
-      
-      // Update column height
-      columnHeights[currentColumn] += item.offsetHeight + rowGap - offset;
-    }
+    // Position item
+    item.style.position = 'absolute';
+    item.style.left = `calc(${column} * (100% / ${columns}))`;
+    item.style.transform = `translateY(${columnHeights[column]}px)`;
+    
+    // Update column height
+    const itemHeight = item.offsetHeight;
+    columnHeights[column] += itemHeight + rowGap;
   });
   
-  // Adjust grid height
-  const maxHeight = Math.max(...columnHeights);
+  // Set grid height to tallest column
+  const maxHeight = Math.max(...columnHeights) - rowGap;
+  grid.style.position = 'relative';
   grid.style.height = `${maxHeight}px`;
 }
 
-// Run on load and resize
-window.addEventListener('load', masonryLayout);
-window.addEventListener('resize', masonryLayout);
+// Run on load
+window.addEventListener('load', () => {
+  setTimeout(masonryLayout, 100);
+});
+
+// Run on resize with debounce
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(masonryLayout, 250);
+});
 
 // Run after images load
 document.addEventListener('DOMContentLoaded', () => {
   const images = document.querySelectorAll('.masonry-grid img');
-  let loadedImages = 0;
+  let loadedCount = 0;
+  const totalImages = images.length;
+  
+  if (totalImages === 0) {
+    setTimeout(masonryLayout, 100);
+    return;
+  }
   
   images.forEach(img => {
     if (img.complete) {
-      loadedImages++;
-      if (loadedImages === images.length) {
-        masonryLayout();
-      }
+      loadedCount++;
+      if (loadedCount === totalImages) setTimeout(masonryLayout, 100);
     } else {
       img.addEventListener('load', () => {
-        loadedImages++;
-        if (loadedImages === images.length) {
-          masonryLayout();
-        }
+        loadedCount++;
+        if (loadedCount === totalImages) setTimeout(masonryLayout, 100);
       });
     }
   });
