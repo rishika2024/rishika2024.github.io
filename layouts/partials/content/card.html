@@ -8,7 +8,7 @@
 
 		  {{- if (strings.HasPrefix .Params.image "http") }}
 
-			<img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="width: 100%; height: auto;" src="{{ .Params.image }}" alt="{{ $.Name }}">
+			<img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="display: block; width: 100%; height: auto;" src="{{ .Params.image }}" alt="{{ $.Name }}">
 
 		  {{- else }}
 
@@ -16,10 +16,10 @@
 			{{- if $res -}}
 			  {{- $ext := lower (path.Ext .Params.image) -}}
 			  {{- if eq $ext ".gif" -}}
-			    <img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="width: 100%; height: auto;" src="{{ $res.RelPermalink }}" alt="{{ $.Name }}">
+				<img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="display: block; width: 100%; height: auto;" src="{{ $res.RelPermalink }}" alt="{{ $.Name }}">
 			  {{- else -}}
 			    {{- $imgcard := $res.Process "resize 750x" -}}
-			    <img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="width: 100%; height: auto;" src="{{ $imgcard.Permalink }}" alt="{{ $.Name }}" width="{{ $imgcard.Width }}" height="{{ $imgcard.Height }}">
+				<img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="display: block; width: 100%; height: auto;" src="{{ $imgcard.Permalink }}" alt="{{ $.Name }}" width="{{ $imgcard.Width }}" height="{{ $imgcard.Height }}">
 			  {{- end -}}
 			{{- end -}}
 
