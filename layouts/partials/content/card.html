@@ -1,14 +1,31 @@
-<article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+{{- $imageWidth := 1 -}}
+{{- $imageHeight := 1 -}}
+{{- if .Params.image -}}
+  {{- if not (strings.HasPrefix .Params.image "http") -}}
+    {{- $res := resources.Get .Params.image -}}
+    {{- if $res -}}
+      {{- $imageWidth = $res.Width -}}
+      {{- $imageHeight = $res.Height -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $aspectRatio := div (float $imageWidth) (float $imageHeight) -}}
+{{- $colSpan := 1 -}}
+{{- if gt $aspectRatio 1.5 -}}
+  {{- $colSpan = 2 -}}
+{{- end -}}
+
+<article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl" style="grid-column: span {{ $colSpan }};">
 	
 	<a class="insert-link" href="{{ .Permalink }}"></a>
 
-	<figure class="w-full overflow-hidden rounded-3xl bg-zinc-50">
+	<figure class="w-full overflow-hidden rounded-3xl flex items-center justify-center bg-zinc-50" style="aspect-ratio: {{ $aspectRatio }};">
 
 		{{- if .Params.image }}
 
 		  {{- if (strings.HasPrefix .Params.image "http") }}
 
-			<img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="display: block; width: 100%; height: auto;" src="{{ .Params.image }}" alt="{{ $.Name }}">
+			<img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="width: 100%; height: 100%;" src="{{ .Params.image }}" alt="{{ $.Name }}">
 
 		  {{- else }}
 
@@ -16,10 +33,10 @@
 			{{- if $res -}}
 			  {{- $ext := lower (path.Ext .Params.image) -}}
 			  {{- if eq $ext ".gif" -}}
-				<img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="display: block; width: 100%; height: auto;" src="{{ $res.RelPermalink }}" alt="{{ $.Name }}">
+			    <img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="width: 100%; height: 100%;" src="{{ $res.RelPermalink }}" alt="{{ $.Name }}">
 			  {{- else -}}
 			    {{- $imgcard := $res.Process "resize 750x" -}}
-				<img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="display: block; width: 100%; height: auto;" src="{{ $imgcard.Permalink }}" alt="{{ $.Name }}" width="{{ $imgcard.Width }}" height="{{ $imgcard.Height }}">
+			    <img class="object-contain group-hover:scale-105 transition duration-500 cursor-pointer" style="width: 100%; height: 100%;" src="{{ $imgcard.Permalink }}" alt="{{ $.Name }}" width="{{ $imgcard.Width }}" height="{{ $imgcard.Height }}">
 			  {{- end -}}
 			{{- end -}}
 
