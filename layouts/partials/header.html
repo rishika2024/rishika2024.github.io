@@ -1,9 +1,16 @@
+
 <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col mb-8">
-	<div class="flex items-center">
-		<div class="text-3xl font-bold uppercase">
-			{{ if .IsHome}}<h1 class="m-0">{{ .Site.Title }}</h1>
-		{{ else }}<h2 class="m-0">{{ .Site.Title }}</h2>{{ end }}
+	<div class="flex items-center justify-between">
+		<!-- Profile photo on the left -->
+		<div class="flex-shrink-0">
+			<img src="/photo/photo.jpeg" alt="Rishika Bera" style="border-radius: 50%; width: 70px; height: 70px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
 		</div>
+		<!-- Site title in the center -->
+		<div class="flex-grow text-center text-3xl font-bold uppercase">
+			{{ if .IsHome}}<h1 class="m-0">Rishika Bera</h1>
+			{{ else }}<h2 class="m-0">Rishika Bera</h2>{{ end }}
+		</div>
+		<!-- Icons and nav on the right -->
 		<div class="flex items-center ml-auto space-x-4">
 			<a href="/about/" class="text-base font-medium hover:text-blue-600">About</a>
 			<nav>
@@ -35,7 +42,6 @@
 					</li>
 				</ul>
 			</nav>
-			
 		</div>
-  </div>
+	</div>
 </div>
