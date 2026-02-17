@@ -23,7 +23,7 @@ order: 1
 
 This was a group project by Halley Zhong, Nolan Knight, Miguel, and myself for **Northwestern's MECH_ENG 450: Embedded Systems in Robotics** course. We built an autonomous system to sort moving HexBugs using the Franka Arm. My role was to develop the vision system, which can detect, uniquely label, and track the moving bugs in real time.
 
-The robot is controlled through the Moti onPlanningInterface, which has three main components:
+The robot is controlled through the MotionPlanningInterface, which has three main components:
 
 1. **RobotState** – keeps track of the robot’s current position.
 2. **MotionPlanner** – plans safe movements for the robot.
