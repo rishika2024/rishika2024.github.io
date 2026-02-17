@@ -7,16 +7,12 @@ draft: false
 
 <style>
 body, #content {
-  background: linear-gradient(135deg, #1a0033 0%, #2d004d 50%, #3a0066 100%);
+  background: #3e274f;
   min-height: 100vh;
+  color: #fff;
 }
-#content p {
-  font-size: 1.25rem !important;
-}
-#content a {
-  font-size: 1.25rem !important;
-}
-#content li {
+#content p, #content a, #content li, #content h1, #content h2 {
+  color: #fff !important;
   font-size: 1.25rem !important;
 }
 #content h1 {
