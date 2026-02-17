@@ -7,7 +7,7 @@ draft: false
 
 <style>
 body, #content {
-  background: #3e274f;
+  background: #100e20;
   min-height: 100vh;
   color: #fff;
 }
