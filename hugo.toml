@@ -1,12 +1,3 @@
-[[menus.main]]
-name = 'About'
-pageRef = '/about/'
-weight = 11
-
-[[menus.main]]
-name = 'Resume'
-pageRef = '/resume/'
-weight = 12
 baseURL = 'https://rishika2024.github.io'
 languageCode = 'en-us'
 title = "Rishika Bera"
