@@ -20,19 +20,29 @@ pageRef = '/'
 weight = 10
 
 [[menus.main]]
+name = 'About'
+pageRef = "/about/"
+weight = 20
+
+[[menus.main]]
+name = 'Resume'
+pageRef = "/resume/"
+weight = 30
+
+[[menus.main]]
 name = 'Github'
 url = 'https://github.com/rishika2024'
-weight = 20
+weight = 40
 
 [[menus.main]]
 name = 'Linkedn'
 url = 'https://www.linkedin.com/in/rishika-bera-05b7b025a/'
-weight = 30
+weight = 50
 
 [[menus.main]]
 name = 'Email'
 url = 'mailto:berarishika@gmail.com'
-weight = 40
+weight = 60
 
 [module]
   [module.hugoVersion]
