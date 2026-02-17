@@ -6,10 +6,10 @@ image: mrs-catfisher/bug_sorter.gif
 tags:
   - Franka Arm
   - ROS2
-  - Onshape
-  - Moveit
-  - OpenCV Vision
   - Python
+  - Moveit
+  - OpenCV
+  - Onshape
 draft: false
 math: true
 github: https://github.com/rishika2024/Bug-sorter.git

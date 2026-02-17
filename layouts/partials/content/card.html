@@ -47,7 +47,7 @@
 
 		<time style="display: block; text-align: center !important;" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ .Date.Format "Jan 02, 2006" }}</time>
 
-		<div class="mt-card-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; margin-bottom: 1.5rem;">
+		<div class="mt-card-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; margin-bottom: 0.3rem;">
 		{{- with .Params.tags }}
 		<ul class="card-tags" style="list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0; padding: 0;">
 			{{- range . }}
@@ -59,7 +59,7 @@
 		{{- end }}
 		</div>
 
-		<h3 style="margin: 1rem 0; font-size: 1.5rem; font-weight: bold; text-align: center !important;">{{ .LinkTitle }}</h3>
+		<h3 style="margin: 0.5rem 0; font-size: 1.5rem; font-weight: bold; text-align: center !important;">{{ .LinkTitle }}</h3>
 
 		<p style="text-align: left !important;" class="text-normal leading-normal text-zinc-500 line-clamp-2">{{ .Params.description }}</p>
 
