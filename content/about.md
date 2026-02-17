@@ -4,15 +4,14 @@ description: "About me"
 draft: false
 ---
 
-
 <style>
-body, #content {
-  background: #100e20 !important;
-  min-height: 100vh;
-  color: #fff;
+#content p {
+  font-size: 1.25rem !important;
 }
-#content p, #content a, #content li, #content h1, #content h2 {
-  color: #fff !important;
+#content a {
+  font-size: 1.25rem !important;
+}
+#content li {
   font-size: 1.25rem !important;
 }
 #content h1 {
