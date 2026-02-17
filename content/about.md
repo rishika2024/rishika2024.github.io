@@ -4,7 +4,12 @@ description: "About me"
 draft: false
 ---
 
+
 <style>
+body, #content {
+  background: linear-gradient(135deg, #1a0033 0%, #2d004d 50%, #3a0066 100%);
+  min-height: 100vh;
+}
 #content p {
   font-size: 1.25rem !important;
 }
