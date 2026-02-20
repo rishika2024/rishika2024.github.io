@@ -70,7 +70,7 @@ draft: false
   font-size: 1rem;
   color: #666;
   font-weight: 500;
-  margin-bottom: 4px
+  margin-bottom: 4px;
 }
 
 .timeline-item-meta {
