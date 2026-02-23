@@ -221,7 +221,7 @@ draft: false
         <span class="skill-pill">CAD</span>        
       </div>
       <div class="about-download">
-        <span style="font-size:1.1em;vertical-align:middle;">&#128229;</span> <a href="/resume/resume.pdf" download>Download</a> my resume as a PDF.
+        <span style="font-size:1.1em;vertical-align:middle;">&#128229;</span> <a href="/resume/Rishika_Resume.pdf" download>Download</a> my resume as a PDF.
       </div>
     </div>
   </div>
