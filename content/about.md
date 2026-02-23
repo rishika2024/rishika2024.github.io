@@ -136,25 +136,13 @@ Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern
 
 <div class="timeline">
   <div class="timeline-item">
-    <div class="timeline-item-title">Robotics Engineer</div>
-    <div class="timeline-item-company">Telexistence</div>
-    <div class="timeline-item-meta">Sep 2024 – Jul 2025 · Tokyo, Japan</div>
+    <div class="timeline-item-title">Summer Undergraduate Research (SURF) Intern</div>
+    <div class="timeline-item-company">Purdue University</div>
+    <div class="timeline-item-meta">May 2024 – Jul 2024 · West Lafayette, IN</div>
     <ul>
-      <li><strong>Worked on Fleet Management systems</strong> for Autonomous Forklifts</li>
-      <li><strong>Implemented error recovery pipelines</strong></li>
+      <li><strong>Engineered PrimerCurator’s multimodal backend pipeline integrating text, image, and video using ChatGPT API</strong></li>      
     </ul>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-item-title">Robotics Engineer</div>
-    <div class="timeline-item-company">Addverb Technologies</div>
-    <div class="timeline-item-meta">Aug 2022 – Jun 2024 · Noida, India</div>
-    <ul>
-      <li><strong>Worked on Multi-Agent Path Planning</strong> for AGVs</li>
-      <li><strong>Implemented behaviour trees</strong> for easier handling of states</li>
-      <li><strong>Deployed over 150 robots</strong> across 4 countries</li>
-      <li><strong>Worked independently</strong> on two greenfield projects</li>
-    </ul>
-  </div>
+  </div>  
 </div>
 
 
