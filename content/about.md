@@ -169,7 +169,7 @@ draft: false
     <div class="timeline-item-company">Purdue University</div>
     <div class="timeline-item-meta">May 2024 – Jul 2024 · West Lafayette, IN</div>
     <ul>
-      <li><strong>Engineered PrimerCurator’s multimodal backend pipeline integrating text, image, and video using ChatGPT API</strong></li>      
+      <li style="font-size:0.98rem; font-weight:400; text-align:left; color:#222;">Engineered PrimerCurator’s multimodal backend pipeline integrating text, image, and video using ChatGPT API</li>      
     </ul>
   </div>  
 </div>
