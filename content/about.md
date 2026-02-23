@@ -51,6 +51,7 @@ draft: false
   width: 210px;
   height: 210px;
   object-fit: cover;
+  aspect-ratio: 1/1;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 .about-name {
@@ -78,14 +79,17 @@ draft: false
   width: 38px;
   height: 38px;
   border-radius: 8px;
-  background: #111;
-  color: #fff;
-  font-size: 1.3rem;
-  transition: background 0.2s;
+  background: #fff;
+  color: #222;
+  font-size: 1.15rem;
+  font-weight: 400;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s;
   text-decoration: none;
 }
 .about-icons a:hover {
   background: #0066cc;
+  color: #fff;
 }
 
 .about-right {
