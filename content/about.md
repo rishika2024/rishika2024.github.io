@@ -106,6 +106,21 @@ Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern
 - **LinkedIn**: [linkedin.com/in/rishika-bera-05b7b025a/](https://www.linkedin.com/in/rishika-bera-05b7b025a/)
 - **Email**: berarishika@gmail.com
 
+## Education
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-item-title">MS in Robotics</div>
+    <div class="timeline-item-company">Northwestern University</div>
+    <div class="timeline-item-meta">Expected Dec 2026 · Evanston, IL</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-item-title">B.Tech in Mechanical Engineering</div>
+    <div class="timeline-item-company">Indian Institute of Technology – Jodhpur</div>
+    <div class="timeline-item-meta">Dec 2021 – May 2025 · Rajasthan, India</div>
+  </div>
+</div>
+
 ## Work Experience
 
 <div class="timeline">
@@ -121,17 +136,4 @@ Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern
   </div>
 </div>
 
-## Education
 
-<div class="timeline">
-  <div class="timeline-item">
-    <div class="timeline-item-title">MS in Robotics</div>
-    <div class="timeline-item-company">Northwestern University</div>
-    <div class="timeline-item-meta">Expected Dec 2026 · Evanston, IL</div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-item-title">B.Tech in Mechanical Engineering</div>
-    <div class="timeline-item-company">Indian Institute of Technology – Jodhpur</div>
-    <div class="timeline-item-meta">Dec 2021 – May 2025 · Rajasthan, India</div>
-  </div>
-</div>
