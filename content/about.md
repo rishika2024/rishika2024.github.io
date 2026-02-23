@@ -209,7 +209,7 @@ draft: false
   </div>
   <div class="about-right">
     <h1>About</h1>
-    <div class="about-summary">
+    <div class="about-summary" style="text-align:left;">
       Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern University. I completed my B.Tech in Mechanical Engineering from IIT Jodhpur, and I'm passionate about developing intelligent robotic solutions with a focus on LLMs and autonomous systems.
     </div>
     <div class="about-skills">
