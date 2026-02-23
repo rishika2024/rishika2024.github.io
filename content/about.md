@@ -27,12 +27,16 @@ draft: false
   align-items: flex-start;
   gap: 3.5rem;
   margin: 2.5rem 0 2rem 0;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
 @media (max-width: 900px) {
   .about-main-row {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    padding-left: 1vw;
+    padding-right: 1vw;
   }
 }
 .about-left {
@@ -209,7 +213,7 @@ draft: false
   </div>
   <div class="about-right">
     <h1>About</h1>
-    <div class="about-summary" style="text-align:left;">
+    <div class="about-summary" style="text-align:justify;">
       Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern University. I completed my B.Tech in Mechanical Engineering from IIT Jodhpur, and I'm passionate about developing intelligent robotic solutions with a focus on LLMs and autonomous systems.
     </div>
     <div class="about-skills">
