@@ -38,25 +38,23 @@ draft: false
 
 .timeline-item {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   background: white;
-  border-radius: 8px;
-  padding: 24px;
-  /* Enhanced shadow for about page */
+  border-radius: 16px;
+  padding: 36px 40px;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.08);
-  border: 1px solid #e8e8e8;
-  transition: box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
-}
-
-.timeline-item:hover {
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.16), 0 3px 8px 0 rgba(0,0,0,0.12);
+  border: none;
+  min-width: 340px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .timeline-item::before {
   content: '';
   position: absolute;
   left: -41px;
-  top: 24px;
+  top: 36px;
   width: 14px;
   height: 14px;
   background-color: white;
@@ -66,23 +64,24 @@ draft: false
 }
 
 .timeline-item-title {
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: #000;
-  margin-bottom: 4px;
+  color: #444;
+  margin-bottom: 2px;
+  letter-spacing: 0.01em;
 }
 
 .timeline-item-company {
-  font-size: 1rem;
-  color: #666;
+  font-size: 1.15rem;
+  color: #222;
   font-weight: 500;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .timeline-item-meta {
-  font-size: 0.9rem;
-  color: #999;
-  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 18px;
 }
 
 .timeline-item ul {
@@ -91,10 +90,16 @@ draft: false
 }
 
 .timeline-item li {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 8px;
-  line-height: 1.5;
+  font-size: 1.08rem;
+  color: #222;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.timeline-item li strong {
+  font-weight: 700;
+  color: #111;
 }
 </style>
 
@@ -131,13 +136,23 @@ Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern
 
 <div class="timeline">
   <div class="timeline-item">
-    <div class="timeline-item-title">Summer Undergraduate Research (SURF) Intern</div>
-    <div class="timeline-item-company">Purdue University</div>
-    <div class="timeline-item-meta">May 2024 – Jul 2024</div>
+    <div class="timeline-item-title">Robotics Engineer</div>
+    <div class="timeline-item-company">Telexistence</div>
+    <div class="timeline-item-meta">Sep 2024 – Jul 2025 · Tokyo, Japan</div>
     <ul>
-      <li>Engineered PrimerCurator's multimodal backend pipeline integrating text, image, and video using ChatGPT API</li>
-      <li>Reduced manual tutorial creation time by 78% with >90% accuracy in automated extraction</li>
-      <li>Collaborated with research team to ensure scalable performance and presented system design and results</li>
+      <li><strong>Worked on Fleet Management systems</strong> for Autonomous Forklifts</li>
+      <li><strong>Implemented error recovery pipelines</strong></li>
+    </ul>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-item-title">Robotics Engineer</div>
+    <div class="timeline-item-company">Addverb Technologies</div>
+    <div class="timeline-item-meta">Aug 2022 – Jun 2024 · Noida, India</div>
+    <ul>
+      <li><strong>Worked on Multi-Agent Path Planning</strong> for AGVs</li>
+      <li><strong>Implemented behaviour trees</strong> for easier handling of states</li>
+      <li><strong>Deployed over 150 robots</strong> across 4 countries</li>
+      <li><strong>Worked independently</strong> on two greenfield projects</li>
     </ul>
   </div>
 </div>
