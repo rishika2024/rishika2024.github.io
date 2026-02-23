@@ -42,8 +42,14 @@ draft: false
   background: white;
   border-radius: 8px;
   padding: 24px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  /* Enhanced shadow for about page */
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.08);
   border: 1px solid #e8e8e8;
+  transition: box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.timeline-item:hover {
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.16), 0 3px 8px 0 rgba(0,0,0,0.12);
 }
 
 .timeline-item::before {
