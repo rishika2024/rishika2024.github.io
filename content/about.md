@@ -21,6 +21,34 @@ draft: false
   font-size: 1.875rem !important;
 }
 
+/* Responsive about section layout */
+.about-flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 2.5rem 0 2rem 0;
+}
+@media (max-width: 800px) {
+  .about-flex-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+.about-photo {
+  border-radius: 50%;
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.about-text {
+  max-width: 480px;
+  font-size: 1.18rem;
+  color: #222;
+}
+
 .timeline {
   position: relative;
   padding-left: 40px;
@@ -105,11 +133,12 @@ draft: false
 
 # About Me
 
-<div style="display: flex; justify-content: center; margin: 2.5rem 0 2rem 0;">
-  <img src="/photo/photo.jpeg" alt="Rishika Bera" style="border-radius: 50%; width: 350px; height: 350px; object-fit: cover; box-shadow: 0 4px 16px rgba(0,0,0,0.12);" />
+<div class="about-flex-row">
+  <img src="/photo/photo.jpeg" alt="Rishika Bera" class="about-photo" />
+  <div class="about-text">
+    Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern University. I completed my B.Tech in Mechanical Engineering from IIT Jodhpur, and I'm passionate about developing intelligent robotic solutions with a focus on LLMs and autonomous systems.
+  </div>
 </div>
-
-Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern University. I completed my B.Tech in Mechanical Engineering from IIT Jodhpur, and I'm passionate about developing intelligent robotic solutions with a focus on LLMs and autonomous systems.
 
 ## Let's Connect
 
