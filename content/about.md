@@ -104,8 +104,8 @@ draft: false
   background: #111;
   color: #fff;
   border-radius: 999px;
-  padding: 0.45em 1.2em;
-  font-size: 1.05rem;
+  padding: 0.25em 0.7em;
+  font-size: 0.85rem;
   font-weight: 500;
   display: inline-block;
 }
