@@ -217,9 +217,8 @@ draft: false
       <div class="skills-list">
         <span class="skill-pill">ROS 2</span>
         <span class="skill-pill">SLAM</span>
-        <span class="skill-pill">Path Planning</span>
-        <span class="skill-pill">Motion Planning</span>
-        <span class="skill-pill">Multi-Agent Systems</span>
+        <span class="skill-pill">UAV</span>
+        <span class="skill-pill">CAD</span>        
       </div>
       <div class="about-download">
         <span style="font-size:1.1em;vertical-align:middle;">&#128229;</span> <a href="/resume/resume.pdf" download>Download</a> my resume as a PDF.
