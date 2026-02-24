@@ -237,35 +237,34 @@ draft: false
 
 ## Education
 
-<div style="display:flex; gap:1.5rem; margin-bottom:1.2rem; align-items:center; justify-content:center;">
-  <img src="/about/nw.png" alt="Northwestern University Logo" style="height:60px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
-  <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:60px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
-</div>
 <div class="timeline">
   <div class="timeline-item">
-    <div class="timeline-item-title">MS in Robotics</div>
-    <div class="timeline-item-company">Northwestern University</div>
+    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.2rem;">
+      <img src="/about/nw.png" alt="Northwestern University Logo" style="height:38px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+      <span class="timeline-item-company" style="font-size:1.25rem; font-weight:600; color:#222;">Northwestern University</span>
+    </div>
+    <div class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444; margin-bottom:0.2rem;">MS in Robotics</div>
     <div class="timeline-item-meta">Expected Dec 2026 · Evanston, IL</div>
   </div>
   <div class="timeline-item">
-    <div class="timeline-item-title">B.Tech in Mechanical Engineering</div>
-    <div class="timeline-item-company">Indian Institute of Technology – Jodhpur</div>
+    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.2rem;">
+      <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:38px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+      <span class="timeline-item-company" style="font-size:1.25rem; font-weight:600; color:#222;">Indian Institute of Technology – Jodhpur</span>
+    </div>
+    <div class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444; margin-bottom:0.2rem;">B.Tech in Mechanical Engineering</div>
     <div class="timeline-item-meta">Dec 2021 – May 2025 · Rajasthan, India</div>
   </div>
 </div>
 
 ## Work Experience
 
-<div style="display:flex; gap:1.5rem; margin-bottom:1.2rem; align-items:center; justify-content:center;">
-  <img src="/about/purdue.png" alt="Purdue University Logo" style="height:60px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
-</div>
 <div class="timeline">
   <div class="timeline-item">
-    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.5rem;">
+    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.2rem;">
       <img src="/about/purdue.png" alt="Purdue University Logo" style="height:38px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
       <span class="timeline-item-company" style="font-size:1.25rem; font-weight:600; color:#222;">Purdue University</span>
-      <span class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444;">Summer Undergraduate Research (SURF) Intern</span>
     </div>
+    <div class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444; margin-bottom:0.2rem;">Summer Undergraduate Research (SURF) Intern</div>
     <div class="timeline-item-meta">May 2024 – Jul 2024 · West Lafayette, IN</div>
     <ul>
       <li style="font-size:0.98rem; font-weight:400; text-align:left; color:#222;">Engineered PrimerCurator’s multimodal backend pipeline integrating text, image, and video using ChatGPT API</li>      
