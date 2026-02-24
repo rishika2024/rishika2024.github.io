@@ -237,6 +237,10 @@ draft: false
 
 ## Education
 
+<div style="display:flex; gap:1.5rem; margin-bottom:1.2rem; align-items:center; justify-content:center;">
+  <img src="/about/nw.png" alt="Northwestern University Logo" style="height:60px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+  <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:60px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+</div>
 <div class="timeline">
   <div class="timeline-item">
     <div class="timeline-item-title">MS in Robotics</div>
@@ -252,6 +256,9 @@ draft: false
 
 ## Work Experience
 
+<div style="display:flex; gap:1.5rem; margin-bottom:1.2rem; align-items:center; justify-content:center;">
+  <img src="/about/purdue.png" alt="Purdue University Logo" style="height:60px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+</div>
 <div class="timeline">
   <div class="timeline-item">
     <div class="timeline-item-title">Summer Undergraduate Research (SURF) Intern</div>
