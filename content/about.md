@@ -228,11 +228,11 @@ draft: false
   <div class="timeline-item">
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
-        <td style="border:none; padding:0 12px 0 0; vertical-align:middle; width:44px;">
-          <img src="/about/nw.png" alt="" style="height:36px; width:36px; object-fit:contain; display:block;" />
+        <td style="border:none; padding:0 12px 0 0; vertical-align:top; width:44px;">
+          <img src="/about/nw.png" alt="" style="height:36px; width:36px; object-fit:contain; display:block; margin-top:-2px;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
-          <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">MS in Robotics</div>
+          <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block; margin:0; padding:0;">MS in Robotics</div>
           <div style="font-size:1.0rem; font-weight:500; color:#444; margin-top:0.15rem; display:block;">Northwestern University</div>
           <div style="font-size:0.95rem; color:#888; margin-top:0.1rem; display:block;">Expected Dec 2026 · Evanston, IL</div>
         </td>
@@ -242,11 +242,11 @@ draft: false
   <div class="timeline-item">
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
-        <td style="border:none; padding:0 12px 0 0; vertical-align:middle; width:44px;">
-          <img src="/about/jodhpur.png" alt="" style="height:36px; width:36px; object-fit:contain; display:block;" />
+        <td style="border:none; padding:0 12px 0 0; vertical-align:top; width:44px;">
+          <img src="/about/jodhpur.png" alt="" style="height:36px; width:36px; object-fit:contain; display:block; margin-top:-2px;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
-          <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">B.Tech in Mechanical Engineering</div>
+          <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block; margin:0; padding:0;">B.Tech in Mechanical Engineering</div>
           <div style="font-size:1.0rem; font-weight:500; color:#444; margin-top:0.15rem; display:block;">Indian Institute of Technology – Jodhpur</div>
           <div style="font-size:0.95rem; color:#888; margin-top:0.1rem; display:block;">Dec 2021 – June 2025 · Rajasthan, India</div>
         </td>
@@ -261,11 +261,11 @@ draft: false
   <div class="timeline-item">
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
-        <td style="border:none; padding:0 12px 0 0; vertical-align:middle; width:44px;">
-          <img src="/about/purdue.png" alt="" style="height:36px; width:36px; object-fit:contain; display:block;" />
+        <td style="border:none; padding:0 12px 0 0; vertical-align:top; width:44px;">
+          <img src="/about/purdue.png" alt="" style="height:36px; width:36px; object-fit:contain; display:block; margin-top:-2px;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
-          <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">Summer Undergraduate Research (SURF) Intern</div>
+          <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block; margin:0; padding:0;">Summer Undergraduate Research (SURF) Intern</div>
           <div style="font-size:1.0rem; font-weight:500; color:#444; margin-top:0.15rem; display:block;">Purdue University</div>
           <div style="font-size:0.95rem; color:#888; margin-top:0.1rem; display:block;">May 2024 – Jul 2024 · West Lafayette, IN</div>
         </td>
