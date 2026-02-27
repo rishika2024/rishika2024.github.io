@@ -51,55 +51,64 @@
   background: #bbb;
   border-radius: 50%;
   cursor: pointer;
+  transition: background 0.2s;
 }
 .slider-dot.active {
   background: #333;
 }
 </style>
+
 {{ $uid := .Ordinal }}
 <div class="slider-container" id="slider-{{ $uid }}">
-  <button class="slider-btn left" onclick="moveSlide{{ $uid }}(-1)">&#8592;</button>
+  <button class="slider-btn left" data-slider="{{ $uid }}" data-dir="-1">&#8592;</button>
   <div class="slider-track" id="sliderTrack{{ $uid }}">
     {{- range $i, $img := .Params }}
       <div class="slide"><img src="/{{ $img }}" alt="slide image"></div>
     {{- end }}
   </div>
-  <button class="slider-btn right" onclick="moveSlide{{ $uid }}(1)">&#8594;</button>
+  <button class="slider-btn right" data-slider="{{ $uid }}" data-dir="1">&#8594;</button>
   <div class="slider-dots" id="sliderDots{{ $uid }}"></div>
 </div>
+
 <script>
 (function() {
+  var uid = {{ $uid }};
   var currentSlide = 0;
-  var slides = document.querySelectorAll('#slider-{{ $uid }} .slide');
-  var track = document.getElementById('sliderTrack{{ $uid }}');
-  var dotsContainer = document.getElementById('sliderDots{{ $uid }}');
+  var container = document.getElementById('slider-' + uid);
+  var slides = container.querySelectorAll('.slide');
+  var track = document.getElementById('sliderTrack' + uid);
+  var dotsContainer = document.getElementById('sliderDots' + uid);
+
   function updateSlider() {
-    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
     Array.from(dotsContainer.children).forEach(function(dot, i) {
       dot.classList.toggle('active', i === currentSlide);
     });
   }
-  window['moveSlide{{ $uid }}'] = function(dir) {
+
+  function moveSlide(dir) {
     currentSlide += dir;
     if (currentSlide < 0) currentSlide = slides.length - 1;
     if (currentSlide >= slides.length) currentSlide = 0;
     updateSlider();
-  };
-  function goToSlide(idx) {
-    currentSlide = idx;
-    updateSlider();
   }
+
+  container.querySelectorAll('.slider-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      moveSlide(parseInt(this.getAttribute('data-dir')));
+    });
+  });
+
   slides.forEach(function(_, i) {
     var dot = document.createElement('span');
     dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-    dot.onclick = function() { goToSlide(i); };
+    dot.addEventListener('click', function() {
+      currentSlide = i;
+      updateSlider();
+    });
     dotsContainer.appendChild(dot);
   });
+
   updateSlider();
 })();
 </script>
-```
-
-The **only change** from your original is line:
-```
-{{ $uid := .Ordinal }}
