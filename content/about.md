@@ -264,7 +264,7 @@ draft: false
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
         <td style="border:none; padding:0 10px 0 0; vertical-align:top; width:26px;">
-          <img src="/about/nw.png" alt="" style="height:32px; width:32px; object-fit:contain; display:block; margin-top:3px;" />
+          <img src="/about/nw.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block; margin-top:3px;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
           <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">MS in Robotics</div>
@@ -278,7 +278,7 @@ draft: false
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
         <td style="border:none; padding:0 10px 0 0; vertical-align:top; width:26px;">
-          <img src="/about/jodhpur.png" alt="" style="height:32px; width:32px; object-fit:contain; display:block; margin-top:3px;" />
+          <img src="/about/jodhpur.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block; margin-top:3px;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
           <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">B.Tech in Mechanical Engineering</div>
@@ -297,7 +297,7 @@ draft: false
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
         <td style="border:none; padding:0 10px 0 0; vertical-align:top; width:26px;">
-          <img src="/about/purdue.png" alt="" style="height:32px; width:32px; object-fit:contain; display:block; margin-top:3px;" />
+          <img src="/about/purdue.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block; margin-top:3px;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
           <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">Summer Undergraduate Research (SURF) Intern</div>
