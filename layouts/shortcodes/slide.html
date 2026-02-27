@@ -9,23 +9,16 @@
   padding: 1rem 3rem;
   box-sizing: border-box;
 }
-.slider-track {
-  display: flex;
-  transition: transform 0.5s cubic-bezier(.4,2,.6,1);
-  overflow: hidden;
-}
 .slider-window {
   overflow: hidden;
   width: 100%;
 }
-.slide-pair {
+.slider-track {
   display: flex;
-  min-width: 100%;
-  gap: 1rem;
-  box-sizing: border-box;
+  transition: transform 0.5s cubic-bezier(.4,2,.6,1);
 }
 .slide-item {
-  flex: 1;
+  min-width: 50%;
   text-align: center;
   background: #f8f8f8;
   border-radius: 8px;
@@ -37,7 +30,7 @@
   max-height: 280px;
   object-fit: contain;
 }
-.slide-item .slide-caption {
+.slide-caption {
   margin-top: 0.5rem;
   font-size: 0.95rem;
   font-weight: 600;
@@ -80,44 +73,27 @@
 
 {{ $uid := .Ordinal }}
 {{ $params := .Params }}
+{{ $total := len $params }}
 
-{{/* Build pairs: each param is alternating image, caption */}}
 <div class="slider-container" id="slider-{{ $uid }}">
-  <button class="slider-btn left" data-slider="{{ $uid }}" data-dir="-1">&#8592;</button>
+  <button class="slider-btn left" data-dir="-1">&#8592;</button>
   <div class="slider-window">
     <div class="slider-track" id="sliderTrack{{ $uid }}">
-      {{- $total := len $params }}
-      {{- $i := 0 }}
       {{- range $idx, $_ := $params }}
         {{- if eq (mod $idx 2) 0 }}
-          {{- $img1 := index $params $idx }}
-          {{- $cap1 := "" }}
-          {{- if lt (add $idx 1) $total }}{{ $cap1 = index $params (add $idx 1) }}{{ end }}
-          {{- $img2 := "" }}
-          {{- $cap2 := "" }}
-          {{- if lt (add $idx 2) $total }}{{ $img2 = index $params (add $idx 2) }}{{ end }}
-          {{- if lt (add $idx 3) $total }}{{ $cap2 = index $params (add $idx 3) }}{{ end }}
-        <div class="slide-pair">
-          {{ $r1 := resources.Get $img1 }}
+          {{- $img := index $params $idx }}
+          {{- $cap := "" }}
+          {{- if lt (add $idx 1) $total }}{{ $cap = index $params (add $idx 1) }}{{ end }}
+          {{ $r := resources.Get $img }}
           <div class="slide-item">
-            {{ if $r1 }}<img src="{{ $r1.RelPermalink }}" alt="{{ $cap1 }}">{{ else }}<p>Not found: {{ $img1 }}</p>{{ end }}
-            {{ if $cap1 }}<div class="slide-caption">{{ $cap1 }}</div>{{ end }}
+            {{ if $r }}<img src="{{ $r.RelPermalink }}" alt="{{ $cap }}">{{ else }}<p>Not found: {{ $img }}</p>{{ end }}
+            {{ if $cap }}<div class="slide-caption">{{ $cap }}</div>{{ end }}
           </div>
-          {{ if $img2 }}
-            {{ $r2 := resources.Get $img2 }}
-            <div class="slide-item">
-              {{ if $r2 }}<img src="{{ $r2.RelPermalink }}" alt="{{ $cap2 }}">{{ else }}<p>Not found: {{ $img2 }}</p>{{ end }}
-              {{ if $cap2 }}<div class="slide-caption">{{ $cap2 }}</div>{{ end }}
-            </div>
-          {{ else }}
-            <div class="slide-item" style="background:transparent;box-shadow:none;"></div>
-          {{ end }}
-        </div>
         {{- end }}
       {{- end }}
     </div>
   </div>
-  <button class="slider-btn right" data-slider="{{ $uid }}" data-dir="1">&#8594;</button>
+  <button class="slider-btn right" data-dir="1">&#8594;</button>
   <div class="slider-dots" id="sliderDots{{ $uid }}"></div>
 </div>
 
@@ -126,12 +102,14 @@
   var uid = {{ $uid }};
   var currentSlide = 0;
   var container = document.getElementById('slider-' + uid);
-  var pairs = container.querySelectorAll('.slide-pair');
   var track = document.getElementById('sliderTrack' + uid);
+  var slides = container.querySelectorAll('.slide-item');
+  var total = slides.length;
   var dotsContainer = document.getElementById('sliderDots' + uid);
 
   function updateSlider() {
-    track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+    // shift by 50% per slide (since each slide is 50% wide)
+    track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
     Array.from(dotsContainer.children).forEach(function(dot, i) {
       dot.classList.toggle('active', i === currentSlide);
     });
@@ -139,8 +117,8 @@
 
   function moveSlide(dir) {
     currentSlide += dir;
-    if (currentSlide < 0) currentSlide = pairs.length - 1;
-    if (currentSlide >= pairs.length) currentSlide = 0;
+    if (currentSlide < 0) currentSlide = total - 1;
+    if (currentSlide >= total) currentSlide = 0;
     updateSlider();
   }
 
@@ -150,7 +128,7 @@
     });
   });
 
-  pairs.forEach(function(_, i) {
+  slides.forEach(function(_, i) {
     var dot = document.createElement('span');
     dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
     dot.addEventListener('click', function() {
