@@ -27,13 +27,11 @@ This is an ongoing individual project being built as part of the Master of Scien
 
 ### Week 1
 
+
+A simple conceptual CAD model
 A simple conceptual CAD model
 
-{{< figure src="transformer-robot/initial_cad.png" alt="inital cad" width="60%">}}
-{{< figure src="transformer-robot/initial_cad.gif" alt="inital cad" width="60%">}}
-{{< figure src="transformer-robot/initial_hinge.png" alt="inital cad" width="60%">}}
-{{< figure src="transformer-robot/initial_hinge.gif" alt="inital cad" width="60%">}}
-{{< figure src="transformer-robot/initial_wheel.png" alt="inital cad" width="60%">}}
+{{< slide transformer-robot/initial_cad.png transformer-robot/initial_cad.gif transformer-robot/initial_hinge.png transformer-robot/initial_hinge.gif transformer-robot/initial_wheel.png >}}
 
 
 

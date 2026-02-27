@@ -1,0 +1,99 @@
+<style>
+.slider-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(.4,2,.6,1);
+}
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  background: #fff;
+}
+.slide img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  background: #f8f8f8;
+}
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+.slider-btn.left { left: 10px; }
+.slider-btn.right { right: 10px; }
+.slider-dots {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.slider-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.slider-dot.active {
+  background: #333;
+}
+</style>
+<div class="slider-container" id="slider-{{ .Get 0 | urlize }}-{{ now.UnixNano }}">
+  <button class="slider-btn left" onclick="moveSlide{{ now.UnixNano }}(-1)">&#8592;</button>
+  <div class="slider-track" id="sliderTrack{{ now.UnixNano }}">
+    {{- range $i, $img := .Params }}
+      <div class="slide"><img src="/{{ $img }}" alt="slide image"></div>
+    {{- end }}
+  </div>
+  <button class="slider-btn right" onclick="moveSlide{{ now.UnixNano }}(1)">&#8594;</button>
+  <div class="slider-dots" id="sliderDots{{ now.UnixNano }}"></div>
+</div>
+<script>
+(function() {
+  var currentSlide = 0;
+  var slides = document.querySelectorAll('#slider-{{ .Get 0 | urlize }}-{{ now.UnixNano }} .slide');
+  var track = document.getElementById('sliderTrack{{ now.UnixNano }}');
+  var dotsContainer = document.getElementById('sliderDots{{ now.UnixNano }}');
+  function updateSlider() {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    Array.from(dotsContainer.children).forEach(function(dot, i) {
+      dot.classList.toggle('active', i === currentSlide);
+    });
+  }
+  window['moveSlide{{ now.UnixNano }}'] = function(dir) {
+    currentSlide += dir;
+    if (currentSlide < 0) currentSlide = slides.length - 1;
+    if (currentSlide >= slides.length) currentSlide = 0;
+    updateSlider();
+  };
+  function goToSlide(idx) {
+    currentSlide = idx;
+    updateSlider();
+  }
+  slides.forEach(function(_, i) {
+    var dot = document.createElement('span');
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = function() { goToSlide(i); };
+    dotsContainer.appendChild(dot);
+  });
+  updateSlider();
+})();
+</script>
