@@ -152,7 +152,7 @@ draft: false
   margin-bottom: 40px;
   background: white;
   border-radius: 16px;
-  padding: 36px 40px;
+  padding: 24px 28px;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.08);
   border: none;
 }
@@ -160,7 +160,7 @@ draft: false
   content: '';
   position: absolute;
   left: -39px;
-  top: 36px;
+  top: 24px;
   width: 14px;
   height: 14px;
   background-color: white;
