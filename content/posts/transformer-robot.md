@@ -30,7 +30,7 @@ This is an ongoing individual project being built as part of the Master of Scien
 Printed the wheels and tested it
 
 *  Gear Meshing
-{{< video "transformer-robot/week7/Wheel_gear.mp4.mp4" 640 360 >}}
+{{< video "transformer-robot/week7/Wheel_gear.mp4" 640 360 >}}
 
 *  Flight testing
 {{< video "transformer-robot/week7/Wheeled flight .mp4" 640 360 >}}
