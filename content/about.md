@@ -159,7 +159,7 @@ draft: false
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -41px;
+  left: -39px;
   top: 36px;
   width: 14px;
   height: 14px;
@@ -238,17 +238,17 @@ draft: false
 
 <div class="timeline">
   <div class="timeline-item">
-    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.2rem;">
-      <img src="/about/nw.png" alt="Northwestern University Logo" style="height:38px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
-      <span class="timeline-item-company" style="font-size:1.25rem; font-weight:600; color:#222;">Northwestern University</span>
+    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.6rem;">
+      <img src="/about/nw.png" alt="Northwestern University Logo" style="height:38px; width:38px; object-fit:contain; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0;" />
+      <span class="timeline-item-company" style="font-size:1.25rem; font-weight:600; color:#222; line-height:1.2;">Northwestern University</span>
     </div>
     <div class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444; margin-bottom:0.2rem;">MS in Robotics</div>
     <div class="timeline-item-meta">Expected Dec 2026 · Evanston, IL</div>
   </div>
   <div class="timeline-item">
-    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.2rem;">
-      <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:38px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
-      <span class="timeline-item-company" style="font-size:1.25rem; font-weight:600; color:#222;">Indian Institute of Technology – Jodhpur</span>
+    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.6rem;">
+      <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:38px; width:38px; object-fit:contain; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0;" />
+      <span class="timeline-item-company" style="font-size:1.25rem; font-weight:600; color:#222; line-height:1.2;">Indian Institute of Technology – Jodhpur</span>
     </div>
     <div class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444; margin-bottom:0.2rem;">B.Tech in Mechanical Engineering</div>
     <div class="timeline-item-meta">Dec 2021 – May 2025 · Rajasthan, India</div>
@@ -259,9 +259,9 @@ draft: false
 
 <div class="timeline">
   <div class="timeline-item">
-    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.2rem;">
-      <img src="/about/purdue.png" alt="Purdue University Logo" style="height:38px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
-      <span class="timeline-item-company" style="font-size:1.25rem; font-weight:600; color:#222;">Purdue University</span>
+    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:0.6rem;">
+      <img src="/about/purdue.png" alt="Purdue University Logo" style="height:38px; width:38px; object-fit:contain; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0;" />
+      <span class="timeline-item-company" style="font-size:1.25rem; font-weight:600; color:#222; line-height:1.2;">Purdue University</span>
     </div>
     <div class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444; margin-bottom:0.2rem;">Summer Undergraduate Research (SURF) Intern</div>
     <div class="timeline-item-meta">May 2024 – Jul 2024 · West Lafayette, IN</div>
