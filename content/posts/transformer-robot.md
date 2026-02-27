@@ -30,6 +30,7 @@ This is an ongoing individual project being built as part of the Master of Scien
 A simple conceptual CAD model
 
 {{< figure src="transformer-robot/initial_cad.png" alt="inital cad" width="60%">}}
+{{< figure src="transformer-robot/initial_hinge.png" alt="inital cad" width="60%">}}
 
 
 
