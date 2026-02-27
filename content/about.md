@@ -193,9 +193,10 @@ draft: false
 }
 .timeline-item-header img {
   display: table-cell;
-  vertical-align: middle;
-  width: 28px;
-  height: 28px;
+  vertical-align: top;
+  padding-top: 3px;
+  width: 24px;
+  height: 24px;
 }
 .timeline-item-header-text {
   display: table-cell;
