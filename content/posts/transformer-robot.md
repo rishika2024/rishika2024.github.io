@@ -25,12 +25,16 @@ This is an ongoing individual project being built as part of the Master of Scien
 
 ## Project Updates
 
-### Week 1
+### Week 2
 
+Assembled the drone kit (from Hawks drone kit)
+{{< figure src="week2/transformer-robot/initial_assembly.png" alt="initial assembly" width="60%">}}
+
+### Week 1
 
 A simple conceptual CAD model
 
-{{< slide "transformer-robot/initial_cad.png" "Initial CAD Design" "transformer-robot/initial_cad.gif" "CAD Animation" "transformer-robot/initial_hinge.png" "Hinge Design" "transformer-robot/initial_hinge.gif" "Hinge Animation" "transformer-robot/initial_wheel.png" "Wheel Design" >}}
+{{< slide "transformer-robot/week1/initial_cad.png" "Initial CAD Design" "transformer-robot/week1/initial_cad.gif" "CAD Animation" "/transformer-robot/week1/initial_hinge.png" "Hinge Design" "/transformer-robot/week1/initial_hinge.gif" "Hinge Animation" "transformer-robot/week1/initial_wheel.png" "Wheel Design" >}}
 
 
 
