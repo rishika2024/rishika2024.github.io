@@ -56,29 +56,30 @@
   background: #333;
 }
 </style>
-<div class="slider-container" id="slider-{{ .Get 0 | urlize }}-{{ now.UnixNano }}">
-  <button class="slider-btn left" onclick="moveSlide{{ now.UnixNano }}(-1)">&#8592;</button>
-  <div class="slider-track" id="sliderTrack{{ now.UnixNano }}">
+{{ $uid := .UniqueID }}
+<div class="slider-container" id="slider-{{ $uid }}">
+  <button class="slider-btn left" onclick="moveSlide{{ $uid }}(-1)">&#8592;</button>
+  <div class="slider-track" id="sliderTrack{{ $uid }}">
     {{- range $i, $img := .Params }}
       <div class="slide"><img src="/{{ $img }}" alt="slide image"></div>
     {{- end }}
   </div>
-  <button class="slider-btn right" onclick="moveSlide{{ now.UnixNano }}(1)">&#8594;</button>
-  <div class="slider-dots" id="sliderDots{{ now.UnixNano }}"></div>
+  <button class="slider-btn right" onclick="moveSlide{{ $uid }}(1)">&#8594;</button>
+  <div class="slider-dots" id="sliderDots{{ $uid }}"></div>
 </div>
 <script>
 (function() {
   var currentSlide = 0;
-  var slides = document.querySelectorAll('#slider-{{ .Get 0 | urlize }}-{{ now.UnixNano }} .slide');
-  var track = document.getElementById('sliderTrack{{ now.UnixNano }}');
-  var dotsContainer = document.getElementById('sliderDots{{ now.UnixNano }}');
+  var slides = document.querySelectorAll('#slider-{{ $uid }} .slide');
+  var track = document.getElementById('sliderTrack{{ $uid }}');
+  var dotsContainer = document.getElementById('sliderDots{{ $uid }}');
   function updateSlider() {
     track.style.transform = `translateX(-${currentSlide * 100}%)`;
     Array.from(dotsContainer.children).forEach(function(dot, i) {
       dot.classList.toggle('active', i === currentSlide);
     });
   }
-  window['moveSlide{{ now.UnixNano }}'] = function(dir) {
+  window['moveSlide{{ $uid }}'] = function(dir) {
     currentSlide += dir;
     if (currentSlide < 0) currentSlide = slides.length - 1;
     if (currentSlide >= slides.length) currentSlide = 0;
