@@ -145,6 +145,13 @@
     return window.innerWidth >= 768 ? 50 : 100;
   }
 
+  function updateSlideWidths() {
+    var pct = getSlidePercent() + '%';
+    Array.from(track.querySelectorAll('.slide-item')).forEach(function(s) {
+      s.style.minWidth = pct;
+    });
+  }
+
   function setPosition(animate) {
     var pct = getSlidePercent();
     track.style.transition = animate ? 'transform 0.5s cubic-bezier(.4,2,.6,1)' : 'none';
@@ -160,6 +167,7 @@
 
   /* On resize, snap to correct position without animation */
   window.addEventListener('resize', function() {
+    updateSlideWidths();
     setPosition(false);
   });
 
@@ -199,6 +207,7 @@
   });
 
   /* Init */
+  updateSlideWidths();
   setPosition(false);
   updateDots(currentSlide);
 })();
