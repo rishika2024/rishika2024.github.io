@@ -182,8 +182,26 @@ draft: false
 #content .timeline-item div,
 #content .timeline-item span,
 #content .timeline-item p,
-#content .timeline-item li {
+#content .timeline-item li,
+#content .timeline-item img {
   text-align: left !important;
+  display: inline !important;
+}
+#content .timeline-item {
+  display: block !important;
+}
+#content .timeline-item > * {
+  display: block !important;
+}
+#content .timeline-item-heading {
+  display: block !important;
+}
+#content .timeline-item-heading img {
+  display: inline !important;
+  height: 20px !important;
+  width: 20px !important;
+  vertical-align: middle !important;
+  margin-right: 6px !important;
 }
 .timeline-item-header {
   margin-bottom: 0.4rem;
@@ -260,18 +278,32 @@ draft: false
 
 <div class="timeline">
   <div class="timeline-item">
-    <div class="timeline-item-header">
-      <div class="timeline-item-heading"><img src="/about/nw.png" alt="" />MS in Robotics</div>
-      <div style="font-size:0.95rem; font-weight:500; color:#444; margin-bottom:0.1rem;">Northwestern University</div>
-      <div style="font-size:0.88rem; color:#888;">Expected Dec 2026 · Evanston, IL</div>
-    </div>
+    <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
+      <tr>
+        <td style="border:none; padding:0 10px 0 0; vertical-align:top; width:26px;">
+          <img src="/about/nw.png" alt="" style="height:22px; width:22px; object-fit:contain; display:block; margin-top:3px;" />
+        </td>
+        <td style="border:none; padding:0; vertical-align:top; text-align:left;">
+          <div style="font-size:1.2rem; font-weight:700; color:#111; line-height:1.3;">MS in Robotics</div>
+          <div style="font-size:0.95rem; font-weight:500; color:#444; margin-top:0.15rem;">Northwestern University</div>
+          <div style="font-size:0.88rem; color:#888; margin-top:0.1rem;">Expected Dec 2026 · Evanston, IL</div>
+        </td>
+      </tr>
+    </table>
   </div>
   <div class="timeline-item">
-    <div class="timeline-item-header">
-      <div class="timeline-item-heading"><img src="/about/jodhpur.png" alt="" />B.Tech in Mechanical Engineering</div>
-      <div style="font-size:0.95rem; font-weight:500; color:#444; margin-bottom:0.1rem;">Indian Institute of Technology – Jodhpur</div>
-      <div style="font-size:0.88rem; color:#888;">Dec 2021 – May 2025 · Rajasthan, India</div>
-    </div>
+    <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
+      <tr>
+        <td style="border:none; padding:0 10px 0 0; vertical-align:top; width:26px;">
+          <img src="/about/jodhpur.png" alt="" style="height:22px; width:22px; object-fit:contain; display:block; margin-top:3px;" />
+        </td>
+        <td style="border:none; padding:0; vertical-align:top; text-align:left;">
+          <div style="font-size:1.2rem; font-weight:700; color:#111; line-height:1.3;">B.Tech in Mechanical Engineering</div>
+          <div style="font-size:0.95rem; font-weight:500; color:#444; margin-top:0.15rem;">Indian Institute of Technology – Jodhpur</div>
+          <div style="font-size:0.88rem; color:#888; margin-top:0.1rem;">Dec 2021 – May 2025 · Rajasthan, India</div>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
 
@@ -279,11 +311,18 @@ draft: false
 
 <div class="timeline">
   <div class="timeline-item">
-    <div class="timeline-item-header">
-      <div class="timeline-item-heading"><img src="/about/purdue.png" alt="" />Summer Undergraduate Research (SURF) Intern</div>
-      <div style="font-size:0.95rem; font-weight:500; color:#444; margin-bottom:0.1rem;">Purdue University</div>
-      <div style="font-size:0.88rem; color:#888;">May 2024 – Jul 2024 · West Lafayette, IN</div>
-    </div>
+    <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
+      <tr>
+        <td style="border:none; padding:0 10px 0 0; vertical-align:top; width:26px;">
+          <img src="/about/purdue.png" alt="" style="height:22px; width:22px; object-fit:contain; display:block; margin-top:3px;" />
+        </td>
+        <td style="border:none; padding:0; vertical-align:top; text-align:left;">
+          <div style="font-size:1.2rem; font-weight:700; color:#111; line-height:1.3;">Summer Undergraduate Research (SURF) Intern</div>
+          <div style="font-size:0.95rem; font-weight:500; color:#444; margin-top:0.15rem;">Purdue University</div>
+          <div style="font-size:0.88rem; color:#888; margin-top:0.1rem;">May 2024 – Jul 2024 · West Lafayette, IN</div>
+        </td>
+      </tr>
+    </table>
     <ul style="margin-left:20px; margin-top:10px;">
       <li style="font-size:0.98rem; font-weight:400; color:#222;">Engineered PrimerCurator's multimodal backend pipeline integrating text, image, and video using ChatGPT API</li>
     </ul>
