@@ -176,13 +176,30 @@ draft: false
   margin-bottom: 2px;
   letter-spacing: 0.01em;
 }
-.timeline-item-company {
-  font-size: 1.15rem;
-  color: #222;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
-  line-height: 1;
+#content .timeline,
+#content .timeline *,
+#content .timeline-item,
+#content .timeline-item div,
+#content .timeline-item span,
+#content .timeline-item p,
+#content .timeline-item li {
+  text-align: left !important;
+}
+.timeline-item-header {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 0.85rem;
+  width: 100%;
+}
+.timeline-item-header img {
+  flex-shrink: 0;
+  display: block;
+  margin-top: 2px;
+}
+.timeline-item-header-text {
+  text-align: left !important;
 }
 .timeline-item-meta {
   font-size: 1rem;
@@ -241,9 +258,9 @@ draft: false
 
 <div class="timeline">
   <div class="timeline-item">
-    <div style="display:flex; flex-direction:row; align-items:flex-start; justify-content:flex-start; gap:0.85rem;">
-      <img src="/about/nw.png" alt="Northwestern University Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block; margin-top:2px;" />
-      <div style="text-align:left;">
+    <div class="timeline-item-header">
+      <img src="/about/nw.png" alt="Northwestern University Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+      <div class="timeline-item-header-text">
         <div style="font-size:1.08rem; font-weight:700; color:#111; margin-bottom:0.15rem;">MS in Robotics</div>
         <div style="font-size:1rem; font-weight:500; color:#444; margin-bottom:0.15rem;">Northwestern University</div>
         <div style="font-size:0.92rem; color:#888;">Expected Dec 2026 · Evanston, IL</div>
@@ -251,9 +268,9 @@ draft: false
     </div>
   </div>
   <div class="timeline-item">
-    <div style="display:flex; flex-direction:row; align-items:flex-start; justify-content:flex-start; gap:0.85rem;">
-      <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block; margin-top:2px;" />
-      <div style="text-align:left;">
+    <div class="timeline-item-header">
+      <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+      <div class="timeline-item-header-text">
         <div style="font-size:1.08rem; font-weight:700; color:#111; margin-bottom:0.15rem;">B.Tech in Mechanical Engineering</div>
         <div style="font-size:1rem; font-weight:500; color:#444; margin-bottom:0.15rem;">Indian Institute of Technology – Jodhpur</div>
         <div style="font-size:0.92rem; color:#888;">Dec 2021 – May 2025 · Rajasthan, India</div>
@@ -266,9 +283,9 @@ draft: false
 
 <div class="timeline">
   <div class="timeline-item">
-    <div style="display:flex; flex-direction:row; align-items:flex-start; justify-content:flex-start; gap:0.85rem;">
-      <img src="/about/purdue.png" alt="Purdue University Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block; margin-top:2px;" />
-      <div style="text-align:left;">
+    <div class="timeline-item-header">
+      <img src="/about/purdue.png" alt="Purdue University Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08);" />
+      <div class="timeline-item-header-text">
         <div style="font-size:1.08rem; font-weight:700; color:#111; margin-bottom:0.15rem;">Summer Undergraduate Research (SURF) Intern</div>
         <div style="font-size:1rem; font-weight:500; color:#444; margin-bottom:0.15rem;">Purdue University</div>
         <div style="font-size:0.92rem; color:#888;">May 2024 – Jul 2024 · West Lafayette, IN</div>
