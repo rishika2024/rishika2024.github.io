@@ -1,0 +1,17 @@
+{{/*
+Shortcode: video
+Usage: {{< video src width height poster >}}
+Example: {{< video "/videos/demo.mp4" 640 360 "/images/poster.jpg" >}}
+*/}}
+<div style="display: flex; justify-content: center; margin: 1.5rem 0;">
+  <video
+    src="{{ .Get 0 }}"
+    width="{{ with .Get 1 }}{{ . }}{{ else }}640{{ end }}"
+    height="{{ with .Get 2 }}{{ . }}{{ else }}360{{ end }}"
+    {{ with .Get 3 }}poster="{{ . }}"{{ end }}
+    controls
+    style="max-width: 100%; border-radius: 8px; background: #000;"
+  >
+    Your browser does not support the video tag.
+  </video>
+</div>

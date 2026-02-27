@@ -25,6 +25,11 @@ This is an ongoing individual project being built as part of the Master of Scien
 
 ## Project Updates
 
+### Week 3
+Got the drone flying
+
+{{< video "assets/transformer-robot/week3/proper flight.mov" 640 360 >}}
+
 ### Week 2
 
 Assembled the drone kit (from Hawks drone kit)
