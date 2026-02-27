@@ -27,10 +27,26 @@ This is an ongoing individual project being built as part of the Master of Scien
 
 ### Week 4
 
-### Week 3
-Got the drone flying and designed a wheel to mount on the motor body below the propeller.
 
-{{< slide "transformer-robot/week3/wheel1.png" "Wheel View1" "transformer-robot/week3/wheel2.png" "Wheel View2" >}}
+Determined the payload capacity of the drone and designed a wheel to mount on the motor body below the propeller.
+
+With a 3S battery, the drone can carry an extra payload of up to 366g—it is able to move but cannot gain significant altitude, even at full throttle. When the payload is reduced to 250g, the drone is able to hover properly.
+
+*  Stable Hower
+{{< video "transformer-robot/week4/stable_hower.mp4" 640 360 >}}
+
+*  250g payload
+{{< video "transformer-robot/week4/250_3.mp4" 640 360 >}}
+
+*  366g payload
+{{< video "transformer-robot/week4/366g.mp4" 640 360 >}}
+
+{{< slide "transformer-robot/week4wheel1.png" "Wheel View1" "transformer-robot/week4wheel2.png" "Wheel View2" >}}
+
+
+
+### Week 3
+Got the drone flying 
 
 {{< video "transformer-robot/week3/proper flight.mp4" 640 360 >}}
 
