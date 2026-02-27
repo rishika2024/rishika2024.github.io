@@ -228,8 +228,8 @@ draft: false
   <div class="timeline-item">
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
-        <td style="border:none; padding:0 12px 0 0; vertical-align:top; width:48px;">
-          <img src="/about/nw.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block;" />
+        <td style="border:none; padding:0 12px 0 0; vertical-align:middle; width:44px;">
+          <img src="/about/nw.png" alt="" style="height:36px; width:36px; object-fit:contain; display:block;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
           <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">MS in Robotics</div>
@@ -242,8 +242,8 @@ draft: false
   <div class="timeline-item">
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
-        <td style="border:none; padding:0 12px 0 0; vertical-align:top; width:48px;">
-          <img src="/about/jodhpur.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block;" />
+        <td style="border:none; padding:0 12px 0 0; vertical-align:middle; width:44px;">
+          <img src="/about/jodhpur.png" alt="" style="height:36px; width:36px; object-fit:contain; display:block;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
           <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">B.Tech in Mechanical Engineering</div>
@@ -261,8 +261,8 @@ draft: false
   <div class="timeline-item">
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
-        <td style="border:none; padding:0 12px 0 0; vertical-align:top; width:48px;">
-          <img src="/about/purdue.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block;" />
+        <td style="border:none; padding:0 12px 0 0; vertical-align:middle; width:44px;">
+          <img src="/about/purdue.png" alt="" style="height:36px; width:36px; object-fit:contain; display:block;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
           <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">Summer Undergraduate Research (SURF) Intern</div>
