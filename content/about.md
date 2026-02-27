@@ -240,20 +240,24 @@ draft: false
 
 <div class="timeline">
   <div class="timeline-item">
-    <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem;">
-      <img src="/about/nw.png" alt="Northwestern University Logo" style="height:32px; width:32px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block;" />
-      <span class="timeline-item-company" style="font-size:1.15rem; font-weight:600; color:#222;">Northwestern University</span>
+    <div style="display:flex; align-items:flex-start; gap:0.85rem; margin-bottom:0.5rem;">
+      <img src="/about/nw.png" alt="Northwestern University Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block; margin-top:2px;" />
+      <div>
+        <div style="font-size:1.08rem; font-weight:700; color:#111; margin-bottom:0.15rem;">MS in Robotics</div>
+        <div style="font-size:1rem; font-weight:500; color:#444; margin-bottom:0.15rem;">Northwestern University</div>
+        <div style="font-size:0.92rem; color:#888;">Expected Dec 2026 · Evanston, IL</div>
+      </div>
     </div>
-    <div class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444; margin-bottom:0.2rem;">MS in Robotics</div>
-    <div class="timeline-item-meta">Expected Dec 2026 · Evanston, IL</div>
   </div>
   <div class="timeline-item">
-    <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem;">
-      <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:32px; width:32px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block;" />
-      <span class="timeline-item-company" style="font-size:1.15rem; font-weight:600; color:#222;">Indian Institute of Technology – Jodhpur</span>
+    <div style="display:flex; align-items:flex-start; gap:0.85rem; margin-bottom:0.5rem;">
+      <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block; margin-top:2px;" />
+      <div>
+        <div style="font-size:1.08rem; font-weight:700; color:#111; margin-bottom:0.15rem;">B.Tech in Mechanical Engineering</div>
+        <div style="font-size:1rem; font-weight:500; color:#444; margin-bottom:0.15rem;">Indian Institute of Technology – Jodhpur</div>
+        <div style="font-size:0.92rem; color:#888;">Dec 2021 – May 2025 · Rajasthan, India</div>
+      </div>
     </div>
-    <div class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444; margin-bottom:0.2rem;">B.Tech in Mechanical Engineering</div>
-    <div class="timeline-item-meta">Dec 2021 – May 2025 · Rajasthan, India</div>
   </div>
 </div>
 
@@ -261,14 +265,16 @@ draft: false
 
 <div class="timeline">
   <div class="timeline-item">
-    <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.6rem;">
-      <img src="/about/purdue.png" alt="Purdue University Logo" style="height:32px; width:32px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block;" />
-      <span class="timeline-item-company" style="font-size:1.15rem; font-weight:600; color:#222;">Purdue University</span>
+    <div style="display:flex; align-items:flex-start; gap:0.85rem; margin-bottom:0.5rem;">
+      <img src="/about/purdue.png" alt="Purdue University Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block; margin-top:2px;" />
+      <div>
+        <div style="font-size:1.08rem; font-weight:700; color:#111; margin-bottom:0.15rem;">Summer Undergraduate Research (SURF) Intern</div>
+        <div style="font-size:1rem; font-weight:500; color:#444; margin-bottom:0.15rem;">Purdue University</div>
+        <div style="font-size:0.92rem; color:#888;">May 2024 – Jul 2024 · West Lafayette, IN</div>
+      </div>
     </div>
-    <div class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444; margin-bottom:0.2rem;">Summer Undergraduate Research (SURF) Intern</div>
-    <div class="timeline-item-meta">May 2024 – Jul 2024 · West Lafayette, IN</div>
-    <ul>
-      <li style="font-size:0.98rem; font-weight:400; text-align:left; color:#222;">Engineered PrimerCurator's multimodal backend pipeline integrating text, image, and video using ChatGPT API</li>      
+    <ul style="margin-left:20px; margin-top:10px;">
+      <li style="font-size:0.98rem; font-weight:400; color:#222;">Engineered PrimerCurator's multimodal backend pipeline integrating text, image, and video using ChatGPT API</li>
     </ul>
   </div>  
 </div>
