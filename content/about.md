@@ -1,6 +1,6 @@
 ---
-title: "Resume"
-description: "Resume"
+title: "About"
+description: "About"
 draft: false
 ---
 
@@ -130,10 +130,13 @@ draft: false
   color: #0066cc;
 }
 
-/* Timeline and cards remain unchanged */
+/* Timeline */
 .timeline {
   position: relative;
   padding-left: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .timeline::before {
   content: '';
@@ -152,10 +155,6 @@ draft: false
   padding: 36px 40px;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.08);
   border: none;
-  min-width: 340px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .timeline-item::before {
   content: '';
@@ -229,7 +228,7 @@ draft: false
         <span class="skill-pill">CAD</span>        
       </div>
       <div class="about-download">
-        <span style="font-size:1.1em;vertical-align:middle;">&#128229;</span> <a href="/resume/Rishika_Resume.pdf" download>Download</a> my resume as a PDF.
+        <a href="/resume/Rishika_Resume.pdf" download>Download</a> my resume as a PDF.
       </div>
     </div>
   </div>
@@ -267,9 +266,7 @@ draft: false
     <div class="timeline-item-title" style="font-size:1.08rem; font-weight:500; color:#444; margin-bottom:0.2rem;">Summer Undergraduate Research (SURF) Intern</div>
     <div class="timeline-item-meta">May 2024 – Jul 2024 · West Lafayette, IN</div>
     <ul>
-      <li style="font-size:0.98rem; font-weight:400; text-align:left; color:#222;">Engineered PrimerCurator’s multimodal backend pipeline integrating text, image, and video using ChatGPT API</li>      
+      <li style="font-size:0.98rem; font-weight:400; text-align:left; color:#222;">Engineered PrimerCurator's multimodal backend pipeline integrating text, image, and video using ChatGPT API</li>      
     </ul>
   </div>  
 </div>
-
-

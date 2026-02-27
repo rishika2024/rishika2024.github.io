@@ -25,6 +25,9 @@ This is an ongoing individual project being built as part of the Master of Scien
 
 ## Project Updates
 
+### Week 6
+
+
 ### Week 5
 
 Designed the hinge mechanism
