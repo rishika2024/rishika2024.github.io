@@ -25,6 +25,12 @@ This is an ongoing individual project being built as part of the Master of Scien
 
 ## Project Updates
 
+### Week 5
+
+Designed the hinge mechanism
+
+{{< slide "transformer-robot/week5/hinge_mech1.png" "Hinge View1" "transformer-robot/week5/hinge_mech2.png" "Hinge View2" "transformer-robot/week5/hinge_mech3.png" "Hinge View3" >}}
+
 ### Week 4
 
 
