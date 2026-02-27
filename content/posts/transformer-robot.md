@@ -30,7 +30,7 @@ This is an ongoing individual project being built as part of the Master of Scien
 ### Week 3
 Got the drone flying and designed a wheel to mount on the motor body below the propeller.
 
-{{< slide "transformer-robot/week3/wheel1.png" "Wheel View1" "transformer-robot/week3/wheel2.png" "Wheel View2 >}}
+{{< slide "transformer-robot/week3/wheel1.png" "Wheel View1" "transformer-robot/week3/wheel2.png" "Wheel View2" >}}
 
 {{< video "transformer-robot/week3/proper flight.mp4" 640 360 >}}
 
