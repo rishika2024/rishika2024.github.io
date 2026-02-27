@@ -2,7 +2,7 @@
 title: "Transformer Robot"
 date: 2026-02-24T14:15:05+07:00
 description: A mobile robot that can operate both as a ground vehicle and as a drone
-image: assets/transformer-robot/drone-with-wheels.png
+image: transformer-robot/drone-with-wheels.png
 tags:
   - UAV
   - Onshape
