@@ -20,6 +20,9 @@ draft: false
 #content h2 {
   font-size: 2rem !important;
 }
+.about-skills h2 {
+  font-size: 1.3rem !important;
+}
 
 .about-main-row {
   display: flex;
@@ -205,7 +208,7 @@ draft: false
     </div>
   </div>
   <div class="about-right">
-    <div class="about-summary" style="text-align:justify;">
+    <div class="about-summary" style="text-align:justify; margin-top:3.5rem;">
       Hi! I'm Rishika, a graduate student in the M.S. Robotics program at Northwestern University. I completed my B.Tech in Mechanical Engineering from IIT Jodhpur, and I'm passionate about developing intelligent robotic solutions with a focus on LLMs and autonomous systems.
     </div>
     <div class="about-skills">
