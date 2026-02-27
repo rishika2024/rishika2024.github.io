@@ -28,7 +28,7 @@ This is an ongoing individual project being built as part of the Master of Scien
 ### Week 2
 
 Assembled the drone kit (from Hawks drone kit)
-{{< figure src="week2/transformer-robot/initial_assembly.png" alt="initial assembly" width="60%">}}
+{{< figure src="transformer-robot/week2/initial_assembly.png" alt="initial assembly" width="60%">}}
 
 ### Week 1
 
