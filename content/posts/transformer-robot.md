@@ -10,16 +10,22 @@ tags:
   - Pixhawk
   - Raspbery pi
   
-draft: true
+draft: false
 order: 1
 
 ---
 
 # Transformer Robot
 
+## Overview
+
 The goal of this project is to design and build a mobile robot that can operate both as a ground vehicle and as a drone, enabling versatile movement across different terrains and environments. 
 
 This is an ongoing individual project being built as part of the Master of Science in Robotics (MSR) program at Northwestern University.
+
+## Project Updates
+
+
 
 
 
