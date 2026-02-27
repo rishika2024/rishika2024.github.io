@@ -27,6 +27,25 @@ This is an ongoing individual project being built as part of the Master of Scien
 
 ### Week 6
 
+Tested the wheels using both 3S and 4S batteries; however, the RPM was insufficient, and the drone was unable to take off. With a 4S battery, the payload capacity was tested and found to be 750g. Additionally, I designed a planetary gear-like system for the wheels to decouple them from the DC motor body.
+
+*  Flight test with the wheels and 4s battery
+
+{{< video "transformer-robot/week6/Flight_test_with_wheels.mp4" 640 360 >}}
+
+*  Wheel designs
+{{< slide "transformer-robot/week6/wheel_v1.png" "Wheel Design 1" "transformer-robot/week6/wheel_v2.png" "Wheel Design 2" "transformer-robot/week6/wheel_v3.png" "Wheel Design 3" >}}
+
+*  Planetary Gear-like system for wheels
+   *    Design 1
+   {{< slide "transformer-robot/week6/wheel_assem1_complete.png" "Complete Assembly with Motor and Propeller" "transformer-robot/week6/wheel_assem_1.png" "Isometric View" "transformer-robot/week6/wheel_assem1_side.png" "Side View" "transformer-robot/week6/wheel_assem1_top.png" "Top View">}}
+
+   *    Desgin 2
+   {{< slide "transformer-robot/week6/wheel_assem2_complete.png" "Complete Assembly with Motor and Propeller" "transformer-robot/week6/wheel_assem2.png" "Isometric View" "transformer-robot/week6/wheel_assem2_side.png" "Side View" "transformer-robot/week6/wheel_assem2_top.png" "Top View">}}
+
+
+
+
 
 ### Week 5
 
