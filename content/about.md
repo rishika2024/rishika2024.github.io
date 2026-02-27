@@ -186,19 +186,19 @@ draft: false
   text-align: left !important;
 }
 .timeline-item-header {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-  gap: 0.85rem;
+  display: table;
   width: 100%;
+  border-collapse: separate;
+  border-spacing: 12px 0;
 }
 .timeline-item-header img {
-  flex-shrink: 0;
-  display: block;
-  margin-top: 2px;
+  display: table-cell;
+  vertical-align: top;
+  width: 40px;
 }
 .timeline-item-header-text {
+  display: table-cell;
+  vertical-align: top;
   text-align: left !important;
 }
 .timeline-item-meta {
