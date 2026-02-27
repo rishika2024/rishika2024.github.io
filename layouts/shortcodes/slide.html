@@ -1,12 +1,12 @@
 <style>
 .slider-container {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 2rem auto;
   position: relative;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   background: #fff;
-  padding: 1rem 3rem;
+  padding: 1.25rem 3.5rem;
   box-sizing: border-box;
 }
 .slider-window {
@@ -22,17 +22,17 @@
   text-align: center;
   background: #f8f8f8;
   border-radius: 8px;
-  padding: 0.5rem;
+  padding: 0.75rem;
   box-sizing: border-box;
 }
 .slide-item img {
   width: 100%;
-  max-height: 280px;
+  max-height: 340px;
   object-fit: contain;
 }
 .slide-caption {
   margin-top: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #333;
 }
@@ -105,23 +105,19 @@
   var track = document.getElementById('sliderTrack' + uid);
   var dotsContainer = document.getElementById('sliderDots' + uid);
 
-  // Clone all slides and append to track for infinite loop
   var slides = Array.from(container.querySelectorAll('.slide-item'));
   var total = slides.length;
 
-  // Prepend last slide clone and append first slide clone
   var firstClone = slides[0].cloneNode(true);
   var lastClone = slides[total - 1].cloneNode(true);
   track.appendChild(firstClone);
   track.insertBefore(lastClone, slides[0]);
 
-  // Start at index 1 (after the prepended clone)
   currentSlide = 1;
   track.style.transition = 'none';
   track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
 
   function updateDots(idx) {
-    // real index (0-based, ignoring clones)
     var realIdx = ((idx - 1) % total + total) % total;
     Array.from(dotsContainer.children).forEach(function(dot, i) {
       dot.classList.toggle('active', i === realIdx);
@@ -134,9 +130,7 @@
     updateDots(currentSlide);
   }
 
-  // After transition ends, silently jump if on a clone
   track.addEventListener('transitionend', function() {
-    var allSlides = track.querySelectorAll('.slide-item');
     if (currentSlide === 0) {
       currentSlide = total;
       track.style.transition = 'none';
@@ -165,7 +159,7 @@
     var dot = document.createElement('span');
     dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
     dot.addEventListener('click', function() {
-      currentSlide = i + 1; // offset by 1 due to prepended clone
+      currentSlide = i + 1;
       updateSlider(true);
     });
     dotsContainer.appendChild(dot);
