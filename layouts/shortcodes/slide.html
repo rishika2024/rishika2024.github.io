@@ -1,27 +1,47 @@
 <style>
 .slider-container {
-  max-width: 600px;
+  max-width: 900px;
   margin: 2rem auto;
   position: relative;
-  overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  background: #fff;
+  padding: 1rem 3rem;
+  box-sizing: border-box;
 }
 .slider-track {
   display: flex;
   transition: transform 0.5s cubic-bezier(.4,2,.6,1);
+  overflow: hidden;
 }
-.slide {
-  min-width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  background: #fff;
-}
-.slide img {
+.slider-window {
+  overflow: hidden;
   width: 100%;
-  max-height: 350px;
-  object-fit: contain;
+}
+.slide-pair {
+  display: flex;
+  min-width: 100%;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+.slide-item {
+  flex: 1;
+  text-align: center;
   background: #f8f8f8;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.slide-item img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+}
+.slide-item .slide-caption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
 }
 .slider-btn {
   position: absolute;
@@ -37,11 +57,11 @@
   cursor: pointer;
   z-index: 2;
 }
-.slider-btn.left { left: 10px; }
-.slider-btn.right { right: 10px; }
+.slider-btn.left { left: 6px; }
+.slider-btn.right { right: 6px; }
 .slider-dots {
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
 .slider-dot {
   display: inline-block;
@@ -59,17 +79,43 @@
 </style>
 
 {{ $uid := .Ordinal }}
+{{ $params := .Params }}
+
+{{/* Build pairs: each param is alternating image, caption */}}
 <div class="slider-container" id="slider-{{ $uid }}">
   <button class="slider-btn left" data-slider="{{ $uid }}" data-dir="-1">&#8592;</button>
-  <div class="slider-track" id="sliderTrack{{ $uid }}">
-    {{- range $i, $img := .Params }}
-      {{ $resource := resources.Get $img }}
-      {{ if $resource }}
-        <div class="slide"><img src="{{ $resource.RelPermalink }}" alt="slide image"></div>
-      {{ else }}
-        <div class="slide"><p>Image not found: {{ $img }}</p></div>
-      {{ end }}
-    {{- end }}
+  <div class="slider-window">
+    <div class="slider-track" id="sliderTrack{{ $uid }}">
+      {{- $total := len $params }}
+      {{- $i := 0 }}
+      {{- range $idx, $_ := $params }}
+        {{- if eq (mod $idx 2) 0 }}
+          {{- $img1 := index $params $idx }}
+          {{- $cap1 := "" }}
+          {{- if lt (add $idx 1) $total }}{{ $cap1 = index $params (add $idx 1) }}{{ end }}
+          {{- $img2 := "" }}
+          {{- $cap2 := "" }}
+          {{- if lt (add $idx 2) $total }}{{ $img2 = index $params (add $idx 2) }}{{ end }}
+          {{- if lt (add $idx 3) $total }}{{ $cap2 = index $params (add $idx 3) }}{{ end }}
+        <div class="slide-pair">
+          {{ $r1 := resources.Get $img1 }}
+          <div class="slide-item">
+            {{ if $r1 }}<img src="{{ $r1.RelPermalink }}" alt="{{ $cap1 }}">{{ else }}<p>Not found: {{ $img1 }}</p>{{ end }}
+            {{ if $cap1 }}<div class="slide-caption">{{ $cap1 }}</div>{{ end }}
+          </div>
+          {{ if $img2 }}
+            {{ $r2 := resources.Get $img2 }}
+            <div class="slide-item">
+              {{ if $r2 }}<img src="{{ $r2.RelPermalink }}" alt="{{ $cap2 }}">{{ else }}<p>Not found: {{ $img2 }}</p>{{ end }}
+              {{ if $cap2 }}<div class="slide-caption">{{ $cap2 }}</div>{{ end }}
+            </div>
+          {{ else }}
+            <div class="slide-item" style="background:transparent;box-shadow:none;"></div>
+          {{ end }}
+        </div>
+        {{- end }}
+      {{- end }}
+    </div>
   </div>
   <button class="slider-btn right" data-slider="{{ $uid }}" data-dir="1">&#8594;</button>
   <div class="slider-dots" id="sliderDots{{ $uid }}"></div>
@@ -80,7 +126,7 @@
   var uid = {{ $uid }};
   var currentSlide = 0;
   var container = document.getElementById('slider-' + uid);
-  var slides = container.querySelectorAll('.slide');
+  var pairs = container.querySelectorAll('.slide-pair');
   var track = document.getElementById('sliderTrack' + uid);
   var dotsContainer = document.getElementById('sliderDots' + uid);
 
@@ -93,8 +139,8 @@
 
   function moveSlide(dir) {
     currentSlide += dir;
-    if (currentSlide < 0) currentSlide = slides.length - 1;
-    if (currentSlide >= slides.length) currentSlide = 0;
+    if (currentSlide < 0) currentSlide = pairs.length - 1;
+    if (currentSlide >= pairs.length) currentSlide = 0;
     updateSlider();
   }
 
@@ -104,7 +150,7 @@
     });
   });
 
-  slides.forEach(function(_, i) {
+  pairs.forEach(function(_, i) {
     var dot = document.createElement('span');
     dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
     dot.addEventListener('click', function() {
