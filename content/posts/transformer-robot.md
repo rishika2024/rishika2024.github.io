@@ -41,7 +41,7 @@ With a 3S battery, the drone can carry an extra payload of up to 366g—it is ab
 *  366g payload
 {{< video "transformer-robot/week4/366g.mp4" 640 360 >}}
 
-{{< slide "transformer-robot/week4wheel1.png" "Wheel View1" "transformer-robot/week4wheel2.png" "Wheel View2" >}}
+{{< slide "transformer-robot/week4/wheel1.png" "Wheel View1" "transformer-robot/week4/wheel2.png" "Wheel View2" >}}
 
 
 
