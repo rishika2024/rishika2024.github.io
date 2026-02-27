@@ -155,6 +155,7 @@ draft: false
   padding: 24px 28px;
   box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.08);
   border: none;
+  text-align: left !important;
 }
 .timeline-item::before {
   content: '';
@@ -240,9 +241,9 @@ draft: false
 
 <div class="timeline">
   <div class="timeline-item">
-    <div style="display:flex; align-items:flex-start; gap:0.85rem; margin-bottom:0.5rem;">
+    <div style="display:flex; flex-direction:row; align-items:flex-start; justify-content:flex-start; gap:0.85rem;">
       <img src="/about/nw.png" alt="Northwestern University Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block; margin-top:2px;" />
-      <div>
+      <div style="text-align:left;">
         <div style="font-size:1.08rem; font-weight:700; color:#111; margin-bottom:0.15rem;">MS in Robotics</div>
         <div style="font-size:1rem; font-weight:500; color:#444; margin-bottom:0.15rem;">Northwestern University</div>
         <div style="font-size:0.92rem; color:#888;">Expected Dec 2026 · Evanston, IL</div>
@@ -250,9 +251,9 @@ draft: false
     </div>
   </div>
   <div class="timeline-item">
-    <div style="display:flex; align-items:flex-start; gap:0.85rem; margin-bottom:0.5rem;">
+    <div style="display:flex; flex-direction:row; align-items:flex-start; justify-content:flex-start; gap:0.85rem;">
       <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block; margin-top:2px;" />
-      <div>
+      <div style="text-align:left;">
         <div style="font-size:1.08rem; font-weight:700; color:#111; margin-bottom:0.15rem;">B.Tech in Mechanical Engineering</div>
         <div style="font-size:1rem; font-weight:500; color:#444; margin-bottom:0.15rem;">Indian Institute of Technology – Jodhpur</div>
         <div style="font-size:0.92rem; color:#888;">Dec 2021 – May 2025 · Rajasthan, India</div>
@@ -265,9 +266,9 @@ draft: false
 
 <div class="timeline">
   <div class="timeline-item">
-    <div style="display:flex; align-items:flex-start; gap:0.85rem; margin-bottom:0.5rem;">
+    <div style="display:flex; flex-direction:row; align-items:flex-start; justify-content:flex-start; gap:0.85rem;">
       <img src="/about/purdue.png" alt="Purdue University Logo" style="height:40px; width:40px; object-fit:contain; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex-shrink:0; display:block; margin-top:2px;" />
-      <div>
+      <div style="text-align:left;">
         <div style="font-size:1.08rem; font-weight:700; color:#111; margin-bottom:0.15rem;">Summer Undergraduate Research (SURF) Intern</div>
         <div style="font-size:1rem; font-weight:500; color:#444; margin-bottom:0.15rem;">Purdue University</div>
         <div style="font-size:0.92rem; color:#888;">May 2024 – Jul 2024 · West Lafayette, IN</div>
