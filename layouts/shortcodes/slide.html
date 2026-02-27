@@ -103,23 +103,56 @@
   var currentSlide = 0;
   var container = document.getElementById('slider-' + uid);
   var track = document.getElementById('sliderTrack' + uid);
-  var slides = container.querySelectorAll('.slide-item');
-  var total = slides.length;
   var dotsContainer = document.getElementById('sliderDots' + uid);
 
-  function updateSlider() {
-    // shift by 50% per slide (since each slide is 50% wide)
-    track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
+  // Clone all slides and append to track for infinite loop
+  var slides = Array.from(container.querySelectorAll('.slide-item'));
+  var total = slides.length;
+
+  // Prepend last slide clone and append first slide clone
+  var firstClone = slides[0].cloneNode(true);
+  var lastClone = slides[total - 1].cloneNode(true);
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+
+  // Start at index 1 (after the prepended clone)
+  currentSlide = 1;
+  track.style.transition = 'none';
+  track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
+
+  function updateDots(idx) {
+    // real index (0-based, ignoring clones)
+    var realIdx = ((idx - 1) % total + total) % total;
     Array.from(dotsContainer.children).forEach(function(dot, i) {
-      dot.classList.toggle('active', i === currentSlide);
+      dot.classList.toggle('active', i === realIdx);
     });
   }
 
+  function updateSlider(animate) {
+    track.style.transition = animate ? 'transform 0.5s cubic-bezier(.4,2,.6,1)' : 'none';
+    track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
+    updateDots(currentSlide);
+  }
+
+  // After transition ends, silently jump if on a clone
+  track.addEventListener('transitionend', function() {
+    var allSlides = track.querySelectorAll('.slide-item');
+    if (currentSlide === 0) {
+      currentSlide = total;
+      track.style.transition = 'none';
+      track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
+    }
+    if (currentSlide === total + 1) {
+      currentSlide = 1;
+      track.style.transition = 'none';
+      track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
+    }
+    updateDots(currentSlide);
+  });
+
   function moveSlide(dir) {
     currentSlide += dir;
-    if (currentSlide < 0) currentSlide = total - 1;
-    if (currentSlide >= total) currentSlide = 0;
-    updateSlider();
+    updateSlider(true);
   }
 
   container.querySelectorAll('.slider-btn').forEach(function(btn) {
@@ -132,12 +165,12 @@
     var dot = document.createElement('span');
     dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
     dot.addEventListener('click', function() {
-      currentSlide = i;
-      updateSlider();
+      currentSlide = i + 1; // offset by 1 due to prepended clone
+      updateSlider(true);
     });
     dotsContainer.appendChild(dot);
   });
 
-  updateSlider();
+  updateDots(currentSlide);
 })();
 </script>
