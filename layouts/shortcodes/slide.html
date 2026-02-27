@@ -63,7 +63,12 @@
   <button class="slider-btn left" data-slider="{{ $uid }}" data-dir="-1">&#8592;</button>
   <div class="slider-track" id="sliderTrack{{ $uid }}">
     {{- range $i, $img := .Params }}
-      <div class="slide"><img src="/{{ $img }}" alt="slide image"></div>
+      {{ $resource := resources.Get $img }}
+      {{ if $resource }}
+        <div class="slide"><img src="{{ $resource.RelPermalink }}" alt="slide image"></div>
+      {{ else }}
+        <div class="slide"><p>Image not found: {{ $img }}</p></div>
+      {{ end }}
     {{- end }}
   </div>
   <button class="slider-btn right" data-slider="{{ $uid }}" data-dir="1">&#8594;</button>
