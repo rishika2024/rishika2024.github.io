@@ -91,7 +91,6 @@ draft: false
   background: #0066cc;
   color: #fff;
 }
-
 .about-right {
   flex: 1;
   min-width: 260px;
@@ -169,13 +168,6 @@ draft: false
   border-radius: 50%;
   z-index: 1;
 }
-.timeline-item-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #444;
-  margin-bottom: 2px;
-  letter-spacing: 0.01em;
-}
 #content .timeline,
 #content .timeline *,
 #content .timeline-item,
@@ -185,29 +177,6 @@ draft: false
 #content .timeline-item li,
 #content .timeline-item img {
   text-align: left !important;
-}
-.timeline-item-header {
-  margin-bottom: 0.4rem;
-}
-.timeline-item-heading {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #111;
-  line-height: 1.3;
-  margin-bottom: 0.2rem;
-}
-.timeline-item-heading img {
-  height: 20px;
-  width: 20px;
-  object-fit: contain;
-  display: inline;
-  vertical-align: middle;
-  margin-right: 6px;
-}
-.timeline-item-meta {
-  font-size: 1rem;
-  color: #888;
-  margin-bottom: 18px;
 }
 .timeline-item ul {
   margin-left: 20px;
@@ -219,10 +188,6 @@ draft: false
   margin-bottom: 10px;
   line-height: 1.6;
   font-weight: 500;
-}
-.timeline-item li strong {
-  font-weight: 700;
-  color: #111;
 }
 </style>
 
@@ -248,7 +213,7 @@ draft: false
         <span class="skill-pill">ROS 2</span>
         <span class="skill-pill">SLAM</span>
         <span class="skill-pill">UAV</span>
-        <span class="skill-pill">CAD</span>        
+        <span class="skill-pill">CAD</span>
       </div>
       <div class="about-download">
         <a href="/resume/Rishika_Resume.pdf" download>Download</a> my resume as a PDF.
@@ -263,8 +228,8 @@ draft: false
   <div class="timeline-item">
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
-        <td style="border:none; padding:0 10px 0 0; vertical-align:top; width:26px;">
-          <img src="/about/nw.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block; margin-top:3px;" />
+        <td style="border:none; padding:0 12px 0 0; vertical-align:top; width:48px;">
+          <img src="/about/nw.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
           <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">MS in Robotics</div>
@@ -277,8 +242,8 @@ draft: false
   <div class="timeline-item">
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
-        <td style="border:none; padding:0 10px 0 0; vertical-align:top; width:26px;">
-          <img src="/about/jodhpur.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block; margin-top:3px;" />
+        <td style="border:none; padding:0 12px 0 0; vertical-align:top; width:48px;">
+          <img src="/about/jodhpur.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
           <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">B.Tech in Mechanical Engineering</div>
@@ -296,8 +261,8 @@ draft: false
   <div class="timeline-item">
     <table style="border:none; border-spacing:0; border-collapse:collapse; width:auto; margin:0; padding:0; background:none;">
       <tr>
-        <td style="border:none; padding:0 10px 0 0; vertical-align:top; width:26px;">
-          <img src="/about/purdue.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block; margin-top:3px;" />
+        <td style="border:none; padding:0 12px 0 0; vertical-align:top; width:48px;">
+          <img src="/about/purdue.png" alt="" style="height:40px; width:40px; object-fit:contain; display:block;" />
         </td>
         <td style="border:none; padding:0; vertical-align:top; text-align:left;">
           <div style="font-size:1.4rem; font-weight:700; color:#111; line-height:1.3; display:block;">Summer Undergraduate Research (SURF) Intern</div>
@@ -309,5 +274,5 @@ draft: false
     <ul style="margin-left:20px; margin-top:10px;">
       <li style="font-size:0.98rem; font-weight:400; color:#222;">Engineered PrimerCurator's multimodal backend pipeline integrating text, image, and video using ChatGPT API</li>
     </ul>
-  </div>  
+  </div>
 </div>
