@@ -1,6 +1,7 @@
+{{ $video := resources.Get (.Get 0) }}
 <div style="display: flex; justify-content: center; margin: 1.5rem 0;">
   <video
-    src="{{ .Get 0 }}"
+    src="{{ $video.RelPermalink }}"
     width="{{ with .Get 1 }}{{ . }}{{ else }}640{{ end }}"
     height="{{ with .Get 2 }}{{ . }}{{ else }}360{{ end }}"
     {{ with .Get 3 }}poster="{{ . }}"{{ end }}
