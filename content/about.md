@@ -186,22 +186,25 @@ draft: false
   text-align: left !important;
 }
 .timeline-item-header {
-  display: table;
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 10px 0;
+  margin-bottom: 0.4rem;
 }
-.timeline-item-header img {
-  display: table-cell;
-  vertical-align: top;
-  padding-top: 3px;
-  width: 22px;
-  height: 22px;
+.timeline-item-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.2rem;
 }
-.timeline-item-header-text {
-  display: table-cell;
-  vertical-align: top;
-  text-align: left !important;
+.timeline-item-heading img {
+  height: 20px;
+  width: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.timeline-item-heading-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.2;
 }
 .timeline-item-meta {
   font-size: 1rem;
@@ -261,22 +264,22 @@ draft: false
 <div class="timeline">
   <div class="timeline-item">
     <div class="timeline-item-header">
-      <img src="/about/nw.png" alt="Northwestern University Logo" style="height:22px; width:22px; object-fit:contain;" />
-      <div class="timeline-item-header-text">
-        <div style="font-size:1.2rem; font-weight:700; color:#111;">MS in Robotics</div>
-        <div style="font-size:0.95rem; font-weight:500; color:#444; margin-top:0.15rem;">Northwestern University</div>
-        <div style="font-size:0.88rem; color:#888; margin-top:0.1rem;">Expected Dec 2026 · Evanston, IL</div>
+      <div class="timeline-item-heading">
+        <img src="/about/nw.png" alt="Northwestern University Logo" />
+        <span class="timeline-item-heading-title">MS in Robotics</span>
       </div>
+      <div style="font-size:0.95rem; font-weight:500; color:#444; margin-bottom:0.1rem;">Northwestern University</div>
+      <div style="font-size:0.88rem; color:#888;">Expected Dec 2026 · Evanston, IL</div>
     </div>
   </div>
   <div class="timeline-item">
     <div class="timeline-item-header">
-      <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" style="height:22px; width:22px; object-fit:contain;" />
-      <div class="timeline-item-header-text">
-        <div style="font-size:1.2rem; font-weight:700; color:#111;">B.Tech in Mechanical Engineering</div>
-        <div style="font-size:0.95rem; font-weight:500; color:#444; margin-top:0.15rem;">Indian Institute of Technology – Jodhpur</div>
-        <div style="font-size:0.88rem; color:#888; margin-top:0.1rem;">Dec 2021 – May 2025 · Rajasthan, India</div>
+      <div class="timeline-item-heading">
+        <img src="/about/jodhpur.png" alt="IIT Jodhpur Logo" />
+        <span class="timeline-item-heading-title">B.Tech in Mechanical Engineering</span>
       </div>
+      <div style="font-size:0.95rem; font-weight:500; color:#444; margin-bottom:0.1rem;">Indian Institute of Technology – Jodhpur</div>
+      <div style="font-size:0.88rem; color:#888;">Dec 2021 – May 2025 · Rajasthan, India</div>
     </div>
   </div>
 </div>
@@ -286,12 +289,12 @@ draft: false
 <div class="timeline">
   <div class="timeline-item">
     <div class="timeline-item-header">
-      <img src="/about/purdue.png" alt="Purdue University Logo" style="height:22px; width:22px; object-fit:contain;" />
-      <div class="timeline-item-header-text">
-        <div style="font-size:1.2rem; font-weight:700; color:#111;">Summer Undergraduate Research (SURF) Intern</div>
-        <div style="font-size:0.95rem; font-weight:500; color:#444; margin-top:0.15rem;">Purdue University</div>
-        <div style="font-size:0.88rem; color:#888; margin-top:0.1rem;">May 2024 – Jul 2024 · West Lafayette, IN</div>
+      <div class="timeline-item-heading">
+        <img src="/about/purdue.png" alt="Purdue University Logo" />
+        <span class="timeline-item-heading-title">Summer Undergraduate Research (SURF) Intern</span>
       </div>
+      <div style="font-size:0.95rem; font-weight:500; color:#444; margin-bottom:0.1rem;">Purdue University</div>
+      <div style="font-size:0.88rem; color:#888;">May 2024 – Jul 2024 · West Lafayette, IN</div>
     </div>
     <ul style="margin-left:20px; margin-top:10px;">
       <li style="font-size:0.98rem; font-weight:400; color:#222;">Engineered PrimerCurator's multimodal backend pipeline integrating text, image, and video using ChatGPT API</li>
