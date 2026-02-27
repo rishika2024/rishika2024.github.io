@@ -25,6 +25,32 @@
   padding: 0.75rem;
   box-sizing: border-box;
 }
+
+/* Mobile: 1 slide */
+@media (max-width: 767px) {
+  .slide-item {
+    min-width: 100%;
+  }
+  .slider-container {
+    padding: 1rem 2.5rem;
+  }
+  .slide-item img {
+    max-height: 220px;
+  }
+  .slider-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+}
+
+/* Tablet + Desktop: 2 slides */
+@media (min-width: 768px) {
+  .slide-item {
+    min-width: 50%;
+  }
+}
+
 .slide-item img {
   width: 100%;
   max-height: 340px;
@@ -100,7 +126,6 @@
 <script>
 (function() {
   var uid = {{ $uid }};
-  var currentSlide = 0;
   var container = document.getElementById('slider-' + uid);
   var track = document.getElementById('sliderTrack' + uid);
   var dotsContainer = document.getElementById('sliderDots' + uid);
@@ -108,14 +133,23 @@
   var slides = Array.from(container.querySelectorAll('.slide-item'));
   var total = slides.length;
 
+  /* Clone first and last for infinite loop */
   var firstClone = slides[0].cloneNode(true);
   var lastClone = slides[total - 1].cloneNode(true);
   track.appendChild(firstClone);
   track.insertBefore(lastClone, slides[0]);
 
-  currentSlide = 1;
-  track.style.transition = 'none';
-  track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
+  var currentSlide = 1;
+
+  function getSlidePercent() {
+    return window.innerWidth >= 768 ? 50 : 100;
+  }
+
+  function setPosition(animate) {
+    var pct = getSlidePercent();
+    track.style.transition = animate ? 'transform 0.5s cubic-bezier(.4,2,.6,1)' : 'none';
+    track.style.transform = 'translateX(-' + (currentSlide * pct) + '%)';
+  }
 
   function updateDots(idx) {
     var realIdx = ((idx - 1) % total + total) % total;
@@ -124,29 +158,27 @@
     });
   }
 
-  function updateSlider(animate) {
-    track.style.transition = animate ? 'transform 0.5s cubic-bezier(.4,2,.6,1)' : 'none';
-    track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
-    updateDots(currentSlide);
-  }
+  /* On resize, snap to correct position without animation */
+  window.addEventListener('resize', function() {
+    setPosition(false);
+  });
 
   track.addEventListener('transitionend', function() {
     if (currentSlide === 0) {
       currentSlide = total;
-      track.style.transition = 'none';
-      track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
+      setPosition(false);
     }
     if (currentSlide === total + 1) {
       currentSlide = 1;
-      track.style.transition = 'none';
-      track.style.transform = 'translateX(-' + (currentSlide * 50) + '%)';
+      setPosition(false);
     }
     updateDots(currentSlide);
   });
 
   function moveSlide(dir) {
     currentSlide += dir;
-    updateSlider(true);
+    setPosition(true);
+    updateDots(currentSlide);
   }
 
   container.querySelectorAll('.slider-btn').forEach(function(btn) {
@@ -160,11 +192,14 @@
     dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
     dot.addEventListener('click', function() {
       currentSlide = i + 1;
-      updateSlider(true);
+      setPosition(true);
+      updateDots(currentSlide);
     });
     dotsContainer.appendChild(dot);
   });
 
+  /* Init */
+  setPosition(false);
   updateDots(currentSlide);
 })();
 </script>
