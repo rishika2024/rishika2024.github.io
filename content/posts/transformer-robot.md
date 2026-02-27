@@ -30,7 +30,7 @@ This is an ongoing individual project being built as part of the Master of Scien
 
 A simple conceptual CAD model
 
-{{< slide "transformer-robot/initial_cad.png" "Initial CAD Design" "transformer-robot/initial_cad.gif" "CAD Animation" "transformer-robot/initial_hinge.png" "Hinge Design" "transformer-robot/initial_hinge.gif" "Hinge Animation" "transformer-robot/initial_wheel.gif" "Wheel Design" >}}
+{{< slide "transformer-robot/initial_cad.png" "Initial CAD Design" "transformer-robot/initial_cad.gif" "CAD Animation" "transformer-robot/initial_hinge.png" "Hinge Design" "transformer-robot/initial_hinge.gif" "Hinge Animation" "transformer-robot/initial_wheel.png" "Wheel Design" >}}
 
 
 
