@@ -6,7 +6,7 @@ image: jack-in-box/Animation.gif
 tags:
   - Dynamics
   - Python
-draft: true
+draft: false
 math: true
 order: 3
 github: https://github.com/rishika2024/Jack-in-a-Box
