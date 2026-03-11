@@ -36,9 +36,6 @@ This is an ongoing individual project being built as part of the Master of Scien
 
 ## CAD Models:
 
-Original conceptual CAD model
-
-{{< slide "transformer-robot/week1/initial_cad.png" "Initial CAD Design" "transformer-robot/week1/initial_cad.gif" "CAD Animation" "/transformer-robot/week1/initial_hinge.png" "Hinge Design" "/transformer-robot/week1/initial_hinge.gif" "Hinge Animation" "transformer-robot/week1/initial_wheel.png" "Wheel Design" >}}
 
 Hinge Mechanism conceptual CAD model
 
@@ -54,6 +51,11 @@ Hinge Mechanism conceptual CAD model
 
 *  Wheel designs I tried
 {{< slide "transformer-robot/week6/wheel_v1.png" "Wheel Design 1" "transformer-robot/week6/wheel_v2.png" "Wheel Design 2" "transformer-robot/week6/wheel_v3.png" "Wheel Design 3" >}}
+
+Original conceptual CAD model
+
+{{< slide "transformer-robot/week1/initial_cad.png" "Initial CAD Design" "transformer-robot/week1/initial_cad.gif" "CAD Animation" "/transformer-robot/week1/initial_hinge.png" "Hinge Design" "/transformer-robot/week1/initial_hinge.gif" "Hinge Animation" "transformer-robot/week1/initial_wheel.png" "Wheel Design" >}}
+
 
 ## Flight Testing
 
