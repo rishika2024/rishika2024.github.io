@@ -25,9 +25,10 @@ So far I have a working model with the full mechanical system assembled. What re
 
 This is an ongoing individual project being built as part of the Master of Science in Robotics (MSR) program at Northwestern University.
 
-{{< figure src="transformer-robot/Ground mode.gif" alt="Ground Mode" width="50%">}}
-
-{{< figure src="transformer-robot/Wheeled flight .gif" alt="Flight mode" width="50%">}}
+<div style="display:flex; gap:1rem;">
+  {{< figure src="transformer-robot/Ground mode.gif" alt="Ground Mode" width="100%">}}
+  {{< figure src="transformer-robot/Wheeled flight .gif" alt="Flight mode" width="100%">}}
+</div>
 
 ## System Design:
 
