@@ -31,7 +31,7 @@ This is an ongoing individual project being built as part of the Master of Scien
 </div>
 
 ## System Design:
-{{< figure src="transformer-robot/System.png" alt="Flight mode" width="100%">}}
+{{< figure src="transformer-robot/System.png" alt="Flight mode" width="70%">}}
 
 
 ## CAD Models:
