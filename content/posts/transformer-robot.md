@@ -26,12 +26,12 @@ So far I have a working model with the full mechanical system assembled. What re
 This is an ongoing individual project being built as part of the Master of Science in Robotics (MSR) program at Northwestern University.
 
 <div style="display:flex; gap:1rem; justify-content:center;">
-  <img src="/transformer-robot/Ground%20mode.gif" alt="Ground Mode" style="width:50%; height:300px; object-fit:cover;">
-  <img src="/transformer-robot/Wheeled%20flight%20.gif" alt="Flight mode" style="width:50%; height:300px; object-fit:cover;">
+  {{< figure src="transformer-robot/Ground mode.gif" alt="Ground Mode" width="100%">}}
+  {{< figure src="transformer-robot/Wheeled flight .gif" alt="Flight mode" width="100%">}}
 </div>
 
 ## System Design:
-<img src="/transformer-robot/System.png" alt="System" style="width:60%; object-fit:cover;">
+{{< figure src="transformer-robot/System.png" alt="Flight mode" width="100%">}}
 
 
 ## CAD Models:
