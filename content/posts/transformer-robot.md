@@ -61,7 +61,7 @@ Original conceptual CAD model
 
 I tested the drone with both 3S and 4S batteries. With a 3S, it can carry up to 250g and hover properly, but struggles to gain altitude beyond 366g. Switching to a 4S significantly improved performance, with a payload capacity of up to 750g.
 
-### Stable Hower
+### Stable Hover
 {{< video "transformer-robot/week4/stable_hower.mp4" 640 360 >}}
 
 
