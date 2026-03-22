@@ -25,7 +25,7 @@ This is a teleoperated transformer robot that can switch between flight and grou
 
 <div style="display:flex; gap:1rem; justify-content:center;">
   {{< figure src="transformer-robot/ground_moving.gif" alt="Ground Mode" width="200%" >}}
-  {{< figure src="transformer-robot/Wheeled flight .gif" alt="Flight mode" width="200%">}}
+  {{< figure src="transformer-robot/Wheeled flight.gif" alt="Flight mode" width="200%">}}
 </div>
 
 ## System Design:
