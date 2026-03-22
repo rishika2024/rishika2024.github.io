@@ -19,11 +19,9 @@ order: 1
 
 ## Overview
 
-The goal of this project is to build a transformer robot — one that can switch between flight and ground modes. I started with an F450 drone frame and designed a hinge mechanism on each arm: when the arms are straight, the robot flies as a quadcopter powered by brushless motors; when the arms fold down, it becomes a wheeled ground vehicle with wheels driven by mini servo motors. The folding itself is also actuated by servo motors.
+This is a teleoperated transformer robot that can switch between flight and ground modes. I started with an F450 drone frame and designed a hinge mechanism on each arm: when the arms are straight, the robot flies as a quadcopter powered by brushless motors; when the arms fold down, it becomes a wheeled ground vehicle with wheels driven by mini servo motors. The folding itself is also actuated by servo motors.
 
-So far I have a working model with the full mechanical system assembled. What remains is wiring up the drive servos.
 
-This is an ongoing individual project being built as part of the Master of Science in Robotics (MSR) program at Northwestern University.
 
 <div style="display:flex; gap:1rem; justify-content:center;">
   {{< figure src="transformer-robot/ground_moving.gif" alt="Ground Mode" width="200%" >}}
