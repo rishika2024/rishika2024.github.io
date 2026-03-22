@@ -62,6 +62,10 @@ I tested the drone with both 3S and 4S batteries. With a 3S, it can carry up to 
 ### Stable Hover
 {{< video "transformer-robot/week4/stable_hower.mp4" 640 360 >}}
 
+## Future Work
+
+Adding mecanum wheels would allow it to move like an omnidrive, enabling full 360° ground movement without turning.
+
 
 
 
