@@ -3,6 +3,7 @@ title: "Transformer Robot"
 date: 2026-03-11T14:15:05+07:00
 description: A mobile robot that can operate both as a ground vehicle and as a drone
 image: transformer-robot/ground_moving.gif
+tags:
   - UAV
   - Onshape
   - ROS2
@@ -28,10 +29,11 @@ This is a teleoperated transformer robot that can switch between flight and grou
 </div>
 
 ## Full System Architecture:
-{{< figure src="transformer-robot/System.png" alt="Flight mode" width="120%">}}
+{{< figure src="transformer-robot/System.png" alt="Flight mode" width="0%">}}
 
 
 ## CAD Models:
+
 
 Hinge Mechanism conceptual CAD model
 
@@ -60,7 +62,9 @@ I tested the drone with both 3S and 4S batteries. With a 3S, it can carry up to 
 ### Stable Hover
 {{< video "transformer-robot/week4/stable_hower.mp4" 640 360 >}}
 
+## Future Work
 
+Adding mecanum wheels would allow it to move like an omnidrive, enabling full 360° ground movement without turning.
 
 
 
