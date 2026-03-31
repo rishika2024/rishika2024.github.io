@@ -21,7 +21,7 @@ order: 1
 
 This is a teleoperated transformer robot that can switch between flight and ground modes. I started with an F450 drone frame and designed a hinge mechanism on each arm: when the arms are straight, the robot flies as a quadcopter powered by brushless motors; when the arms fold down, it becomes a wheeled ground vehicle with wheels driven by mini servo motors. The folding itself is also actuated by servo motors.
 
-(https://private-user-images.githubusercontent.com/172546714/571893275-bb357b8e-f73c-4b09-b0f0-be0380d24280.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzQ5NjExMzMsIm5iZiI6MTc3NDk2MDgzMywicGF0aCI6Ii8xNzI1NDY3MTQvNTcxODkzMjc1LWJiMzU3YjhlLWY3M2MtNGIwOS1iMGYwLWJlMDM4MGQyNDI4MC5tcDQ_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwMzMxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDMzMVQxMjQwMzNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01MGUzMWJhNTc1ZmQxODQ0MTkwYzY5NDhjZTdkOWRkMDdiNDQ0ZmIzZDMwYjU4YzFmMWJlZGEzYWMzYWRiMTJmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.P3Hg7FDSrJZO-n4m-lbXp1y3FNhSCxlJs6eYRbScSaQ)
+{{< video "transformer-robot/final.mp4" 640 360 >}}
 
 
 ## Full System Architecture:
