@@ -33,7 +33,6 @@ This is a teleoperated transformer robot that can switch between flight and grou
 
 ## CAD Models:
 
-
 Hinge Mechanism conceptual CAD model
 
 {{< slide "transformer-robot/week5/hinge_mech1.png" "Hinge View1" "transformer-robot/week5/hinge_mech2.png" "Hinge View2" "transformer-robot/week5/hinge_mech3.png" "Hinge View3" >}}
@@ -61,9 +60,7 @@ I tested the drone with both 3S and 4S batteries. With a 3S, it can carry up to 
 ### Stable Hover
 {{< video "transformer-robot/week4/stable_hower.mp4" 640 360 >}}
 
-## Future Work
 
-Adding mecanum wheels would allow it to move like an omnidrive, enabling full 360° ground movement without turning.
 
 
 
