@@ -26,7 +26,7 @@ This is a teleoperated transformer robot that can switch between flight and grou
 </div> -->
 
 ## Full System Architecture:
-{{< figure src="transformer-robot/System.png" alt="Flight mode" width="150%">}}
+{{< figure src="transformer-robot/System.png" alt="Flight mode" width="250%">}}
 
 
 ## CAD Models:
