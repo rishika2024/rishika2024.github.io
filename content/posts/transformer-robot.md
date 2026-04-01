@@ -64,7 +64,7 @@ I initially mounted the wheel directly on the motor body, but the inertia on the
 
 Wheel Design
 
-{{< slide "m" "transformer-robot/week6/wheel_v1.png" "v1" "transformer-robot/week6/wheel_v2.png" "v2" "transformer-robot/week6/wheel_v3.png" "v3" >}}
+{{< slide "m" "transformer-robot/week6/wheel_v1.png" "v1" "transformer-robot/week6/wheel_v2.png" "v2" "transformer-robot/week6/wheel_v3.png" "v3" "transformer-robot/wheel_v4.png" "v4" "transformer-robot/wheel_v5.png" "v5">}}
 
 
 ## Flight Testing
