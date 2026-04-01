@@ -40,7 +40,7 @@ Hinge Mechanism
 
 {{< slide "transformer-robot/Final_HInge_mech.png" "Hinge Mechanism" "transformer-robot/Final_Hinge_mech2.png" "Hinge Mechanism"
 "transformer-robot/final_cad4.gif" "Hinge Mechanism with the Motors" 
-"transformer-robot/Final_hinge_side_closed.png" "Hinge Mechanism Side View" "transformer-robot/Final_hinge_side_closed.png" "Hinge Mechanism Side View" >}}
+"transformer-robot/Final_hinge_side_closed.png" "Hinge Mechanism Side View" "transformer-robot/Final_hinge_side_open.png" "Hinge Mechanism Side View" >}}
 
 Planetary Gear-like system for wheels
 
