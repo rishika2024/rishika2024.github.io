@@ -44,13 +44,6 @@
   }
 }
 
-/* Tablet + Desktop: 2 slides */
-@media (min-width: 768px) {
-  .slide-item {
-    min-width: 50%;
-  }
-}
-
 .slide-item img {
   width: 100%;
   max-height: 340px;
@@ -98,10 +91,16 @@
 </style>
 
 {{ $uid := .Ordinal }}
+{{ $size := .Get "size" | default "l" }}
+{{ $perRow := 2 }}
+{{ if eq $size "m" }}{{ $perRow = 4 }}{{ end }}
+{{ if eq $size "s" }}{{ $perRow = 6 }}{{ end }}
+{{ $pct := div 100.0 $perRow }}
+
 {{ $params := .Params }}
 {{ $total := len $params }}
 
-<div class="slider-container" id="slider-{{ $uid }}">
+<div class="slider-container" id="slider-{{ $uid }}" data-per-row="{{ $perRow }}">
   <button class="slider-btn left" data-dir="-1">&#8592;</button>
   <div class="slider-window">
     <div class="slider-track" id="sliderTrack{{ $uid }}">
@@ -129,6 +128,7 @@
   var container = document.getElementById('slider-' + uid);
   var track = document.getElementById('sliderTrack' + uid);
   var dotsContainer = document.getElementById('sliderDots' + uid);
+  var perRow = parseInt(container.getAttribute('data-per-row')) || 2;
 
   var slides = Array.from(container.querySelectorAll('.slide-item'));
   var total = slides.length;
@@ -142,7 +142,7 @@
   var currentSlide = 1;
 
   function getSlidePercent() {
-    return window.innerWidth >= 768 ? 50 : 100;
+    return window.innerWidth >= 768 ? (100 / perRow) : 100;
   }
 
   function updateSlideWidths() {
@@ -165,7 +165,6 @@
     });
   }
 
-  /* On resize, snap to correct position without animation */
   window.addEventListener('resize', function() {
     updateSlideWidths();
     setPosition(false);

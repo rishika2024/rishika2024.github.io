@@ -50,17 +50,21 @@ Planetary Gear-like system for wheels
 
 ## Design Iterations
 
-Hinge Mechanism
+These are some of the iterations I went through before finalizing the design.
 
-{{< slide "transformer-robot/week5/hinge_mech1.png" "v1" "transformer-robot/week5/hinge_mech2.png" "v2" "transformer-robot/week5/hinge_mech3.png" "v3" >}}
+Conceptual Hinge Mechanism
+
+{{< slide size="m" "transformer-robot/week5/hinge_mech1.png" "view 1" "transformer-robot/week5/hinge_mech2.png" "view 2" "transformer-robot/week5/hinge_mech3.png" "view 3" >}}
 
 Wheel Assembly
 
-{{< slide "transformer-robot/week6/wheel_assem1_complete.png" "v1" "transformer-robot/week6/wheel_assem_1.png" "v1 Isometric" "transformer-robot/week6/wheel_assem2_complete.png" "v2" "transformer-robot/week6/wheel_assem2.png" "v2 Isometric" >}}
+I initially mounted the wheel directly on the motor body, but the inertia on the brushless motors was too much and the wheels could not reach a reasonable RPM — so I designed a planetary gear-like system to decouple the wheel from the motor.
+
+{{< slide size = "m" "transformer-robot/week6/wheel_assem1_complete.png" "v1" "transformer-robot/week6/wheel_assem_1.png" "v1 Isometric" "transformer-robot/week6/wheel_assem2_complete.png" "v2" "transformer-robot/week6/wheel_assem2.png" "v2 Isometric" >}}
 
 Wheel Design
 
-{{< slide "transformer-robot/week6/wheel_v1.png" "v1" "transformer-robot/week6/wheel_v2.png" "v2" "transformer-robot/week6/wheel_v3.png" "v3" >}}
+{{< slide size = "m" "transformer-robot/week6/wheel_v1.png" "v1" "transformer-robot/week6/wheel_v2.png" "v2" "transformer-robot/week6/wheel_v3.png" "v3" >}}
 
 
 ## Flight Testing
