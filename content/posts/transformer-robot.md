@@ -60,7 +60,7 @@ Wheel Assembly
 
 I initially mounted the wheel directly on the motor body, but the inertia on the brushless motors was too much and the wheels could not reach a reasonable RPM — so I designed a planetary gear-like system to decouple the wheel from the motor.
 
-{{< slide "m" "transformer-robot/week6/wheel_assem1_complete.png" "v1" "transformer-robot/week6/wheel_assem_1.png" "v1 Isometric" "transformer-robot/week6/wheel_assem2_complete.png" "v2" "transformer-robot/week6/wheel_assem2.png" "v2 Isometric" >}}
+{{< slide "m" "transformer-robot/week6/wheel_assem1_complete.png" "v1 Full Assembly" "transformer-robot/week6/wheel_assem_1.png" "v1 Isometric" "transformer-robot/week6/wheel_assem2_complete.png" "v2 Full Assembly" "transformer-robot/week6/wheel_assem2.png" "v2 Isometric" >}}
 
 Wheel Design
 
@@ -72,7 +72,9 @@ Wheel Design
 I tested the drone with both 3S and 4S batteries. With a 3S, it can carry up to 250g and hover properly, but struggles to gain altitude beyond 366g. Switching to a 4S significantly improved performance, with a payload capacity of up to 750g.
 
 ### Stable Hover
-{{< video "transformer-robot/week4/stable_hower.mp4" 640 360 >}}
+{{< video "transformer-robot/week4/stable_hower.mp4" 640 >}}
+
+
 
 
 
