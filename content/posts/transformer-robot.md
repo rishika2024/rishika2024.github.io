@@ -58,7 +58,7 @@ Conceptual Hinge Mechanism
 
 Wheel Assembly
 
-I initially mounted the wheel directly on the motor body, but the inertia on the brushless motors was too much and the wheels could not reach a reasonable RPM — so I designed a planetary gear-like system to decouple the wheel from the motor.
+I initially mounted the wheel directly on the motor body, but the inertia on the brushless motors was too much and the wheels could not reach a reasonable RPM. This is why I designed a planetary gear-like system to decouple the wheel from the motor.
 
 {{< slide "m" "transformer-robot/week6/wheel_assem1_complete.png" "v1 Full Assembly" "transformer-robot/week6/wheel_assem_1.png" "v1 Isometric" "transformer-robot/week6/wheel_assem2_complete.png" "v2 Full Assembly" "transformer-robot/week6/wheel_assem2.png" "v2 Isometric" >}}
 
