@@ -91,13 +91,16 @@
 </style>
 
 {{ $uid := .Ordinal }}
-{{ $size := .Get "size" | default "l" }}
+{{ $first := .Get 0 }}
+{{ $size := "l" }}
+{{ $params := .Params }}
+{{ if or (eq $first "l") (eq $first "m") (eq $first "s") }}
+  {{ $size = $first }}
+  {{ $params = after 1 $params }}
+{{ end }}
 {{ $perRow := 2 }}
 {{ if eq $size "m" }}{{ $perRow = 4 }}{{ end }}
 {{ if eq $size "s" }}{{ $perRow = 6 }}{{ end }}
-{{ $pct := div 100.0 $perRow }}
-
-{{ $params := .Params }}
 {{ $total := len $params }}
 
 <div class="slider-container" id="slider-{{ $uid }}" data-per-row="{{ $perRow }}">
