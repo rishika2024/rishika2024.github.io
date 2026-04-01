@@ -34,7 +34,7 @@ This is a teleoperated transformer robot that can switch between flight and grou
 
 Full Assembly
 
-{{< slide "transformer-robot/final_cad2.gif" "Aerial Mode" "transformer-robot/final_cad2.gif" "Ground Mode" >}}
+{{< slide "transformer-robot/final_cad2.gif" "Aerial Mode" "transformer-robot/final_cad3.gif" "Ground Mode" >}}
 
 Hinge Mechanism
 
