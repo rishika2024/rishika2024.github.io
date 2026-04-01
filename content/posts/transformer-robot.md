@@ -2,7 +2,7 @@
 title: "Teleoperated Ground-Air Morphing Robot"
 date: 2026-03-11T14:15:05+07:00
 description: A mobile robot that can operate both as a ground vehicle and as a drone
-image: transformer-robot/ground_moving.gif
+image: transformer-robot/gif.gif
 tags:
   - UAV
   - Onshape
@@ -12,6 +12,7 @@ tags:
   
 draft: false
 order: 1
+github: https://github.com/rishika2024/transformer_bot
 
 ---
 
