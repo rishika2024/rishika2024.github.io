@@ -4,11 +4,12 @@ date: 2026-03-11T14:15:05+07:00
 description: A mobile robot that can operate both as a ground vehicle and as a drone
 image: transformer-robot/gif.gif
 tags:
-  - UAV
-  - Onshape
-  - ROS2
+  - CAD
+  - UAV  
   - Pixhawk
   - Raspbery pi
+  - Servo Motor
+  
   
 draft: false
 order: 1
@@ -31,25 +32,35 @@ This is a teleoperated transformer robot that can switch between flight and grou
 
 ## CAD Models:
 
+Full Assembly
 
-Hinge Mechanism conceptual CAD model
+{{< slide "transformer-robot/final_cad2.gif" "Aerial Mode" "transformer-robot/final_cad2.gif" "Ground Mode" >}}
 
-{{< slide "transformer-robot/week5/hinge_mech1.png" "Hinge View1" "transformer-robot/week5/hinge_mech2.png" "Hinge View2" "transformer-robot/week5/hinge_mech3.png" "Hinge View3" >}}
+Hinge Mechanism
 
-*  Planetary Gear-like system for wheels
+{{< slide "transformer-robot/Final_HInge_mech.png" "Hinge Mechanism" "transformer-robot/Final_Hinge_mech2.png" "Hinge Mechanism"
+"transformer-robot/final_cad4.gif" "Hinge Mechanism with the Motors" 
+"transformer-robot/Final_hinge_side_closed.png" "Hinge Mechanism Side View" "transformer-robot/Final_hinge_side_closed.png" "Hinge Mechanism Side View" >}}
 
-   *   Original Wheel Design
-   {{< slide "transformer-robot/week6/wheel_assem1_complete.png" "Complete Assembly with Motor and Propeller" "transformer-robot/week6/wheel_assem_1.png" "Isometric View" "transformer-robot/week6/wheel_assem1_side.png" "Side View" "transformer-robot/week6/wheel_assem1_top.png" "Top View">}}
+Planetary Gear-like system for wheels
 
-   *    Final Wheel Design
-   {{< slide "transformer-robot/week6/wheel_assem2_complete.png" "Complete Assembly with Motor and Propeller" "transformer-robot/week6/wheel_assem2.png" "Isometric View" "transformer-robot/week6/wheel_assem2_side.png" "Side View" "transformer-robot/week6/wheel_assem2_top.png" "Top View">}}
+{{< slide "transformer-robot/Final_planetary_wheel_side.png" "Side View" "transformer-robot/Final_planetary_wheel_top.png" "Top View" >}}
 
-*  Wheel designs I tried
-{{< slide "transformer-robot/week6/wheel_v1.png" "Wheel Design 1" "transformer-robot/week6/wheel_v2.png" "Wheel Design 2" "transformer-robot/week6/wheel_v3.png" "Wheel Design 3" >}}
 
-Original conceptual CAD model
 
-{{< slide "transformer-robot/week1/initial_cad.png" "Initial CAD Design" "transformer-robot/week1/initial_cad.gif" "CAD Animation" "/transformer-robot/week1/initial_hinge.png" "Hinge Design" "/transformer-robot/week1/initial_hinge.gif" "Hinge Animation" "transformer-robot/week1/initial_wheel.png" "Wheel Design" >}}
+## Design Iterations
+
+Hinge Mechanism
+
+{{< slide "transformer-robot/week5/hinge_mech1.png" "v1" "transformer-robot/week5/hinge_mech2.png" "v2" "transformer-robot/week5/hinge_mech3.png" "v3" >}}
+
+Wheel Assembly
+
+{{< slide "transformer-robot/week6/wheel_assem1_complete.png" "v1" "transformer-robot/week6/wheel_assem_1.png" "v1 Isometric" "transformer-robot/week6/wheel_assem2_complete.png" "v2" "transformer-robot/week6/wheel_assem2.png" "v2 Isometric" >}}
+
+Wheel Design
+
+{{< slide "transformer-robot/week6/wheel_v1.png" "v1" "transformer-robot/week6/wheel_v2.png" "v2" "transformer-robot/week6/wheel_v3.png" "v3" >}}
 
 
 ## Flight Testing
