@@ -4,11 +4,11 @@ date: 2026-03-31T14:15:05+07:00
 description: EKF SLAM with unknown data association
 image: SLAM/SLAM.gif
 tags:
-  - CAD
-  - UAV  
-  - Pixhawk
-  - Raspbery pi
-  - Servo Motor
+  - EKF SLAM
+  - Mahalanobis Data Association
+  - Circle Fitting
+  - Turtlebot Robot
+ 
   
   
 draft: false
