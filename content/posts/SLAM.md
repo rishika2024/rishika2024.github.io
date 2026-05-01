@@ -51,8 +51,9 @@ The SLAM package. Runs the Extended Kalman Filter with unknown data association 
 
 ## Landmark Detection
 
-The landmark detection node takes raw 2D LaserScan data and extracts cylindrical landmarks. First, scan points are clustered based on a distance threshold between consecutive readings, wrapping around the full scan. Clusters with fewer than 3 points are discarded. Each remaining cluster is passed through a circle fitting regression algorithm to estimate the center and radius. Clusters are then classified as circle or not circle using the inscribed angle theorem: if the standard deviation of inscribed angles is low and the mean angle falls within a valid range, the cluster is accepted as a landmark. Circles with unreasonable radii are filtered out as a final sanity check.
+{{< video "SLAM/circle_fitting.mp4" 640 360 >}}
 
+The landmark detection node takes raw 2D LaserScan data and extracts cylindrical landmarks. First, scan points are clustered based on a distance threshold between consecutive readings, wrapping around the full scan. Clusters with fewer than 3 points are discarded. Each remaining cluster is passed through a circle fitting regression algorithm to estimate the center and radius. Clusters are then classified as circle or not circle using the inscribed angle theorem: if the standard deviation of inscribed angles is low and the mean angle falls within a valid range, the cluster is accepted as a landmark. Circles with unreasonable radii are filtered out as a final sanity check.
 
 
 ## Simulated Sensor Data
