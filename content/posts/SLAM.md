@@ -5,7 +5,10 @@ description: EKF SLAM with unknown data association
 image: SLAM/SLAM.gif
 tags:
   - ROS 2
+  - C++
   - EKF SLAM
+  - Mapping
+  - Path Planning
   - Mahalanobis Data Association
   - Circle Fitting
   - Turtlebot Robot
@@ -68,4 +71,10 @@ The simulator generates fake sensor data to test the SLAM pipeline without a phy
 {{< video "SLAM/odom_sim.mp4" 640 360 >}}
 
 The video shows the TurtleBot3 driving in circles both in simulation and on the physical robot. In simulation, the blue (odometry) and red (ground truth) robots overlap perfectly since there is no noise or slip. On the real robot, the blue robot gradually drifts from the actual position as odometry error accumulates over repeated loops. The final odometry pose after returning to the start position gives a measure of the cumulative drift.
+
+## Demo on Turtlebot
+
+{{< video "SLAM/real_robo_odom.mp4" 640 360 >}}
+
+
 
