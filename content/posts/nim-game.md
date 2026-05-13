@@ -8,7 +8,6 @@ tags:
   - supernova 
   - cosmic
   - space
-order: 5
 draft: true
 ---
 

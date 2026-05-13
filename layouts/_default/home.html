@@ -39,7 +39,7 @@
   <section class="mt-8 mb-16">
 
     {{ $pages := ( where site.RegularPages "Type" "in" site.Params.mainSections ) }}
-    {{ $paginator := .Paginate ( $pages.ByParam "order" ) }}
+    {{ $paginator := .Paginate ( $pages.ByDate.Reverse ) }}
     {{ $list := $paginator.Pages }}
 
     {{ $col1 := slice }}
@@ -58,7 +58,7 @@
     {{ end }}
 
     <div class="masonry-grid">
-      {{ range .Site.RegularPages.ByParam "order" }}
+      {{ range .Site.RegularPages.ByDate.Reverse }}
         {{- if and (ne .Params.draft true) (not (in .Params.tags "feature")) (not (eq .File.BaseFileName "about")) (not (eq .File.BaseFileName "resume")) }}
           <div class="masonry-item">
             {{- partial "content/card" . -}}

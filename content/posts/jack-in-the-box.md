@@ -8,7 +8,6 @@ tags:
   - Python
 draft: false
 math: true
-order: 4
 github: https://github.com/rishika2024/Jack-in-a-Box
 ---
 

@@ -7,7 +7,6 @@ tags:
   - MATLAB
   - Arduino  
   - Solidworks
-order: 7
 draft: false
 
 ---

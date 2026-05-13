@@ -12,7 +12,6 @@ tags:
   
   
 draft: false
-order: 1
 github: https://github.com/rishika2024/transformer_bot
 
 ---

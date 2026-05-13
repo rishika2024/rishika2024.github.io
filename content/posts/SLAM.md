@@ -16,7 +16,6 @@ tags:
   
   
 draft: false
-order: 2
 github: https://github.com/rishika2024/Turtlebot_SLAM
 
 ---
