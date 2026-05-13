@@ -30,21 +30,25 @@ The model reverses a diffusion process — starting from Gaussian noise and iter
 
 5K images at 128×128, cosine noise schedule, L1 loss. Training plateaued around epoch 160 — dataset too small to generalize further.
 
-{{< figure src="/sketch2real/small/sample_epoch0160.png" alt="Epoch 160" width="30%">}}
-{{< figure src="/sketch2real/small/sample_epoch0180.png" alt="Epoch 180" width="30%">}}
-{{< figure src="/sketch2real/small/sample_epoch0200.png" alt="Epoch 200" width="30%">}}
-{{< figure src="/sketch2real/small/sample_epoch0220.png" alt="Epoch 220" width="30%">}}
-{{< figure src="/sketch2real/small/sample_epoch0240.png" alt="Epoch 240" width="30%">}}
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin:1rem 0;">
+  <img src="/sketch2real/small/sample_epoch0160.png" style="width:18%; min-width:80px;">
+  <img src="/sketch2real/small/sample_epoch0180.png" style="width:18%; min-width:80px;">
+  <img src="/sketch2real/small/sample_epoch0200.png" style="width:18%; min-width:80px;">
+  <img src="/sketch2real/small/sample_epoch0220.png" style="width:18%; min-width:80px;">
+  <img src="/sketch2real/small/sample_epoch0240.png" style="width:18%; min-width:80px;">
+</div>
 
 ## Model 2 — Full Scale
 
 118K images at 256×256, offset cosine schedule, MSE loss, CosineAnnealingLR. Significantly sharper results.
 
-{{< figure src="/sketch2real/large/epoch0005.png" alt="Epoch 5" width="30%">}}
-{{< figure src="/sketch2real/large/epoch0010.png" alt="Epoch 10" width="30%">}}
-{{< figure src="/sketch2real/large/epoch0020.png" alt="Epoch 20" width="30%">}}
-{{< figure src="/sketch2real/large/epoch0035.png" alt="Epoch 35" width="30%">}}
-{{< figure src="/sketch2real/large/epoch0050.png" alt="Epoch 50" width="30%">}}
-{{< figure src="/sketch2real/large/epoch0070.png" alt="Epoch 70" width="30%">}}
+<div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin:1rem 0;">
+  <img src="/sketch2real/large/epoch0005.png" style="width:15%; min-width:80px;">
+  <img src="/sketch2real/large/epoch0010.png" style="width:15%; min-width:80px;">
+  <img src="/sketch2real/large/epoch0020.png" style="width:15%; min-width:80px;">
+  <img src="/sketch2real/large/epoch0035.png" style="width:15%; min-width:80px;">
+  <img src="/sketch2real/large/epoch0050.png" style="width:15%; min-width:80px;">
+  <img src="/sketch2real/large/epoch0070.png" style="width:15%; min-width:80px;">
+</div>
 
 Check out the [GitHub repo](https://github.com/rishika2024/Sketch2Real) for full architecture details, training instructions, and dataset setup.
