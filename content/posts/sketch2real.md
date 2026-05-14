@@ -49,9 +49,13 @@ The model reverses a diffusion process — starting from Gaussian noise and iter
 
 <div class="side-by-side">
 {{< figure src="/sketch2real/small/sample_epoch0160.png" alt="Epoch 160" >}}
+{{< figure src="/sketch2real/small/sample_epoch0170.png" alt="Epoch 170" >}}
 {{< figure src="/sketch2real/small/sample_epoch0180.png" alt="Epoch 180" >}}
+{{< figure src="/sketch2real/small/sample_epoch0190.png" alt="Epoch 190" >}}
 {{< figure src="/sketch2real/small/sample_epoch0200.png" alt="Epoch 200" >}}
+{{< figure src="/sketch2real/small/sample_epoch0210.png" alt="Epoch 210" >}}
 {{< figure src="/sketch2real/small/sample_epoch0220.png" alt="Epoch 220" >}}
+{{< figure src="/sketch2real/small/sample_epoch0230.png" alt="Epoch 230" >}}
 {{< figure src="/sketch2real/small/sample_epoch0240.png" alt="Epoch 240" >}}
 </div>
 
