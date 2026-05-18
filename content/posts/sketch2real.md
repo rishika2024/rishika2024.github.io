@@ -1,5 +1,5 @@
 ---
-title: "Sketch2Real"
+title: "Sketch2Real - Colored Sketch to Photorealistic Image Generation"
 date: 2026-05-09T14:15:05+07:00
 description: Generating a Realistic Image from a Coloured Sketch using Conditional U-Net based Diffusion
 image: /sketch2real/epoch0070.png
