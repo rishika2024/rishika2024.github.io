@@ -2,6 +2,7 @@
 title: "YOLO Distillation for Real-Time Inference on a Raspberry Pi Zero"
 date: 2026-07-10T14:15:05+07:00
 description: Distilling a fine-tuned YOLO into a ~280K-parameter model for real-time landing-pad detection on a Raspberry Pi Zero 2W
+image: yolo_distillation/bitterlessondrone.png
 tags:
   - Python
   - PyTorch
@@ -20,6 +21,8 @@ github: https://github.com/theoHC/yolo-berry-distillery
 We distilled a fine-tuned YOLO detector into a custom architecture small enough to run in real time on a Raspberry Pi Zero 2W, alongside a drone's flight control code, so it can spot and land on a landing platform on its own. The final model runs at about a tenth of the teacher's parameter count while keeping detection performance usable for landing.
 
 ## The Platform
+
+{{< figure src="/yolo_distillation/bitterlessondrone.png" alt="Small Drone used in the project" width="70%" >}}
 
 The drone system belongs to Mike Rubenstein's lab at Northwestern (built principally by Andrew Curtis) for swarm robotics research. It has three parts: a custom Optitrack interface broadcasting position over Wi-Fi, a ground station for fleet management, and the drone itself, controlled through Python scripts that read Optitrack position data and send setpoints to the flight controller. For this project we built a new drone on the standard frame and taped a Raspberry Pi camera module to the underside. We weren't able to get the model fully integrated with the flight controller in time — our unit had persistent serial connection issues — so testing was done by manually holding the drone over the landing platform.
 
@@ -179,7 +182,34 @@ Benchmarked on a laptop, 50 runs on a test image:
 </table>
 </div>
 
-Roughly 10× less memory and 100× faster inference than the teacher on the same hardware, with localization on held-out test images that held up well qualitatively. On the Pi Zero 2W itself, inference averaged around 180ms over a one-minute run — not integrated with the full flight stack due to the serial issue mentioned above, but well within the margin needed for detecting a static object at the drone's operating speed.
+Roughly 10× less memory and 100× faster inference than the teacher on the same hardware, with localization on held-out test images that held up well qualitatively. On the Pi Zero 2W itself, inference averaged around 180ms over a one-minute run — not integrated with the full flight stack due to the serial issue mentioned above, but well within the margin needed for detecting a static object at the drone's operating speed. To simulate the visual field of flight, the drone was manually held over the platform:
+
+{{< figure src="/yolo_distillation/holdingdrone.png" alt="Integrated evaluation setup" width="70%" >}}
+
+Examples of inference from the Pi itself:
+
+<style>
+.pi-examples {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+.pi-examples figure {
+  flex: 1;
+  min-width: 220px;
+  max-width: 30%;
+}
+</style>
+
+<div class="pi-examples">
+{{< figure src="/yolo_distillation/frame00127_small.jpg" alt="Successful detection from the pi" >}}
+{{< figure src="/yolo_distillation/frame00148_small.jpg" alt="Rejection in a borderline case" >}}
+{{< figure src="/yolo_distillation/frame00060_small.jpg" alt="Successful non-detection from the pi" >}}
+</div>
+
+Left to right: a successful detection, a rejected borderline case, and a correct non-detection (no pad in frame).
 
 ## What Degraded on the Pi
 
