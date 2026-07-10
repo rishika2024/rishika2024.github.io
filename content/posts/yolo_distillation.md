@@ -47,6 +47,74 @@ The student takes a 224×224 image and outputs five numbers: a confidence score 
 
 The result is 283,541 parameters against YOLO11n's 2,624,080 — about a 9× reduction — with no neck and a single-scale head.
 
+<style>
+.flowchart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 2rem auto;
+  max-width: 380px;
+  font-size: 0.9rem;
+}
+.flowchart .fc-box {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  line-height: 1.3;
+}
+.flowchart .fc-box strong { display: block; font-weight: 600; }
+.flowchart .fc-box small { color: rgba(0,0,0,0.55); }
+.flowchart .fc-arrow {
+  width: 2px;
+  height: 1.1rem;
+  background: rgba(0,0,0,0.35);
+  position: relative;
+}
+.flowchart .fc-arrow::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid rgba(0,0,0,0.35);
+}
+.flowchart .fc-input { background: #eceff1; }
+.flowchart .fc-conv { background: #dbeafe; }
+.flowchart .fc-csp { background: #ccfbf1; }
+.flowchart .fc-pool { background: #ffedd5; }
+.flowchart .fc-flatten { background: #eceff1; }
+.flowchart .fc-head { background: #ede9fe; }
+.flowchart .fc-out { background: #fee2e2; }
+</style>
+
+<div class="flowchart">
+  <div class="fc-box fc-input"><strong>Input image</strong><small>3 × 224 × 224</small></div>
+  <div class="fc-arrow"></div>
+  <div class="fc-box fc-conv"><strong>ConvBnAct ×2</strong><small>conv + batchnorm + ReLU6, downsample 224 → 56</small></div>
+  <div class="fc-arrow"></div>
+  <div class="fc-box fc-csp"><strong>CSP block</strong><small>feature learning at 56</small></div>
+  <div class="fc-arrow"></div>
+  <div class="fc-box fc-conv"><strong>ConvBnAct</strong><small>downsample 56 → 28</small></div>
+  <div class="fc-arrow"></div>
+  <div class="fc-box fc-csp"><strong>CSP block</strong><small>feature learning at 28</small></div>
+  <div class="fc-arrow"></div>
+  <div class="fc-box fc-conv"><strong>ConvBnAct</strong><small>downsample 28 → 14</small></div>
+  <div class="fc-arrow"></div>
+  <div class="fc-box fc-pool"><strong>Spatial pooling</strong><small>14 → 4 × 4 grid</small></div>
+  <div class="fc-arrow"></div>
+  <div class="fc-box fc-flatten"><strong>Flatten</strong></div>
+  <div class="fc-arrow"></div>
+  <div class="fc-box fc-head"><strong>Head</strong><small>2-layer fully connected</small></div>
+  <div class="fc-arrow"></div>
+  <div class="fc-box fc-out"><small>confidence, x1, y1, x2, y2</small></div>
+</div>
+<p style="text-align:center; font-size: 0.85rem; color: rgba(0,0,0,0.55); margin-top: -1rem;">Figure — custom student model architecture.</p>
+
 ## Training
 
 The teacher was a YOLO11l fine-tuned for 50 epochs on our own dataset on an RTX 6000 Ada. Data was labeled on Roboflow, which integrates SAM2 for prompt-driven automatic annotation, then exported in YOLO format and converted into single-box regression targets: `[confidence, x1, y1, x2, y2]`, keeping the largest box per image when multiple labels exist and treating unlabeled images as negatives.
