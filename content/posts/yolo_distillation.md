@@ -1,0 +1,88 @@
+---
+title: "YOLO Distillation for Real-Time Inference on a Raspberry Pi Zero"
+date: 2026-07-10T14:15:05+07:00
+description: Distilling a fine-tuned YOLO into a ~280K-parameter model for real-time landing-pad detection on a Raspberry Pi Zero 2W
+tags:
+  - Python
+  - PyTorch
+  - YOLO
+  - Knowledge Distillation
+  - Computer Vision
+  - Raspberry Pi
+draft: false
+github: https://github.com/theoHC/yolo-berry-distillery
+---
+
+# YOLO Distillation for Real-Time Inference on a Raspberry Pi Zero
+
+#### Joint project with Theo Coulson, Northwestern University
+
+We distilled a fine-tuned YOLO detector into a custom architecture small enough to run in real time on a Raspberry Pi Zero 2W, alongside a drone's flight control code, so it can spot and land on a landing platform on its own. The final model runs at about a tenth of the teacher's parameter count while keeping detection performance usable for landing.
+
+## The Platform
+
+The drone system belongs to Mike Rubenstein's lab at Northwestern (built principally by Andrew Curtis) for swarm robotics research. It has three parts: a custom Optitrack interface broadcasting position over Wi-Fi, a ground station for fleet management, and the drone itself, controlled through Python scripts that read Optitrack position data and send setpoints to the flight controller. For this project we built a new drone on the standard frame and taped a Raspberry Pi camera module to the underside. We weren't able to get the model fully integrated with the flight controller in time — our unit had persistent serial connection issues — so testing was done by manually holding the drone over the landing platform.
+
+## Downscoping
+
+The original pitch was a miniaturized VLA running on the drone, adapted to consume Optitrack data directly. We scaled that back for three reasons: shrinking a VLA enough to fit a Pi Zero would have gutted its capability, the Optitrack API doesn't expose enough for a VLA's generality to matter, and collecting and labeling training data for that setup would have taken more time than we had (we also lost close to two weeks of team availability to illness). YOLO distillation for a single fixed object — the landing pad — was a much more tractable and testable target.
+
+## Why the Neck Goes
+
+A standard YOLO has three parts: a backbone extracting features at multiple scales (P3/P4/P5), a neck (FPN) fusing those scales together, and a head producing boxes and classes. The neck exists so the model can handle objects of wildly different sizes. We only ever need to find one object — a landing pad with roughly fixed dimensions — so multi-scale fusion buys us nothing. We drop the neck entirely and predict from a single scale.
+
+## Student Architecture
+
+The student takes a 224×224 image and outputs five numbers: a confidence score and four normalized box corners `(x1, y1, x2, y2)`.
+
+**Depthwise separable convolution (DSConv)** — a regular convolution looks for spatial patterns and mixes channels in one expensive step. DSConv splits this in two: a depthwise conv finds spatial patterns per-channel with no mixing, then a 1×1 pointwise conv mixes channels. Same expressive shape, far fewer parameters.
+
+**CSP block** — our lightweight stand-in for YOLO11's C3k2. Split the input in half along channels; one half runs through two DSConv layers, the other skips straight through; concatenate and mix with a 1×1 conv. The skip path keeps a clean gradient route, similar to a ResNet.
+
+**Backbone** — a stack of strided `ConvBnAct` + `CSP` blocks that downsample 224 → 112 → 56 → 28 → 14 while increasing channel depth, the same progressive-downsampling principle as YOLO11's backbone, just with cheaper blocks.
+
+**Spatial pooling** — the backbone output is pooled to a 4×4 grid rather than collapsed to 1×1. A single global-average vector is nearly translation-invariant, which is great for "is the pad present" but throws away *where* it is. The 4×4 grid keeps enough position information for the box regression to work.
+
+**Head** — a two-layer fully connected network mapping the flattened 4×4×128 features to confidence + box. Box coordinates go through a sigmoid at both train and inference time so the loss and the deployed model see the same mapping. Confidence stays a raw logit during training (for `BCEWithLogitsLoss`) and gets sigmoided only at inference.
+
+The result is 283,541 parameters against YOLO11n's 2,624,080 — about a 9× reduction — with no neck and a single-scale head.
+
+## Training
+
+The teacher was a YOLO11l fine-tuned for 50 epochs on our own dataset on an RTX 6000 Ada. Data was labeled on Roboflow, which integrates SAM2 for prompt-driven automatic annotation, then exported in YOLO format and converted into single-box regression targets: `[confidence, x1, y1, x2, y2]`, keeping the largest box per image when multiple labels exist and treating unlabeled images as negatives.
+
+Training combines two losses:
+
+- **Detection loss** — `BCEWithLogits` on confidence over every example, plus MSE on box corners computed only over positive examples (no point penalizing coordinates when there's no pad in frame). Box loss is scaled by 5× since raw MSE on normalized coordinates is tiny next to the BCE term and gets ignored otherwise.
+- **Distillation loss** — rather than only matching final outputs, we match intermediate feature maps location-by-location, so the teacher's sense of *where* the pad is transfers, not just *whether* it's there. A learned 1×1 adapter projects the student's 128 channels up to the teacher's channel count (captured via a forward hook on the teacher backbone), the teacher's map is pooled down to the student's spatial resolution, both are L2-normalized per spatial location, and we take the MSE between them — matching direction rather than magnitude.
+
+Total loss is `det_loss + 0.3 * kd_loss`, optimized with Adam and a cosine annealing schedule for 50 epochs. The student's backbone features are reused for the KD loss rather than run twice, and the teacher runs under `no_grad`, upscaled to 512px so its features stay on the distribution it was fine-tuned at. Distillation itself took about 45 minutes on an RTX 500 Ada.
+
+## Results
+
+Benchmarked on a laptop, 50 runs on a test image:
+
+| Metric | YOLO11n | Custom Model |
+|---|---|---|
+| Params | 2,624,080 | 283,541 |
+| Size (MB) | 10.01 | 1.08 |
+| Avg (ms) | 105.07 | 11.4 |
+| Best (ms) | 104.62 | 1.11 |
+| Worst (ms) | 108.21 | 1.30 |
+| FPS | 9.52 | 880.45 |
+
+Roughly 10× less memory and 100× faster inference than the teacher on the same hardware, with localization on held-out test images that held up well qualitatively. On the Pi Zero 2W itself, inference averaged around 180ms over a one-minute run — not integrated with the full flight stack due to the serial issue mentioned above, but well within the margin needed for detecting a static object at the drone's operating speed.
+
+## What Degraded on the Pi
+
+The model was noticeably less reliable and less well-localized running on the actual Pi camera than on the laptop test set, for a few compounding reasons:
+
+- Some quality loss is expected from a reduction this aggressive.
+- Delays getting the ribbon cable for the Pi camera module meant training data was shot on phones in portrait mode; at inference everything gets resized to 224×224 square, so the differing aspect ratios vertically compress the pad relative to what the model saw in training.
+- Training data was collected at night under one lighting condition; the Pi tests ran during the day under a skylight, and YOLO-family models are known to be sensitive to lighting shifts.
+- The Pi camera module has no IR filter, giving images a red tint that likely confused the model further.
+- Few training examples showed the pad partially clipped at the frame edge — a case that matters a lot for a drone doing initial localization, and a priority to fix before flying this on the real system.
+
+## Code
+
+Full architecture, training scripts, and the distillation pipeline are on [GitHub](https://github.com/theoHC/yolo-berry-distillery).
