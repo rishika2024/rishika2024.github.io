@@ -130,14 +130,54 @@ Total loss is `det_loss + 0.3 * kd_loss`, optimized with Adam and a cosine annea
 
 Benchmarked on a laptop, 50 runs on a test image:
 
-| Metric | YOLO11n | Custom Model |
-|---|---|---|
-| Params | 2,624,080 | 283,541 |
-| Size (MB) | 10.01 | 1.08 |
-| Avg (ms) | 105.07 | 11.4 |
-| Best (ms) | 104.62 | 1.11 |
-| Worst (ms) | 108.21 | 1.30 |
-| FPS | 9.52 | 880.45 |
+<style>
+.results-table-wrap { margin: 1.5rem 0; overflow-x: auto; }
+.results-table {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.results-table caption {
+  caption-side: top;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 0.6rem;
+}
+.results-table th, .results-table td {
+  padding: 0.5rem 1rem;
+  text-align: right;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+.results-table th:first-child, .results-table td:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+.results-table thead th {
+  border-bottom: 2px solid rgba(0,0,0,0.4);
+  font-weight: 600;
+}
+.results-table tbody tr:last-child td { border-bottom: none; }
+.results-table td.custom-col, .results-table th.custom-col { background: #fee2e2; }
+</style>
+
+<div class="results-table-wrap">
+<table class="results-table">
+<caption>Performance comparison on test image (50 runs)</caption>
+<thead>
+<tr><th>Metric</th><th>YOLO11n</th><th class="custom-col">Custom Model</th></tr>
+</thead>
+<tbody>
+<tr><td>Params</td><td>2,624,080</td><td class="custom-col">283,541</td></tr>
+<tr><td>Size (MB)</td><td>10.01</td><td class="custom-col">1.08</td></tr>
+<tr><td>Avg (ms)</td><td>105.07</td><td class="custom-col">11.4</td></tr>
+<tr><td>Best (ms)</td><td>104.62</td><td class="custom-col">1.11</td></tr>
+<tr><td>Worst (ms)</td><td>108.21</td><td class="custom-col">1.30</td></tr>
+<tr><td>FPS</td><td>9.52</td><td class="custom-col">880.45</td></tr>
+</tbody>
+</table>
+</div>
 
 Roughly 10× less memory and 100× faster inference than the teacher on the same hardware, with localization on held-out test images that held up well qualitatively. On the Pi Zero 2W itself, inference averaged around 180ms over a one-minute run — not integrated with the full flight stack due to the serial issue mentioned above, but well within the margin needed for detecting a static object at the drone's operating speed.
 
