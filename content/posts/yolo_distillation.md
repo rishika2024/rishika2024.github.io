@@ -22,7 +22,7 @@ We distilled a fine-tuned YOLO detector into a custom architecture small enough 
 
 ## The Platform
 
-{{< figure src="/yolo_distillation/bitterlessondrone.png" alt="Small Drone used in the project" width="70%" >}}
+{{< figure src="/yolo_distillation/bitterlessondrone.png" alt="Small Drone used in the project" width="50%" >}}
 
 The drone system belongs to Mike Rubenstein's lab at Northwestern (built principally by Andrew Curtis) for swarm robotics research. It has three parts: a custom Optitrack interface broadcasting position over Wi-Fi, a ground station for fleet management, and the drone itself, controlled through Python scripts that read Optitrack position data and send setpoints to the flight controller. For this project we built a new drone on the standard frame and taped a Raspberry Pi camera module to the underside. We weren't able to get the model fully integrated with the flight controller in time — our unit had persistent serial connection issues — so testing was done by manually holding the drone over the landing platform.
 
@@ -191,7 +191,7 @@ Benchmarked on a laptop, 50 runs on a test image:
 
 Roughly 10× less memory and 100× faster inference than the teacher on the same hardware, with localization on held-out test images that held up well qualitatively. On the Pi Zero 2W itself, inference averaged around 180ms over a one-minute run — not integrated with the full flight stack due to the serial issue mentioned above, but well within the margin needed for detecting a static object at the drone's operating speed. To simulate the visual field of flight, the drone was manually held over the platform:
 
-{{< figure src="/yolo_distillation/holdingdrone.png" alt="Integrated evaluation setup" width="70%" >}}
+{{< figure src="/yolo_distillation/holdingdrone.png" alt="Integrated evaluation setup" width="50%" >}}
 
 Examples of inference from the Pi itself:
 
