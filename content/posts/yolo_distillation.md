@@ -18,7 +18,7 @@ github: https://github.com/theoHC/yolo-berry-distillery
 
 #### Joint project with Theo Coulson, Northwestern University
 
-Distilling a fine-tuned YOLO detector into a custom architecture small enough to run in real time on a Raspberry Pi Zero 2W, so a drone can spot and land on a landing platform on its own — at about a tenth of the teacher's parameter count. Read the [full report](/yolo_distillation/report.pdf) for the complete writeup.
+Distilling a fine-tuned YOLO detector into a custom architecture small enough to run in real time on a Raspberry Pi Zero 2W, so a drone can spot and land on a landing platform on its own — at about a tenth of the teacher's parameter count. Read the <a href="/yolo_distillation/report.pdf" style="text-decoration: underline;">full report</a> for the complete writeup.
 
 ## The Platform
 
