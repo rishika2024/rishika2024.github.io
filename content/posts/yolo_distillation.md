@@ -134,8 +134,8 @@ Total loss is `det_loss + 0.3 * kd_loss`, optimized with Adam and a cosine annea
 On held-out test set images, the student localizes the pad well across a range of scales and distances:
 
 <div class="side-by-side" style="display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; margin: 1.5rem 0;">
-{{< figure src="/yolo_distillation/padbig.png" alt="Detection at close range" width="45%" >}}
-{{< figure src="/yolo_distillation/padsmall.png" alt="Detection at extended range" width="45%" >}}
+{{< figure src="/yolo_distillation/padbig.png" alt="Detection at close range" width="65%" >}}
+{{< figure src="/yolo_distillation/padsmall.png" alt="Detection at extended range" width="65%" >}}
 </div>
 
 Benchmarked on a laptop, 50 runs on a test image:
