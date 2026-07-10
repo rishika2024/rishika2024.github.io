@@ -1,6 +1,6 @@
 ---
 title: "YOLO Distillation for Real-Time Inference on a Raspberry Pi Zero"
-date: 2026-07-10T14:15:05+07:00
+date: 2026-06-10T14:15:05+07:00
 description: Distilling a fine-tuned YOLO into a ~280K-parameter model for real-time landing-pad detection on a Raspberry Pi Zero 2W
 image: yolo_distillation/front_pic.png
 tags:
