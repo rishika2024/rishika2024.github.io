@@ -200,7 +200,3 @@ Examples of inference from the Pi:
 Left to right: a successful detection, a rejected borderline case, and a correct non-detection.
 
 On-device performance was noticeably shakier than on the laptop test set — a mismatch between training data (phone camera, portrait, night) and the Pi's camera (no IR filter, daylight, different aspect ratio) accounts for most of the gap.
-
-## Code
-
-Full architecture, training scripts, and the distillation pipeline are on [GitHub](https://github.com/theoHC/yolo-berry-distillery).
