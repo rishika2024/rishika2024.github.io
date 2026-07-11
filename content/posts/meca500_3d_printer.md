@@ -4,10 +4,13 @@ date: 2026-07-10T14:15:05+07:00
 description: A ROS2 + MoveIt2 package that turns a Meca500 6-DOF arm into a 3D printer
 image: meca500_3d_printer/opening_pic.png
 tags:
-  - ROS2
-  - MoveIt2
+  - ROS 2
+  - MoveIt 2
   - C++
   - Python
+  - G-Code
+  - Moton Planning
+  - Robot Driver Development
   - Meca500
 draft: false
 github: https://github.com/rishika2024/MECA500_3D_Printing
