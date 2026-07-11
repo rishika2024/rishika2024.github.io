@@ -68,9 +68,9 @@ A smoke test of `meca500_hardware`, driving basic robot motion through the ros2_
 
 ## What's Next
 
-- Generalizing the pipeline so any extruder can be mounted from just its URDF, with no hardcoded tool frame or offset
-- Moving from mock hardware to printing on the real robot
-- Reinforcement learning for adaptive tool orientation and extrusion
+*  Generalizing the pipeline so any extruder can be mounted from just its URDF, with no hardcoded tool frame or offset
+*  Moving from mock hardware to printing on the real robot
+*  Reinforcement learning for adaptive tool orientation and extrusion
 
 ## Code
 
