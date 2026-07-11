@@ -22,7 +22,9 @@ github: https://github.com/rishika2024/MECA500_3D_Printing
 ## Overview
 
 I built a ROS 2 package for controlling a Meca500 6-DOF robot arm (5 μm resolution) to perform robotic 3D printing via MoveIt 2. The project bridges the Meca500 proprietary API to MoveIt 2 through a custom ROS 2 hardware interface, enabling real trajectory planning and execution on physical hardware. 
-A print pipeline sweeps the robot's reachable workspace, centers and clips sliced G-code onto the densest reachable region, and executes it move-by-move through MoveIt 2's Pilz Industrial Motion Planner — `LIN` for straight/extruding moves, `CIRC` for arcs.
+A print pipeline sweeps the robot's reachable workspace, centers and clips sliced G-code onto the densest reachable region, and executes it move by move through a patched build of MoveIt 2's Pilz Industrial Motion Planner
+* `LIN` for straight/extruding moves
+* `CIRC` for arcs, with the arc fitting tolerance lowered to match the Meca500's 5 μm resolution.
 
 {{< figure src="/meca500_3d_printer/full_setup.jpeg" alt="Full setup" width="60%" >}}
 
@@ -49,6 +51,8 @@ Reachability sweeping, planning scene setup, and the main print-execution node. 
 A Python preprocessing tool that centers a sliced print on the densest reachable region, drops moves outside the workspace as gaps, and validates and repairs arc geometry, plus a C++ parser library used by the trajectory node at execution time.
 
 ## Demos
+
+In the RViz views below, the green line traces every sampled end effector position and the purple line traces only where the nozzle was extruding.
 
 With an extruder on a flat bed, the full print pipeline plans and executes a sliced Benchy boat move-by-move through Pilz `LIN`/`CIRC`:
 
