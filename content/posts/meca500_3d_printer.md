@@ -12,6 +12,7 @@ tags:
   - Moton Planning
   - Robot Driver Development
   - Meca500
+  - Reinforcement Learning
 draft: false
 github: https://github.com/rishika2024/MECA500_3D_Printing
 ---
