@@ -2,7 +2,7 @@
 title: "Robotic 3D Printing with a Meca500"
 date: 2026-07-10T14:15:05+07:00
 description: A ROS2 + MoveIt2 package that turns a Meca500 6-DOF arm into a 3D printer
-image: meca500_3d_printer/full_setup.jpeg
+image: assets/meca500_3d_printer/opening pic.png
 tags:
   - ROS2
   - MoveIt2
