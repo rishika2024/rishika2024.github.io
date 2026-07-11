@@ -129,6 +129,16 @@
     margin-left: 1rem;
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
+    padding-left: 1rem;
+  }
+  #content ul {
+    list-style-type: disc;
+  }
+  #content ol {
+    list-style-type: decimal;
+  }
+  #content li {
+    margin-bottom: 0.25rem;
   }
   @media (min-width: 768px) {
     #content ul, #content ol {
@@ -141,6 +151,9 @@
     #content ul, #content ol {
       margin-left: 1.5rem;
     }
+  }
+  #content a {
+    text-decoration: underline;
   }
 </style>
 
@@ -164,11 +177,11 @@
       });
     </script>
     {{ end }}
-    <div id="content" class="prose max-w-none mb-32 text-justify leading-relaxed text-lg">
+    <div id="content" class="mb-32 text-justify leading-relaxed text-lg">
       {{- .Content -}}
     </div>
 
-    <footer id="content-footer" class="not-prose">
+    <footer id="content-footer">
     </footer>
   </article>
 </div>
