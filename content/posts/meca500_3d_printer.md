@@ -53,13 +53,13 @@ A Python preprocessing tool that centers a sliced print on the densest reachable
 
 ## Demos
 
-In the RViz views below, the green line traces every sampled end effector position and the purple line traces only where the nozzle was extruding.
+In the RViz views below, the green line traces every sampled end effector position and the purple line traces only where the nozzle was extruding. The next two demos both rely on the pipeline's reachability-aware placement to fit the print onto the workspace.
 
-With an extruder on a flat bed, the full print pipeline plans and executes a sliced Benchy boat move-by-move through Pilz `LIN`/`CIRC`:
+With an extruder on a flat bed, the full print pipeline plans and executes a sliced Benchy boat (21 layers) move-by-move through Pilz `LIN`/`CIRC`:
 
 {{< video "meca500_3d_printer/benchy_print.mp4" 640 360 >}}
 
-With no extruder, the table is tilted to an arbitrary pose via `/table_service`, and the pipeline's reachability-aware placement traces a pattern onto the reoriented surface:
+With no extruder, the table is tilted to an arbitrary pose via `/table_service`, and the pipeline prints a cube (7 layers) onto the reoriented surface:
 
 {{< video "meca500_3d_printer/surface_trace.mp4" 640 360 >}}
 
