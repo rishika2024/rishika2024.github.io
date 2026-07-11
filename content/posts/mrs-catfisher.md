@@ -5,7 +5,7 @@ description: Catching moving bugs using the Franka Arm
 image: mrs-catfisher/bug_sorter.gif
 tags:
   - Franka Arm
-  - ROS2
+  - ROS 2
   - Python
   - Moveit
   - OpenCV

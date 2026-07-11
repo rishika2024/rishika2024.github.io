@@ -1,17 +1,17 @@
 ---
 title: "Robotic 3D Printing with a Meca500"
 date: 2026-07-10T14:15:05+07:00
-description: A ROS2 + MoveIt2 package that turns a Meca500 6-DOF arm into a 3D printer
+description: A ROS 2 + MoveIt 2 package that turns a Meca500 6-DOF arm into a 3D printer
 image: meca500_3d_printer/opening_pic.png
 tags:
+  - Meca500 6-DOF Arm
   - ROS 2
   - MoveIt 2
   - C++
   - Python
   - G-Code
-  - Moton Planning
-  - Robot Driver Development
-  - Meca500
+  - Motion Planning
+  - Robot Driver Development  
   - Reinforcement Learning
 draft: false
 github: https://github.com/rishika2024/MECA500_3D_Printing
@@ -19,37 +19,58 @@ github: https://github.com/rishika2024/MECA500_3D_Printing
 
 # Robotic 3D Printing with a Meca500
 
-A ROS2 package that turns a Meca500 6-DOF arm (5μm resolution) into a 3D printer, bridging its proprietary API to MoveIt2 through a custom hardware interface for real trajectory planning and execution on physical hardware.
+## Overview
+
+I built a ROS 2 package for controlling a Meca500 6-DOF robot arm (5 μm resolution) to perform robotic 3D printing via MoveIt 2. The project bridges the Meca500 proprietary API to MoveIt 2 through a custom ROS 2 hardware interface, enabling real trajectory planning and execution on physical hardware. 
+A print pipeline sweeps the robot's reachable workspace, centers and clips sliced G-code onto the densest reachable region, and executes it move-by-move through MoveIt 2's Pilz Industrial Motion Planner — `LIN` for straight/extruding moves, `CIRC` for arcs.
 
 {{< figure src="/meca500_3d_printer/full_setup.jpeg" alt="Full setup" width="60%" >}}
 
-## How it Works
+## ROS 2 Package Breakdown
 
-The pipeline sweeps the robot's workspace to find reachable regions, centers a sliced G-code model on the densest reachable area rather than resizing it, and treats any unreachable spots as printing gaps. Moves execute through MoveIt2's Pilz Industrial Motion Planner — `LIN` for straight G1 moves, `CIRC` for arcs — with Z-hopping and midpoint bisection as fallbacks when inverse kinematics fails.
+### meca500_hardware:
 
-Five packages make up the system: a hardware bridge to MoveIt2, MoveIt2 config/launch files, a URDF/Xacro description with the extruder and nozzle frame, reachability + print execution demos, and a G-code preprocessor/parser.
+ROS 2 hardware interface bridging the Meca500 API to MoveIt 2 through ros2_control.
+
+### meca500_moveit:
+
+MoveIt 2 configuration and launch files for motion planning.
+
+### meca500_robot:
+
+Robot description in URDF/Xacro, including the mounted extruder end-effector and the `nozzle` tool frame.
+
+### meca500_demo:
+
+Reachability sweeping, planning scene setup, and the main print-execution node. Parses G-code moves and plans them through Pilz `LIN`/`CIRC`, recovering from occasional IK failures with Z-hopping for travel moves and midpoint bisection for extruding moves, without skipping a commanded point.
+
+### gcode:
+
+A Python preprocessing tool that centers a sliced print on the densest reachable region, drops moves outside the workspace as gaps, and validates and repairs arc geometry, plus a C++ parser library used by the trajectory node at execution time.
 
 ## Demos
 
-**Printing a Benchy boat** with an extruder on a flat bed:
+With an extruder on a flat bed, the full print pipeline plans and executes a sliced Benchy boat move-by-move through Pilz `LIN`/`CIRC`:
 
 {{< video "meca500_3d_printer/benchy_print.mp4" 640 360 >}}
 
-**Tracing a pattern on an arbitrarily oriented surface**, following the print pipeline's reachability-aware placement:
+With no extruder, the table is tilted to an arbitrary pose via `/table_service`, and the pipeline's reachability-aware placement traces a pattern onto the reoriented surface:
 
 {{< video "meca500_3d_printer/surface_trace.mp4" 640 360 >}}
 
-**Straight-line G-code execution** through the Pilz `LIN` planner:
+Straight-line G1 moves sent directly through `/goal_service` and executed via the Pilz `LIN` planner:
 
 {{< video "meca500_3d_printer/gcode_line.mp4" 640 360 >}}
 
-**Basic motion testing** through the MoveIt2 control interface:
+A smoke test of `meca500_hardware`, driving basic robot motion through the ros2_control hardware interface:
 
 {{< video "meca500_3d_printer/moveit_test.mp4" 640 360 >}}
 
 ## What's Next
 
-Generalizing extruder mounting via URDF, moving from simulation to full hardware printing, and eventually using reinforcement learning to optimize tool positioning.
+- Generalizing the pipeline so any extruder can be mounted from just its URDF, with no hardcoded tool frame or offset
+- Moving from mock hardware to printing on the real robot
+- Reinforcement learning for adaptive tool orientation and extrusion
 
 ## Code
 
