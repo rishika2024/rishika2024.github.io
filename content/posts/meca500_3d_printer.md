@@ -55,9 +55,9 @@ A Python preprocessing tool that centers a sliced print on the densest reachable
 
 Below are clips of a 5cm x 5cm x 5cm cube printing on real hardware
 
-{{< video "meca500_3d_printer/real_cube1.mp4" 640 360 >}}
-{{< video "meca500_3d_printer/real_cube2.mp4" 640 360 >}}
-{{< video "meca500_3d_printer/real_cube3.mp4" 640 360 >}}
+{{< video "meca500_3d_printer/real_cube1.mp4" 320 180 >}}
+{{< video "meca500_3d_printer/real_cube2.mp4" 320 180 >}}
+{{< video "meca500_3d_printer/real_cube3.mp4" 320 180 >}}
 
 
 In the RViz views below, the green line traces every sampled end effector position and the purple line traces only where the nozzle was extruding. The next two demos both rely on the pipeline's reachability-aware placement to fit the print onto the workspace.
