@@ -17,6 +17,21 @@ draft: false
 github: https://github.com/rishika2024/MECA500_3D_Printing
 ---
 
+<style>
+.video-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+.video-row > div {
+  margin: 0 !important;
+}
+</style>
+
 # Robotic 3D Printing with a Meca500
 
 ## Overview
@@ -55,9 +70,13 @@ A Python preprocessing tool that centers a sliced print on the densest reachable
 
 Below are clips of a 5cm x 5cm x 5cm cube printing on real hardware
 
-{{< video "meca500_3d_printer/real_cube1.mp4" 320 180 >}}
+<div class="video-row">
+
 {{< video "meca500_3d_printer/real_cube2.mp4" 320 180 >}}
 {{< video "meca500_3d_printer/real_cube3.mp4" 320 180 >}}
+{{< video "meca500_3d_printer/real_cube1.mp4" 320 180 >}}
+
+</div>
 
 
 In the RViz views below, the green line traces every sampled end effector position and the purple line traces only where the nozzle was extruding. The next two demos both rely on the pipeline's reachability-aware placement to fit the print onto the workspace.
