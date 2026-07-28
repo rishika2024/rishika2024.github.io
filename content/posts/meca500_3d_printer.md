@@ -77,6 +77,8 @@ Below are clips of a 5cm x 5cm x 5cm cube printing on real hardware
 </div>
 
 
+
+
 In the RViz views below, the green line traces every sampled end effector position and the purple line traces only where the nozzle was extruding. The next two demos both rely on the pipeline's reachability-aware placement to fit the print onto the workspace.
 
 With an extruder on a flat bed, the full print pipeline plans and executes a sliced Benchy boat (21 layers) move-by-move through Pilz `LIN`/`CIRC`:
