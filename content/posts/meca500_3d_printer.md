@@ -98,9 +98,8 @@ A smoke test of `meca500_hardware`, driving basic robot motion through the ros2_
 {{< video "meca500_3d_printer/moveit_test.mp4" 640 360 >}}
 
 ## What's Next
-
-*  Generalizing the pipeline so any extruder can be mounted from just its URDF, with no hardcoded tool frame or offset
-*  Moving from mock hardware to printing on the real robot
+*  Printing a 3D Benchy Boat in real hardware
+*  Printing on a randomly oriented print bed in real hardware
 *  Reinforcement learning for adaptive tool orientation and extrusion
 
 ## Code
