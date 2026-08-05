@@ -4,6 +4,13 @@ date: 2024-07-29T14:15:05+07:00
 description: ""
 image: "primer_curator/poster-methodology.png"
 tags:
+  - LLM
+  - Multimodal Learning
+  - Web Scraping
+  - Video Segmentation
+  - Image Attribute Extraction
+  - Tutorial Generation 
+  - Educational Technology
 draft: false
 ---
 
