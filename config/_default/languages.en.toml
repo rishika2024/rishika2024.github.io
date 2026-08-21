@@ -1,0 +1,24 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Rishika Bera"
+
+[params]
+  displayName = "English"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  logo = ""
+  description = "Rishika Bera's portfolio of robotics, ML, and software projects."
+
+[params.author]
+  name = "Rishika Bera"
+  email = "berarishika@gmail.com"
+  image = "photo/photo.jpeg"
+  headline = "MS Robotics @ Northwestern University"
+  bio = ""
+  links = [
+    { github = "https://github.com/rishika2024" },
+    { linkedin = "https://www.linkedin.com/in/rishika-bera-05b7b025a/" },
+    { email = "mailto:berarishika@gmail.com" },
+  ]

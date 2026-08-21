@@ -2,7 +2,7 @@
 title: "RRT for 2D Path Planning"
 date: 2025-09-11T14:15:05+07:00
 description: Rapidly-exploring Random Tree (RRT) path planning in Python, with a simple visual demo.
-image: rrt/RRT2.gif
+featureimage: rrt/RRT2.gif
 tags:  
   - RRT Algorithm
   - Python

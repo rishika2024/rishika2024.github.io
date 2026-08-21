@@ -2,7 +2,7 @@
 title: "The Nim Game"
 date: 2023-09-23T22:45:37+07:00
 description: Explore the breathtaking phenomena of supernova explosions, the cosmic fireworks of the universe.
-image: nim-game/Nim_Game.gif
+featureimage: nim-game/Nim_Game.gif
 caption: Photo Lionel HESRY on Unsplash
 tags:
   - supernova 

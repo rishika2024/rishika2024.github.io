@@ -2,7 +2,7 @@
 title: "Jack-in-the-Box"
 date: 2025-12-12T14:15:05+07:00
 description: Simulating the dynamics of a jack in a shaking box from scratch
-image: jack-in-box/Animation.gif
+featureimage: jack-in-box/Animation.gif
 tags:
   - Dynamics
   - Python

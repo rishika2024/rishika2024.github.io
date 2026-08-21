@@ -1,0 +1,37 @@
+[[main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 10
+
+[[main]]
+  name = "Projects"
+  pageRef = "posts"
+  weight = 20
+
+[[main]]
+  name = "About"
+  pageRef = "about"
+  weight = 30
+
+[[main]]
+  name = "Resume"
+  pageRef = "resume"
+  weight = 40
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/rishika2024"
+  weight = 100
+
+[[main]]
+  identifier = "linkedin"
+  pre = "linkedin"
+  url = "https://www.linkedin.com/in/rishika-bera-05b7b025a/"
+  weight = 110
+
+[[main]]
+  identifier = "email"
+  pre = "email"
+  url = "mailto:berarishika@gmail.com"
+  weight = 120

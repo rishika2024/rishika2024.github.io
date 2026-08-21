@@ -2,7 +2,7 @@
 title: "Teleoperated Ground-Air Morphing Robot"
 date: 2026-03-31T14:15:05+07:00
 description: A mobile robot that can operate both as a ground vehicle and as a drone
-image: transformer-robot/Final_Final.gif
+featureimage: transformer-robot/Final_Final.gif
 tags:
   - CAD
   - UAV  

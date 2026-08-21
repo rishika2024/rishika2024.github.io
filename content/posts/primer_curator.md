@@ -2,7 +2,7 @@
 title: "Primer Curator"
 date: 2024-07-29T14:15:05+07:00
 description: ""
-image: "primer_curator/poster-methodology.png"
+featureimage: "primer_curator/poster-methodology.png"
 tags:
   - LLM
   - Multimodal Learning
