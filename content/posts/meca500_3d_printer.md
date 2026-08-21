@@ -27,12 +27,12 @@ github: https://github.com/rishika2024/MECA500_3D_Printing
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
 }
-.video-row > div {
+.video-row > figure {
   margin: 0 !important;
+  flex: 1 1 320px;
+  max-width: 400px;
 }
 </style>
-
-# Robotic 3D Printing with a Meca500
 
 ## Overview
 
@@ -71,9 +71,9 @@ A Python preprocessing tool that centers a sliced print on the densest reachable
 Below are clips of a 5cm x 5cm x 5cm cube printing on real hardware
 
 <div class="video-row">
-{{< video "meca500_3d_printer/real_cube2.mp4" 320 180 >}}
-{{< video "meca500_3d_printer/real_cube3.mp4" 320 180 >}}
-{{< video "meca500_3d_printer/real_cube1.mp4" 320 180 >}}
+{{< video src="meca500_3d_printer/real_cube2.mp4" >}}
+{{< video src="meca500_3d_printer/real_cube3.mp4" >}}
+{{< video src="meca500_3d_printer/real_cube1.mp4" >}}
 </div>
 
 
@@ -83,19 +83,19 @@ In the RViz views below, the green line traces every sampled end effector positi
 
 With an extruder on a flat bed, the full print pipeline plans and executes a sliced Benchy boat (21 layers) move-by-move through Pilz `LIN`/`CIRC`:
 
-{{< video "meca500_3d_printer/benchy_print.mp4" 640 360 >}}
+{{< video src="meca500_3d_printer/benchy_print.mp4" >}}
 
 With no extruder, the table is tilted to an arbitrary pose via `/table_service`, and the pipeline prints a cube (7 layers) onto the reoriented surface:
 
-{{< video "meca500_3d_printer/surface_trace.mp4" 640 360 >}}
+{{< video src="meca500_3d_printer/surface_trace.mp4" >}}
 
 Straight-line G1 moves sent directly through `/goal_service` and executed via the Pilz `LIN` planner:
 
-{{< video "meca500_3d_printer/gcode_line.mp4" 640 360 >}}
+{{< video src="meca500_3d_printer/gcode_line.mp4" >}}
 
 A smoke test of `meca500_hardware`, driving basic robot motion through the ros2_control hardware interface:
 
-{{< video "meca500_3d_printer/moveit_test.mp4" 640 360 >}}
+{{< video src="meca500_3d_printer/moveit_test.mp4" >}}
 
 ## What's Next
 *  Printing a 3D Benchy Boat in real hardware

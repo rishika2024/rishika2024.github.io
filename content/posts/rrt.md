@@ -11,10 +11,9 @@ math: true
 github: https://github.com/rishika2024/MSR_RRT.git
 ---
 
+{{< katex >}}
 
-# Rapidly-exploring Random Trees (RRTs) for 2D path planning.
-
-An RRT is a set of vertices (configurations) and edges (connections between configurations). Each iteration samples a random point in the domain, finds the nearest existing vertex, and takes a small step of size $\Delta$ toward the sample. If you run it for long enough, you get close to uniform coverage over the whole space.
+An RRT is a set of vertices (configurations) and edges (connections between configurations). Each iteration samples a random point in the domain, finds the nearest existing vertex, and takes a small step of size \(\Delta\) toward the sample. If you run it for long enough, you get close to uniform coverage over the whole space.
 
 ## Simple RRT
 

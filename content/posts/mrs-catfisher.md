@@ -16,8 +16,6 @@ github: https://github.com/rishika2024/Bug-sorter.git
 
 ---
 
-# Mrs. Catfisher - The Bug Sorter
-
 {{< figure src="/mrs-catfisher/franka picking up a bug.png" alt="Franka picking up a bug" width="60%">}}
 
 This was a group project by Halley Zhong, Nolan Knight, Miguel, and myself for **Northwestern's MECH_ENG 450: Embedded Systems in Robotics** course. We built an autonomous system to sort moving HexBugs using the Franka Arm. My role was to develop the vision system, which can detect, uniquely label, and track the moving bugs in real time.

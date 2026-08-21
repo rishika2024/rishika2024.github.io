@@ -17,7 +17,7 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       DART_SASS_VERSION: 1.97.2
       GO_VERSION: 1.25.5

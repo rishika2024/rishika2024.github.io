@@ -16,13 +16,11 @@ github: https://github.com/rishika2024/transformer_bot
 
 ---
 
-# Teleoperated Ground-Air Morphing Robot
-
 ## Overview
 
 This is a teleoperated transformer robot that can switch between flight and ground modes. I started with an F450 drone frame and designed a hinge mechanism on each arm: when the arms are straight, the robot flies as a quadcopter powered by brushless motors; when the arms fold down, it becomes a wheeled ground vehicle with wheels driven by mini servo motors. The folding itself is also actuated by servo motors.
 
-{{< video "transformer-robot/Final_Final.mp4" 640 360 >}}
+{{< video src="transformer-robot/Final_Final.mp4" >}}
 
 
 ## Full System Architecture:
@@ -71,7 +69,7 @@ I initially mounted the wheel directly on the motor body, but the inertia on the
 I tested the drone with both 3S and 4S batteries. With a 3S, it can carry up to 250g and hover properly, but struggles to gain altitude beyond 366g. Switching to a 4S significantly improved performance, with a payload capacity of up to 750g.
 
 ### Stable Hover
-{{< video "transformer-robot/week4/stable_hower.mp4" 640 >}}
+{{< video src="transformer-robot/week4/stable_hower.mp4" >}}
 
 
 

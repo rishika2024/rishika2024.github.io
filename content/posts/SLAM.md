@@ -20,13 +20,11 @@ github: https://github.com/rishika2024/Turtlebot_SLAM
 
 ---
 
-# EKF SLAM With Unknown Data Association
-
 ## Overview
 
 Built a complete EKF SLAM pipeline from scratch in C++ using ROS 2, simulated on a TurtleBot3. The robot localizes itself and maps cylindrical landmarks simultaneously using wheel odometry and 2D LiDAR. Three robots are visualized: red (ground truth, known only to the simulator), blue (odometry estimate, which drifts over time), and green (SLAM corrected estimate). The video shows the robot driving a closed path with sensor noise and limited detection range. As odometry drifts, the EKF corrects it by fusing landmark observations, keeping the green path close to ground truth while blue diverges. Landmark estimates in green converge toward their true positions with repeated observations.
 
-{{< video "SLAM/SLAM_video.mp4" 640 360 >}}
+{{< video src="SLAM/SLAM_video.mp4" >}}
 
 
 ## ROS 2 Package Breakdown
@@ -53,27 +51,27 @@ The SLAM package. Runs the Extended Kalman Filter with unknown data association 
 
 ## Landmark Detection
 
-{{< video "SLAM/circle_fitting.mp4" 640 360 >}}
+{{< video src="SLAM/circle_fitting.mp4" >}}
 
 The landmark detection node takes raw 2D LaserScan data and extracts cylindrical landmarks. First, scan points are clustered based on a distance threshold between consecutive readings, wrapping around the full scan. Clusters with fewer than 3 points are discarded. Each remaining cluster is passed through a circle fitting regression algorithm to estimate the center and radius. Clusters are then classified as circle or not circle using the inscribed angle theorem: if the standard deviation of inscribed angles is low and the mean angle falls within a valid range, the cluster is accepted as a landmark. Circles with unreasonable radii are filtered out as a final sanity check.
 
 
 ## Simulated Sensor Data
 
-{{< video "SLAM/fake_sensor.mp4" 640 360 >}}
+{{< video src="SLAM/fake_sensor.mp4" >}}
 
 The simulator generates fake sensor data to test the SLAM pipeline without a physical robot. Landmark positions are published relative to the robot at 5 Hz with Gaussian noise, and landmarks beyond a configurable max range are hidden. A simulated LiDAR publishes a full LaserScan by raycasting against obstacles and arena walls using circle line intersection, also with Gaussian noise on each range reading. Wheel commands are corrupted with input noise and random slip per wheel, so encoder readings diverge from true motion over time, forcing the EKF to rely on landmark corrections.
 
 
 ## Odometry and Control
 
-{{< video "SLAM/odom_sim.mp4" 640 360 >}}
+{{< video src="SLAM/odom_sim.mp4" >}}
 
 The video shows the TurtleBot3 driving in circles both in simulation and on the physical robot. In simulation, the blue (odometry) and red (ground truth) robots overlap perfectly since there is no noise or slip. On the real robot, the blue robot gradually drifts from the actual position as odometry error accumulates over repeated loops. The final odometry pose after returning to the start position gives a measure of the cumulative drift.
 
 ## Demo on Turtlebot
 
-{{< video "SLAM/real_robo_odom.mp4" 640 360 >}}
+{{< video src="SLAM/real_robo_odom.mp4" >}}
 
 
 

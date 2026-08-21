@@ -2,35 +2,37 @@
 # https://blowfish.page/docs/configuration/#theme-parameters
 
 colorScheme = "blowfish"
-defaultAppearance = "light"
-autoSwitchAppearance = true
+defaultAppearance = "dark"
+autoSwitchAppearance = false
 
 enableSearch = true
 enableCodeCopy = true
 
-disableImageOptimization = false
-disableImageOptimizationMD = false
+disableImageOptimization = true
+disableImageOptimizationMD = true
 disableTextInHeader = false
+
+defaultBackgroundImage = "img/fireflies-custom.svg"
 
 highlightCurrentMenuArea = true
 smartTOC = true
 
 [header]
-  layout = "fixed"
+  layout = "fixed-fill-blur"
 
 [footer]
   showMenu = true
   showCopyright = true
-  showThemeAttribution = false
+  showThemeAttribution = true
   showAppearanceSwitcher = true
   showScrollToTop = true
 
 [homepage]
-  layout = "profile"
+  layout = "background"
+  layoutBackgroundBlur = false
   showRecent = true
-  showRecentItems = 12
-  showMoreLink = true
-  showMoreLinkDest = "posts"
+  showRecentItems = 999
+  showMoreLink = false
   cardView = true
 
 [article]
@@ -43,11 +45,12 @@ smartTOC = true
   showBreadcrumbs = false
   showDraftLabel = true
   showEdit = false
-  showHeadingAnchors = true
+  showHeadingAnchors = false
   showPagination = true
-  showReadingTime = true
+  showReadingTime = false
   showTableOfContents = true
-  showRelatedContent = true
+  showRelatedContent = false
+  relatedContentLimit = 9
   showTaxonomies = true
   showWordCount = false
   sharingLinks = ["linkedin", "email"]
@@ -55,7 +58,7 @@ smartTOC = true
 [list]
   showHero = false
   showBreadcrumbs = false
-  showSummary = true
+  showSummary = false
   showTableOfContents = false
   showCards = true
   orderByWeight = false

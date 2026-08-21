@@ -27,11 +27,9 @@ github: https://github.com/rishika2024/Sketch2Real
 }
 </style>
 
-# SKETCH TO REAL
-
 Sketch2Real generates photorealistic images from colored sketches using a conditional diffusion model built on a U-Net architecture, trained on the COCO dataset.
 
-{{< video "sketch2real/gui.mp4" >}}
+{{< video src="sketch2real/gui.mp4" >}}
 
 ## Sketch Generation
 

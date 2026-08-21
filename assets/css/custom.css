@@ -1,0 +1,240 @@
+/* Darken the dark-mode background toward near-black, keeping the
+   blowfish scheme's blue accent palette untouched. */
+html.dark {
+  --color-neutral-700: 38, 38, 40;
+  --color-neutral-800: 12, 12, 14;
+  --color-neutral-900: 4, 4, 5;
+}
+
+/* disableImageOptimization skips the crop-to-square step for avatar
+   images, so force object-fit here instead of letting them stretch. */
+img.rounded-full {
+  object-fit: cover;
+}
+
+/* Swap the primary accent (tag badges, links, etc.) for the mint tone
+   used in the homepage fireflies background, in both light and dark. */
+:root {
+  --color-primary-50: 239, 250, 248;
+  --color-primary-100: 216, 243, 237;
+  --color-primary-200: 185, 233, 222;
+  --color-primary-300: 170, 228, 215;
+  --color-primary-400: 131, 216, 197;
+  --color-primary-500: 92, 204, 179;
+  --color-primary-600: 59, 186, 158;
+  --color-primary-700: 47, 147, 125;
+  --color-primary-800: 37, 116, 98;
+  --color-primary-900: 27, 85, 72;
+
+  /* "secondary" drives inline `code` text color - keep it the same
+     mint instead of Blowfish's default cyan/light-blue. */
+  --color-secondary-50: 239, 250, 248;
+  --color-secondary-100: 216, 243, 237;
+  --color-secondary-200: 185, 233, 222;
+  --color-secondary-300: 170, 228, 215;
+  --color-secondary-400: 131, 216, 197;
+  --color-secondary-500: 92, 204, 179;
+  --color-secondary-600: 59, 186, 158;
+  --color-secondary-700: 47, 147, 125;
+  --color-secondary-800: 37, 116, 98;
+  --color-secondary-900: 27, 85, 72;
+}
+
+/* Keep the fireflies visible the whole way down the page instead of
+   fading to a solid cover on scroll (layoutBackgroundBlur is off for
+   this). Render at near-full brightness, matching the source SVG. */
+#background-image {
+  opacity: 0.95;
+}
+
+/* The fixed-fill-blur header's scroll-tinted backdrop (menu-blur) now
+   picks up the mint primary color and reads as a solid bar once fully
+   scrolled-in; tone it down so it stays a subtle tint. */
+html.dark #menu-blur {
+  background-color: rgb(37, 116, 98, 0.12);
+}
+
+/* Masonry/brick-style article grid (matching the old site) instead of
+   Blowfish's default row-aligned CSS grid. Pure CSS multi-column, no
+   JS, applies to every article-card grid (home, list, tags, related). */
+.grid.gap-4 {
+  display: block;
+  column-count: 1;
+  column-gap: 1rem;
+}
+@media (min-width: 640px) {
+  .grid.gap-4 {
+    column-count: 2;
+  }
+}
+@media (min-width: 768px) {
+  .grid.gap-4 {
+    column-count: 3;
+  }
+}
+.grid.gap-4 > * {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Give the article body / TOC row more horizontal room -
+   Blowfish's default side padding (md:px-24, lg:px-32) leaves the
+   text column narrow and the TOC cramped toward the center. Covers
+   the md breakpoint too (768-1023px), not just lg, since that's a
+   common window width where this showed up. */
+@media (min-width: 768px) {
+  body {
+    padding-left: 2rem;
+    padding-right: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    padding-left: 5rem;
+    padding-right: 0.75rem;
+    max-width: 100rem;
+  }
+}
+
+/* Shrink the empty hero spacer between the top nav bar and the big
+   article title - it was 150-200px of just background image. */
+#hero {
+  height: 90px;
+}
+@media (min-width: 768px) {
+  #hero {
+    height: 120px;
+  }
+}
+
+/* Match the article paragraph column width to the .video-row below it
+   (990px, matching its rendered width) instead of Tailwind Typography's
+   default prose max-width. */
+.article-content {
+  max-width: 990px;
+}
+
+/* Center the article's content column on the page while keeping the
+   Table of Contents pinned exactly where it was (right edge). TOC is
+   pulled out of flow via absolute positioning, reserving a strip of
+   space on the right that the centered content never enters. */
+@media (min-width: 1024px) {
+  .content-row {
+    position: relative;
+    padding-right: 26rem;
+  }
+  .toc-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24rem;
+  }
+  .content-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header-center {
+    padding-right: 26rem;
+  }
+  .header-center-inner {
+    max-width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .header-center-inner .flex {
+    justify-content: center;
+  }
+}
+
+/* Longer-dash vertical line (shared by the TOC's indent guide and the
+   scroll rail), replacing Tailwind's tight border-dotted default. */
+.dashed-line-v {
+  position: relative;
+}
+.dashed-line-v::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgb(163 163 163) 0,
+    rgb(163 163 163) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+html.dark .dashed-line-v::before {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgb(200 200 200) 0,
+    rgb(200 200 200) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+/* Scroll progress rail: fixed dashed line on the left edge with the
+   robotic-arm icon sliding down it in proportion to scroll position. */
+#scroll-rail {
+  position: fixed;
+  left: 2.5rem;
+  top: 7rem;
+  bottom: 3rem;
+  width: 3px;
+  z-index: 40;
+  display: none;
+}
+@media (min-width: 1280px) {
+  #scroll-rail {
+    display: block;
+  }
+}
+#scroll-rail::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgb(163 163 163) 0,
+    rgb(163 163 163) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+html.dark #scroll-rail::before {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgb(200 200 200) 0,
+    rgb(200 200 200) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+.scroll-rail-icon {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 64px;
+  max-width: 64px;
+  height: 64px;
+  max-height: 64px;
+  pointer-events: none;
+}
+.scroll-rail-icon-dark {
+  display: none;
+}
+html.dark .scroll-rail-icon-light {
+  display: none;
+}
+html.dark .scroll-rail-icon-dark {
+  display: block;
+}
