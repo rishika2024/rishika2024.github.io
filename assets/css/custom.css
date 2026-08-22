@@ -120,7 +120,7 @@ html.dark #menu-blur {
    pulled out of flow via absolute positioning, reserving a strip of
    space on the right that the centered content never enters. */
 @media (min-width: 1024px) {
-  .content-row {
+  .content-row.has-toc {
     position: relative;
     padding-right: 26rem;
   }
@@ -136,7 +136,7 @@ html.dark #menu-blur {
     margin-left: auto;
     margin-right: auto;
   }
-  .header-center {
+  .header-center.has-toc {
     padding-right: 26rem;
   }
   .header-center-inner {

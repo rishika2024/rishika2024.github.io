@@ -1,5 +1,8 @@
 {{ define "main" }}
   {{ .Scratch.Set "scope" "single" }}
+  {{ $enableToc := site.Params.article.showTableOfContents | default false }}
+  {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
+  {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
   <article>
     {{/* Hero */}}
     {{ if .Params.showHero | default (site.Params.article.showHero | default false) }}
@@ -14,7 +17,7 @@
     {{ end }}
 
     {{/* Header */}}
-    <header id="single_header" class="header-center mt-5">
+    <header id="single_header" class="header-center mt-5{{ if $showToc }} has-toc{{ end }}">
       <div class="header-center-inner">
         {{ if .Params.showBreadcrumbs | default (site.Params.article.showBreadcrumbs | default false) }}
           {{ partial "breadcrumbs.html" . }}
@@ -40,10 +43,7 @@
     </header>
 
     {{/* Body */}}
-    <section class="content-row max-w-full mt-0 prose prose-xl dark:prose-invert">
-      {{ $enableToc := site.Params.article.showTableOfContents | default false }}
-      {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
-      {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
+    <section class="content-row max-w-full mt-0 prose prose-xl dark:prose-invert{{ if $showToc }} has-toc{{ end }}">
       {{ if $showToc }}
         <div class="toc-wrapper px-0">
           <div class="toc ps-5 print:hidden">
