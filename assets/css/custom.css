@@ -297,3 +297,12 @@ html.dark .scroll-rail-icon-dark {
 .site-github-btn .icon {
   font-size: 1.1rem;
 }
+
+/* About page intro block (photo, name, subtitle) - center-aligned like
+   the site's other hero-style headers. */
+.about-intro-center {
+  text-align: center;
+}
+.about-intro-center h2 {
+  margin-top: 0.75rem;
+}
