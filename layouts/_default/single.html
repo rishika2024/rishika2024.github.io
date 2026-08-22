@@ -25,6 +25,14 @@
         <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
           {{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}
         </div>
+        {{ with .Params.github }}
+          <a
+            href="{{ . }}" target="_blank" rel="noopener external"
+            class="site-github-btn">
+            {{ partial "icon.html" "github" }}
+            View on GitHub
+          </a>
+        {{ end }}
         {{ if not (.Params.showAuthorBottom | default (site.Params.article.showAuthorBottom | default false)) }}
           {{ template "SingleAuthor" . }}
         {{ end }}
@@ -88,6 +96,7 @@
       {{ end }}
     </footer>
 
+    {{ if .Params.showScrollRail | default true }}
     {{ with resources.Get "robotic-arm-light.gif" }}
       {{ $iconLight := . }}
       {{ with resources.Get "robotic-arm-dark.gif" }}
@@ -120,6 +129,7 @@
           })();
         </script>
       {{ end }}
+    {{ end }}
     {{ end }}
   </article>
 {{ end }}

@@ -125,10 +125,12 @@ html.dark #menu-blur {
     padding-right: 26rem;
   }
   .toc-wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: fixed;
+    top: 7rem;
+    right: 2rem;
     width: 24rem;
+    max-height: calc(100vh - 10rem);
+    overflow-y: auto;
   }
   .content-center {
     margin-left: auto;
@@ -237,4 +239,60 @@ html.dark .scroll-rail-icon-light {
 }
 html.dark .scroll-rail-icon-dark {
   display: block;
+}
+
+/* Bigger tag/badge pills everywhere they appear (cards, article meta,
+   about-page skills) - the Blowfish default (text-xs, px-1 py-[1px])
+   reads cramped. */
+.site-badge {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  border-radius: 0.5rem;
+}
+
+/* Bigger nav bar text (Home / Projects / About / Resume) - Blowfish's
+   default text-base reads small for a primary nav. */
+.main-menu .text-base {
+  font-size: 1.15rem;
+}
+
+/* Center the footer copyright line now that theme attribution
+   (the other justify-between item) is hidden. */
+#site-footer > .flex.items-center.justify-between {
+  justify-content: center;
+}
+
+/* Sharing-link icons at the end of every post, and the footer social
+   icons: plain coral glyphs (no gray box), matching the profile icon
+   style but in the (lightened) coral from the fireflies gradient
+   instead of the mint accent. */
+.site-coral-icon {
+  color: #ff7d7a;
+  font-size: 1.5rem;
+}
+.site-coral-icon:hover {
+  color: #ffa5a3;
+}
+
+/* "View on GitHub" button under the tags on every post - the
+   transition shade between the coral and mint used in the fireflies
+   gradient (#ff5b57 -> #d4a097 -> #aae4d7). */
+.site-github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(212, 160, 151, 0.5);
+  color: #d4a097;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.site-github-btn:hover {
+  border-color: rgba(212, 160, 151, 0.8);
+}
+.site-github-btn .icon {
+  font-size: 1.1rem;
 }

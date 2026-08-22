@@ -1,4 +1,6 @@
 {{ define "main" }}
+  {{ .Scratch.Set "scope" "list" }}
+  {{ partial "hero/background.html" . }}
   {{/* Minimal list page: no title/breadcrumbs/year-grouping, just
        every page in this section as cards, matching the homepage. */}}
   <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">

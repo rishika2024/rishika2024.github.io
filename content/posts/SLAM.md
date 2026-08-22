@@ -71,7 +71,7 @@ The video shows the TurtleBot3 driving in circles both in simulation and on the 
 
 ## Demo on Turtlebot
 
-{{< video src="SLAM/real_robo_odom.mp4" >}}
+{{< video src="SLAM/real_robo_odom.mp4" ratio="9/16" >}}
 
 
 

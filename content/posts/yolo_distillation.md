@@ -53,6 +53,7 @@ A standard YOLO has a backbone, a multi-scale neck (FPN), and a head — the nec
   padding: 0.6rem 1rem;
   text-align: center;
   line-height: 1.3;
+  color: rgb(38 38 38);
 }
 .flowchart .fc-box strong { display: block; font-weight: 600; }
 .flowchart .fc-box small { color: rgba(0,0,0,0.55); }
@@ -79,6 +80,15 @@ A standard YOLO has a backbone, a multi-scale neck (FPN), and a head — the nec
 .flowchart .fc-flatten { background: #eceff1; }
 .flowchart .fc-head { background: #ede9fe; }
 .flowchart .fc-out { background: #fee2e2; }
+
+html.dark .flowchart .fc-box { border-color: rgba(255,255,255,0.2); }
+html.dark .flowchart .fc-box,
+html.dark .flowchart .fc-box strong { color: rgb(23 23 23) !important; }
+html.dark .flowchart .fc-box small { color: rgba(0,0,0,0.65) !important; }
+html.dark .flowchart .fc-arrow { background: rgba(255,255,255,0.4); }
+html.dark .flowchart .fc-arrow::after { border-top-color: rgba(255,255,255,0.4); }
+.flowchart-caption { text-align:center; font-size: 0.85rem; color: rgba(0,0,0,0.55); margin-top: -1rem; }
+html.dark .flowchart-caption { color: rgba(255,255,255,0.55); }
 </style>
 
 <div class="flowchart">
@@ -102,7 +112,7 @@ A standard YOLO has a backbone, a multi-scale neck (FPN), and a head — the nec
   <div class="fc-arrow"></div>
   <div class="fc-box fc-out"><small>confidence, x1, y1, x2, y2</small></div>
 </div>
-<p style="text-align:center; font-size: 0.85rem; color: rgba(0,0,0,0.55); margin-top: -1rem;">Figure — custom student model architecture.</p>
+<p class="flowchart-caption">Figure — custom student model architecture.</p>
 
 ## Training
 
@@ -127,7 +137,9 @@ Benchmarked on a laptop, 50 runs on a test image:
   margin: 0 auto;
   border-collapse: collapse;
   font-size: 0.92rem;
+  color: rgb(38 38 38);
 }
+html.dark .results-table { color: rgb(229 229 229); }
 .results-table caption {
   caption-side: top;
   font-weight: 600;
@@ -139,6 +151,9 @@ Benchmarked on a laptop, 50 runs on a test image:
   text-align: right;
   border-bottom: 1px solid rgba(0,0,0,0.12);
 }
+html.dark .results-table th, html.dark .results-table td {
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
 .results-table th:first-child, .results-table td:first-child {
   text-align: left;
   font-weight: 500;
@@ -147,8 +162,12 @@ Benchmarked on a laptop, 50 runs on a test image:
   border-bottom: 2px solid rgba(0,0,0,0.4);
   font-weight: 600;
 }
+html.dark .results-table thead th {
+  border-bottom: 2px solid rgba(255,255,255,0.4);
+}
 .results-table tbody tr:last-child td { border-bottom: none; }
-.results-table td.custom-col, .results-table th.custom-col { background: #fee2e2; }
+.results-table td.custom-col, .results-table th.custom-col { background: #fee2e2; color: #7f1d1d; }
+html.dark .results-table td.custom-col, html.dark .results-table th.custom-col { background: rgba(127,29,29,0.35); color: #fecaca; }
 </style>
 
 <div class="results-table-wrap">

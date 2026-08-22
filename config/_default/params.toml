@@ -2,6 +2,7 @@
 # https://blowfish.page/docs/configuration/#theme-parameters
 
 colorScheme = "blowfish"
+copyright = "Rishika Bera"
 defaultAppearance = "dark"
 autoSwitchAppearance = false
 
@@ -14,6 +15,8 @@ disableTextInHeader = false
 
 defaultBackgroundImage = "img/fireflies-custom.svg"
 
+Logo = "robo.gif"
+
 highlightCurrentMenuArea = true
 smartTOC = true
 
@@ -23,7 +26,7 @@ smartTOC = true
 [footer]
   showMenu = true
   showCopyright = true
-  showThemeAttribution = true
+  showThemeAttribution = false
   showAppearanceSwitcher = true
   showScrollToTop = true
 
@@ -46,14 +49,14 @@ smartTOC = true
   showDraftLabel = true
   showEdit = false
   showHeadingAnchors = false
-  showPagination = true
+  showPagination = false
   showReadingTime = false
   showTableOfContents = true
   showRelatedContent = false
   relatedContentLimit = 9
   showTaxonomies = true
   showWordCount = false
-  sharingLinks = ["linkedin", "email"]
+  sharingLinks = false
 
 [list]
   showHero = false

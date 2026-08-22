@@ -1,0 +1,17 @@
+{{ with .Params.sharingLinks | default (.Site.Params.article.sharingLinks | default false) }}
+  {{ $links := site.Data.sharing }}
+  <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+    {{ range . }}
+      {{ with index $links . }}
+        <a
+          target="_blank"
+          class="site-coral-icon px-1"
+          href="{{ printf .url $.Permalink $.Title }}"
+          title="{{ i18n .title }}"
+          aria-label="{{ i18n .title }}">
+          {{ partial "icon.html" .icon }}
+        </a>
+      {{ end }}
+    {{ end }}
+  </section>
+{{ end }}

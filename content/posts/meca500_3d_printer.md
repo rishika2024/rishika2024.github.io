@@ -71,9 +71,9 @@ A Python preprocessing tool that centers a sliced print on the densest reachable
 Below are clips of a 5cm x 5cm x 5cm cube printing on real hardware
 
 <div class="video-row">
-{{< video src="meca500_3d_printer/real_cube2.mp4" >}}
-{{< video src="meca500_3d_printer/real_cube3.mp4" >}}
-{{< video src="meca500_3d_printer/real_cube1.mp4" >}}
+{{< video src="meca500_3d_printer/real_cube2.mp4" ratio="9/16" >}}
+{{< video src="meca500_3d_printer/real_cube3.mp4" ratio="9/16" >}}
+{{< video src="meca500_3d_printer/real_cube1.mp4" ratio="9/16" >}}
 </div>
 
 

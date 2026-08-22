@@ -2,10 +2,16 @@
 title: "Resume"
 description: "Rishika Bera's Resume"
 draft: false
+showTableOfContents: false
+showScrollRail: false
+showDate: false
+dimHero: false
 ---
 
 <p style="text-align:center; margin-top:1.5rem;"><a href="/resume/Rishika_Resume.pdf" target="_blank" rel="noopener" class="text-base font-medium hover:text-blue-600">Download PDF</a></p>
 
-<iframe src="/resume/Rishika_Resume.pdf" width="100%" height="1600px" style="border:none; margin-top:2rem;"></iframe>
+<div style="width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding: 0 2rem; box-sizing: border-box;">
+<iframe src="/resume/Rishika_Resume.pdf" width="100%" height="2800px" style="border:none; margin-top:2rem; max-width: 1100px; display:block; margin-left:auto; margin-right:auto;"></iframe>
+</div>
 
 
