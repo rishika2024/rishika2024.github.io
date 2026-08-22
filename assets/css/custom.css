@@ -119,6 +119,16 @@ html.dark #menu-blur {
    Table of Contents pinned exactly where it was (right edge). TOC is
    pulled out of flow via absolute positioning, reserving a strip of
    space on the right that the centered content never enters. */
+.header-center-inner {
+  max-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.header-center-inner .flex {
+  justify-content: center;
+}
+
 @media (min-width: 1024px) {
   .content-row.has-toc {
     position: relative;
@@ -138,15 +148,6 @@ html.dark #menu-blur {
   }
   .header-center.has-toc {
     padding-right: 26rem;
-  }
-  .header-center-inner {
-    max-width: 990px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .header-center-inner .flex {
-    justify-content: center;
   }
 }
 
