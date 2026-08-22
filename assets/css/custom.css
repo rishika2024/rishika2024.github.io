@@ -282,6 +282,7 @@ html.dark .scroll-rail-icon-dark {
   align-items: center;
   gap: 0.5rem;
   margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid rgba(212, 160, 151, 0.5);
