@@ -41,7 +41,7 @@ Node features: `[x, y, z, is_nozzle_here]` (4 features). Travel is a learned act
 
 **Observation:** Method 1 completes 54/54 but the travel count does not improve significantly over training. The network cannot distinguish between a state with 10 edges printed and 40 edges printed because the node features contain no information about print progress. The x, y, z coordinates never change, and the nozzle position alone is insufficient context.
 
-*[insert Method 2 result diagram here]*
+{{< figure src="meca500_rl/meth1.png" alt="Method 1 (4-feature RL) result on a 2x2x2 Simple Cubic lattice" caption="Method 1: 54/54 edges printed, but travel count doesn't improve over training." >}}
 
 ### Method 2 (RL, 6 features, normalized)
 
@@ -53,6 +53,5 @@ Travel penalty reduced to -1 (same as a print move). AERO needed 19 travels for 
 
 **Observation:** Method 2 learns faster and achieves higher best reward. The printed_ratio feature lets the GAT see which parts of the lattice are "used up" and which still need work. The global_progress feature lets the GIN distinguish early game states from late game states, enabling different value estimates for the same local configuration at different stages of completion.
 
-
-
+{{< figure src="meca500_rl/meth2.png" alt="Method 2 (6-feature normalized RL) result on a 2x2x2 Simple Cubic lattice" caption="Method 2: faster learning and higher best reward with progress-aware features." >}}
 

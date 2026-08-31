@@ -44,6 +44,43 @@ The print pipeline sweeps the robot's reachable workspace, centers and clips sli
 
 {{< figure src="/meca500_3d_printer/full_setup.jpeg" alt="Full setup" width="60%" >}}
 
+## Architecture
+
+{{< mermaid >}}
+flowchart TD
+  IN1["sliced model<br/>(.gcode.3mf)"]
+  IN2["bed pose<br/>(touch-probe / AprilTag)"]
+  IN3["Robot description<br/>(URDF + SRDF, build-time)"]
+
+  PRE["gcode preprocessor<br/>center + clip to reachable region"]
+  PS["planningscene node"]
+  RSP["robot_state_publisher"]
+  TRAJ["trajectory node<br/>(orchestrator)"]
+  MG["MoveIt2 move_group<br/>(OMPL + patched Pilz)"]
+  PRINTER["Ender3 / Marlin<br/>(USB serial)"]
+  RC["ros2_control<br/>(arm controller + hw plugin)"]
+  ARM["Meca500 arm"]
+
+  IN1 -->|".3mf"| PRE
+  IN2 --> PS
+  IN3 --> RSP
+  IN3 --> MG
+  IN3 --> RC
+
+  PRE -->|"out.txt"| TRAJ
+  PS -->|"bed pose"| TRAJ
+
+  TRAJ -->|"plan requests"| MG
+  TRAJ -->|"G-code"| PRINTER
+
+  MG -->|"joint trajectory"| RC
+  RC -->|"TCP :10000 / :10001"| ARM
+
+  RC -.->|"/joint_states"| RSP
+  RSP -.->|"/tf"| MG
+  RSP -.->|"/tf"| TRAJ
+{{< /mermaid >}}
+
 ## ROS 2 Package Breakdown
 
 ### meca500_hardware:
