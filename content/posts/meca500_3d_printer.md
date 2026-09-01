@@ -31,6 +31,10 @@ github: https://github.com/rishika2024/MECA500_3D_Printing
   flex: 1 1 320px;
   max-width: 400px;
 }
+.video-row-cubes > figure {
+  flex-basis: 240px;
+  max-width: 280px;
+}
 </style>
 
 ## Overview
@@ -44,11 +48,23 @@ The print pipeline sweeps the robot's reachable workspace, centers and clips sli
 
 Before the arm moves, a **pre-planning pass** runs the whole file plan-only to discover the real feed-rate range, so extrusion can be rescaled to the Ender3's physical limits.
 
-{{< figure src="/meca500_3d_printer/full_setup.jpeg" alt="Full setup" width="60%" >}}
-
 ## System Architecture
 
 {{< figure src="meca500_3d_printer/system.png" alt="System architecture diagram" >}}
+
+## Full Setup
+
+### With flat bed
+
+{{< figure src="meca500_3d_printer/full_setup_flat_bed.jpeg" alt="Full setup with a flat print bed" width="45%" >}}
+
+### With bed at an angle
+
+<div class="video-row">
+{{< figure src="meca500_3d_printer/full_setup_bed_at_angle_front_view.jpeg" alt="Full setup with the bed tilted at an angle, front view" >}}
+{{< figure src="meca500_3d_printer/full_setup_bed_at_angle_side_view.jpeg" alt="Full setup with the bed tilted at an angle, side view" >}}
+</div>
+
 
 ## ROS 2 Package Breakdown
 
@@ -83,9 +99,15 @@ Contains a Python preprocessor I wrote that unzips the sliced `.3mf`, centers th
 
 ## Demos
 
+Below is the clip of my setup printing a 2.5cm cube with a hole of 1cm diameter in the middle with the bed at an angle:
+
+<div class="video-row video-row-cubes">
+{{< video src="meca500_3d_printer/tilted_cube_with_hole.mp4" ratio="9/16" >}}
+</div>
+
 Below are clips of my setup printing a 5 cm × 5 cm × 5 cm cube on real hardware.
 
-<div class="video-row">
+<div class="video-row video-row-cubes">
 {{< video src="meca500_3d_printer/real_cube2.mp4" ratio="9/16" >}}
 {{< video src="meca500_3d_printer/real_cube3.mp4" ratio="9/16" >}}
 {{< video src="meca500_3d_printer/real_cube1.mp4" ratio="9/16" >}}
@@ -116,3 +138,22 @@ Next up: adaptive nozzle orientation for steep struts and overhangs.
 ## Code
 
 My full implementation is on [GitHub](https://github.com/rishika2024/MECA500_3D_Printing).
+
+## Gallery
+
+{{< gallery >}}
+{{< figure src="meca500_3d_printer/benchy with grid support only on build plate.jpeg" caption="Benchy sliced with grid support, printed directly on the build plate" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
+{{< figure src="meca500_3d_printer/benchy with grid support.jpeg" caption="Benchy printed with grid support structures" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
+{{< figure src="meca500_3d_printer/benchy with no support.jpeg" caption="Benchy printed with no support material" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
+{{< figure src="meca500_3d_printer/benchy_real.jpeg" caption="The finished Benchy print" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
+{{< figure src="meca500_3d_printer/hollow cylinder.jpeg" caption="A hollow cylinder print" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
+{{< figure src="meca500_3d_printer/cat.jpg" caption="A printed cat model" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
+<figure class="grid-w33 sm:grid-w25 md:grid-w20">
+{{< video src="meca500_3d_printer/mini cube with hole on flat bed.mp4" ratio="9/16" caption="Printing a mini cube with a hole on a flat bed" >}}
+</figure>
+<figure class="grid-w33 sm:grid-w25 md:grid-w20">
+{{< video src="meca500_3d_printer/cat.mp4" ratio="16/9" caption="Printing a cat model" >}}
+</figure>
+{{< /gallery >}}
+
+

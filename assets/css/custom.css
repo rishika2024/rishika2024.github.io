@@ -297,3 +297,11 @@ html.dark .scroll-rail-icon-dark {
 .about-intro-center h2 {
   margin-top: 0.75rem;
 }
+
+/* Gallery shortcode items ship with margin:0 !important (theme relies
+   on inline-block whitespace alone for a hairline gap) - add a real
+   gutter between tiles so it reads as a gallery, not a solid montage. */
+.gallery img,
+.gallery figure {
+  margin: 0.5rem !important;
+}
