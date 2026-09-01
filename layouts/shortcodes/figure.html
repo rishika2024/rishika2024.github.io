@@ -2,7 +2,8 @@
 {{ if .Get "default" }}
   {{ partial "hugo-embedded/shortcodes/figure-default.html" . }}
 {{ else }}
-  {{- $url := urls.Parse (.Get "src") }}
+  {{- $rawSrc := .Get "src" }}
+  {{- $url := urls.Parse $rawSrc }}
   {{- $altText := .Get "alt" }}
   {{- $caption := .Get "caption" }}
   {{- $href := .Get "href" }}
@@ -18,10 +19,10 @@
       <img class="my-0 rounded-md{{ with $nozoom }} nozoom{{ end }}{{ with $class }} {{ . }}{{ end }}" src="{{ $url.String }}" alt="{{ $altText }}" />
   {{- else }}
     {{- $resource := "" }}
-    {{- if $.Page.Resources.GetMatch ($url.String) }}
-      {{- $resource = $.Page.Resources.GetMatch ($url.String) }}
-    {{- else if resources.GetMatch ($url.String) }}
-      {{- $resource = resources.Get ($url.String) }}
+    {{- if $.Page.Resources.GetMatch $rawSrc }}
+      {{- $resource = $.Page.Resources.GetMatch $rawSrc }}
+    {{- else if resources.GetMatch $rawSrc }}
+      {{- $resource = resources.Get $rawSrc }}
     {{- end }}
     {{- with $resource }}
       {{- if or $disableImageOptimization (eq .MediaType.SubType "svg")}}
