@@ -142,17 +142,14 @@ My full implementation is on [GitHub](https://github.com/rishika2024/MECA500_3D_
 ## Gallery
 
 {{< gallery >}}
-{{< figure src="meca500_3d_printer/benchy with grid support only on build plate.jpeg" caption="Benchy sliced with grid support, printed directly on the build plate" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
-{{< figure src="meca500_3d_printer/benchy with grid support.jpeg" caption="Benchy printed with grid support structures" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
-{{< figure src="meca500_3d_printer/benchy with no support.jpeg" caption="Benchy printed with no support material" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
+{{< figure src="meca500_3d_printer/benchy with grid support only on build plate.jpeg" caption="Benchy with the grid support only on build plate" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
+{{< figure src="meca500_3d_printer/benchy with grid support.jpeg" caption="Benchy with full grid support" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
+{{< figure src="meca500_3d_printer/benchy with no support.jpeg" caption="Benchy with no support material" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
 {{< figure src="meca500_3d_printer/benchy_real.jpeg" caption="The finished Benchy print" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
-{{< figure src="meca500_3d_printer/hollow cylinder.jpeg" caption="A hollow cylinder print" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
+{{< figure src="meca500_3d_printer/hollow cylinder.jpeg" caption="hollow cylinder" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
 {{< figure src="meca500_3d_printer/cat.jpg" caption="A printed cat model" figureClass="grid-w33 sm:grid-w25 md:grid-w20" >}}
 <figure class="grid-w33 sm:grid-w25 md:grid-w20">
 {{< video src="meca500_3d_printer/mini cube with hole on flat bed.mp4" ratio="9/16" caption="Printing a mini cube with a hole on a flat bed" >}}
-</figure>
-<figure class="grid-w33 sm:grid-w25 md:grid-w20">
-{{< video src="meca500_3d_printer/cat.mp4" ratio="16/9" caption="Printing a cat model" >}}
 </figure>
 {{< /gallery >}}
 

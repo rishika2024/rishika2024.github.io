@@ -304,4 +304,10 @@ html.dark .scroll-rail-icon-dark {
 .gallery img,
 .gallery figure {
   margin: 0.5rem !important;
+  /* .gallery figure is inline-block (gallery.css) with no vertical-
+     align set, so it defaults to baseline - rows of images with
+     different heights/caption lengths align by their caption's text
+     baseline instead of the image top, scattering everything
+     vertically. Align by the top of each tile instead. */
+  vertical-align: top;
 }
