@@ -48,6 +48,10 @@ The print pipeline sweeps the robot's reachable workspace, centers and clips sli
 
 Before the arm moves, a **pre-planning pass** runs the whole file plan-only to discover the real feed-rate range, so extrusion can be rescaled to the Ender3's physical limits.
 
+<div style="max-width:400px; margin-inline:auto;">
+{{< video src="meca500_3d_printer/full_print_real_cropped.mp4" ratio="9/16" >}}
+</div>
+
 ## System Architecture
 
 {{< figure src="meca500_3d_printer/system.png" alt="System architecture diagram" >}}
