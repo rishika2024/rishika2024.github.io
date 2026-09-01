@@ -1,0 +1,74 @@
+<script>
+  (function () {
+    function getColumnCount() {
+      var w = window.innerWidth;
+      if (w >= 768) return 3;
+      if (w >= 640) return 2;
+      return 1;
+    }
+
+    function layout(container) {
+      var items = Array.prototype.slice.call(container.children);
+      if (!items.length) return;
+      var cols = getColumnCount();
+      var gap = 16; // matches gap-4 (1rem)
+      var containerWidth = container.clientWidth;
+      var colWidth = (containerWidth - gap * (cols - 1)) / cols;
+      var colHeights = new Array(cols).fill(0);
+
+      items.forEach(function (item) {
+        item.style.position = "absolute";
+        item.style.top = "0";
+        item.style.left = "0";
+        item.style.width = colWidth + "px";
+        // Card markup has Tailwind's min-w-full/min-h-full (100% both
+        // axes). Once absolutely positioned, "100%" resolves against
+        // this container - which we size FROM these same cards - so
+        // leaving min-height alone creates a feedback loop (taller
+        // container -> taller card next pass -> taller container...).
+        // Pin both down so offsetHeight reflects real content only.
+        item.style.minWidth = colWidth + "px";
+        item.style.maxWidth = colWidth + "px";
+        item.style.minHeight = "0";
+        item.style.margin = "0";
+      });
+
+      items.forEach(function (item) {
+        var minCol = 0;
+        for (var i = 1; i < cols; i++) {
+          if (colHeights[i] < colHeights[minCol]) minCol = i;
+        }
+        var x = minCol * (colWidth + gap);
+        var y = colHeights[minCol];
+        item.style.transform = "translate(" + x + "px, " + y + "px)";
+        colHeights[minCol] = y + item.offsetHeight + gap;
+      });
+
+      container.style.height = Math.max.apply(null, colHeights) - gap + "px";
+    }
+
+    function layoutAll() {
+      document.querySelectorAll(".grid.gap-4").forEach(layout);
+    }
+
+    var resizeTimer;
+    window.addEventListener("resize", function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(layoutAll, 150);
+    });
+
+    // Card thumbnails load after initial layout and change item height,
+    // so re-run once each finishes loading (plus a window.load catch-all).
+    document.querySelectorAll(".grid.gap-4 img").forEach(function (img) {
+      if (img.complete) return;
+      img.addEventListener("load", layoutAll);
+    });
+    window.addEventListener("load", layoutAll);
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", layoutAll);
+    } else {
+      layoutAll();
+    }
+  })();
+</script>
