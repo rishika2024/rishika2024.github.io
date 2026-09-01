@@ -298,27 +298,31 @@ html.dark .scroll-rail-icon-dark {
   margin-top: 0.75rem;
 }
 
-/* Gallery shortcode items ship with margin:0 !important (theme relies
-   on inline-block whitespace alone for a hairline gap) - add a real
-   gutter between tiles so it reads as a gallery, not a solid montage. */
+/* Gallery shortcode: replace the theme's percentage-width grid-wXX
+   classes (designed for margin:0 - adding margin on top of a percent
+   width overflows the row and wraps unpredictably) with a flexbox
+   grid. Wrapping/gap is handled by flex-wrap + gap, not item width
+   math, so tiles never overflow the row regardless of gap size. */
+.gallery {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 .gallery img,
 .gallery figure {
-  margin: 1rem !important;
-  /* .gallery figure is inline-block (gallery.css) with no vertical-
-     align set, so it defaults to baseline - rows of images with
-     different heights/caption lengths align by their caption's text
-     baseline instead of the image top, scattering everything
-     vertically. Align by the top of each tile instead. */
-  vertical-align: top;
+  margin: 0 !important;
 }
-
-/* Uniform tile height instead of each image's own aspect ratio -
-   crop to fill instead of leaving rows visually uneven. !important
-   beats the video shortcode's inline aspect-ratio style too. */
+.gallery figure {
+  flex: 0 0 auto;
+  width: 220px !important;
+}
+/* Uniform tile height instead of each image's own aspect ratio - crop
+   to fill instead of leaving rows visually uneven. !important beats
+   the video shortcode's inline aspect-ratio style too. */
 .gallery figure img,
 .gallery figure video {
   height: 220px !important;
-  width: 100% !important;
+  width: 220px !important;
   aspect-ratio: auto !important;
   object-fit: cover !important;
 }
